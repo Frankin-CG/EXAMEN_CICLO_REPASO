@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz de Razonamiento Verbal</title>
+    <title>Test de Biología - franklin</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            background: linear-gradient(135deg, #ff4757 0%, #ff6348 50%, #ffa502 100%);
             min-height: 100vh;
             padding: 20px;
             display: flex;
@@ -25,7 +25,7 @@
             background: white;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            max-width: 800px;
+            max-width: 850px;
             width: 100%;
             padding: 40px;
             animation: fadeIn 0.5s ease;
@@ -36,16 +36,50 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        .academy-header {
+            background: linear-gradient(135deg, #ff4757, #ff6348, #ffa502);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+        }
+
+        
+
+        .logo-text {
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #ff4757, #ffa502);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .academy-name {
+            color: white;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .academy-motto {
+            color: #fff;
+            font-size: 1.2em;
+            font-style: italic;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
         .header {
             text-align: center;
             margin-bottom: 30px;
         }
 
-        .header h1 {
-            color: #fa709a;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+      
 
         .header p {
             color: #666;
@@ -54,7 +88,7 @@
 
         .progress-bar {
             width: 100%;
-            height: 10px;
+            height: 12px;
             background: #e0e0e0;
             border-radius: 10px;
             margin-bottom: 30px;
@@ -63,7 +97,7 @@
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #fa709a, #fee140);
+            background: linear-gradient(90deg, #ff4757, #ff6348, #ffa502);
             width: 0%;
             transition: width 0.3s ease;
         }
@@ -83,7 +117,7 @@
         }
 
         .question-number {
-            color: #fa709a;
+            color: #ff4757;
             font-weight: bold;
             font-size: 1.1em;
             margin-bottom: 15px;
@@ -113,14 +147,14 @@
         }
 
         .option:hover {
-            border-color: #fa709a;
-            background: #fff8f9;
+            border-color: #ff6348;
+            background: linear-gradient(to right, #fff5f5, #fffaf0);
             transform: translateX(5px);
         }
 
         .option.selected {
-            border-color: #fa709a;
-            background: #ffe8ec;
+            border-color: #ff6348;
+            background: linear-gradient(to right, #ffe5e5, #fff5e5);
         }
 
         .option.correct {
@@ -142,8 +176,8 @@
             display: none;
             margin-top: 20px;
             padding: 20px;
-            background: #fff3e0;
-            border-left: 4px solid #ff9800;
+            background: linear-gradient(to right, #fff5f5, #fffaf0);
+            border-left: 4px solid #ff6348;
             border-radius: 8px;
             animation: fadeIn 0.4s ease;
         }
@@ -153,7 +187,7 @@
         }
 
         .justification strong {
-            color: #f57c00;
+            color: #ff4757;
         }
 
         .nav-buttons {
@@ -174,13 +208,13 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #fa709a, #fee140);
+            background: linear-gradient(135deg, #ff4757, #ffa502);
             color: white;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(250, 112, 154, 0.4);
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
         }
 
         .btn-secondary {
@@ -207,32 +241,35 @@
         }
 
         .score-circle {
-            width: 200px;
-            height: 200px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #fa709a, #fee140);
+            background: linear-gradient(135deg, #ff4757, #ff6348, #ffa502);
             color: white;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             margin: 30px auto;
-            box-shadow: 0 10px 30px rgba(250, 112, 154, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 71, 87, 0.4);
         }
 
         .score-circle .score {
-            font-size: 3em;
+            font-size: 3.5em;
             font-weight: bold;
         }
 
         .score-circle .total {
-            font-size: 1.2em;
+            font-size: 1.3em;
             opacity: 0.9;
         }
 
         .results h2 {
-            color: #fa709a;
-            font-size: 2em;
+            background: linear-gradient(135deg, #ff4757, #ffa502);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.2em;
             margin-bottom: 20px;
         }
 
@@ -242,9 +279,30 @@
             margin-bottom: 30px;
         }
 
+        .results-motto {
+            background: linear-gradient(135deg, #ff4757, #ffa502);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            display: inline-block;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         @media (max-width: 600px) {
             .container {
                 padding: 25px;
+            }
+
+            .academy-name {
+                font-size: 1.4em;
+            }
+
+            .academy-motto {
+                font-size: 1em;
             }
 
             .header h1 {
@@ -263,9 +321,16 @@
 </head>
 <body>
     <div class="container">
+        <div class="academy-header">
+            <div class="logo-container">
+                <div class="logo-text"><img src="logo_SOFIA-Photoroom.png" alt="auto"></div>
+            </div>
+    
+        </div>
+
         <div class="header">
-            <h1>📝 Examen de Razonamiento Verbal</h1>
-            <p>Vamos Luz! - 20 Preguntas</p>
+            <h1>🧬 Examen de Biología</h1>
+            <p>Ciclo repaso - 20 Preguntas</p>
         </div>
 
         <div class="progress-bar">
@@ -275,13 +340,15 @@
         <div id="quizContainer"></div>
 
         <div class="results" id="results">
-            <h2>🎉 ¡Quiz Completado!</h2>
+            <h2>🎉 ¡Examen Completado!</h2>
             <div class="score-circle">
                 <div class="score" id="finalScore">0</div>
                 <div class="total">/ 20</div>
             </div>
             <p id="resultMessage"></p>
-            <button class="btn btn-primary" onclick="restartQuiz()">🔄 Reintentar Quiz</button>
+            <div class="results-motto">Creemos en la exigencia</div>
+            <br><br>
+            <button class="btn btn-primary" onclick="restartQuiz()">🔄 Reintentar Examen</button>
         </div>
 
         <div class="nav-buttons" id="navButtons">
@@ -293,124 +360,124 @@
     <script>
         const questions = [
             {
-                question: "La palabra 'bibliografía' proviene de las raíces griegas 'biblion' (libro) y 'graphos' (escritura). ¿Qué significa etimológicamente?",
-                options: ["Colección de libros", "Descripción o escritura de libros", "Estudio de la lectura", "Amor por los libros"],
-                correct: 1,
-                justification: "La etimología une 'biblion' (libro) + 'graphos' (escritura/descripción), por lo tanto significa 'descripción o escritura de libros', refiriéndose a la lista de obras consultadas."
-            },
-            {
-                question: "¿Cuál palabra tiene origen latino?",
-                options: ["Democracia", "Astronomía", "Acueducto", "Fotografía"],
+                question: "¿Cuál de los siguientes elementos NO es un bioelemento primario?",
+                options: ["Carbono (C)", "Hidrógeno (H)", "Calcio (Ca)", "Oxígeno (O)"],
                 correct: 2,
-                justification: "Acueducto proviene del latín 'aqua' (agua) + 'ductus' (conducción). Las demás palabras tienen origen griego."
+                justification: "Los bioelementos primarios son C, H, O, N, P y S que constituyen el 96% de la materia viva. El calcio es un bioelemento secundario importante pero en menor proporción."
             },
             {
-                question: "El prefijo griego 'anti-' significa:",
-                options: ["Antes", "Contra, opuesto", "Alrededor", "Entre"],
+                question: "Las proteínas están formadas por la unión de:",
+                options: ["Monosacáridos", "Aminoácidos", "Nucleótidos", "Ácidos grasos"],
                 correct: 1,
-                justification: "El prefijo inseparable griego 'anti-' significa 'contra' u 'opuesto a'. Ejemplos: antibiótico (contra la vida de microorganismos), antídoto (contra el veneno)."
+                justification: "Las proteínas son polímeros formados por la unión de aminoácidos mediante enlaces peptídicos. Existen 20 aminoácidos diferentes que forman todas las proteínas."
             },
             {
-                question: "¿Qué prefijo griego indica 'sobre' o 'encima'?",
-                options: ["Hipo-", "Epi-", "Para-", "Meta-"],
+                question: "¿Qué característica distingue a las células eucariotas de las procariotas?",
+                options: ["Presencia de ribosomas", "Núcleo definido con membrana nuclear", "Capacidad de reproducirse", "Presencia de ADN"],
                 correct: 1,
-                justification: "El prefijo 'epi-' significa 'sobre' o 'encima'. Ejemplos: epidermis (sobre la dermis), epicentro (sobre el centro)."
+                justification: "Las células eucariotas poseen un núcleo verdadero delimitado por membrana nuclear que contiene el material genético, mientras que las procariotas tienen su ADN disperso en el citoplasma."
             },
             {
-                question: "El sufijo griego '-logia' significa:",
-                options: ["Escritura", "Tratado o estudio", "Medición", "Visión"],
+                question: "¿Qué orgánulo celular es conocido como la 'central energética' de la célula?",
+                options: ["Cloroplasto", "Mitocondria", "Núcleo", "Lisosoma"],
                 correct: 1,
-                justification: "El sufijo '-logia' proviene del griego 'logos' y significa 'tratado', 'estudio' o 'ciencia de'. Ejemplos: biología, psicología, geología."
+                justification: "La mitocondria es el orgánulo donde ocurre la respiración celular aeróbica, proceso que produce ATP (adenosín trifosfato), la principal fuente de energía para las funciones celulares."
             },
             {
-                question: "El prefijo latino 'sub-' significa:",
-                options: ["Sobre", "Debajo, bajo", "Fuera", "Contra"],
+                question: "En la fotosíntesis, las plantas capturan energía luminosa y producen:",
+                options: ["Proteínas y lípidos", "Glucosa y oxígeno", "Agua y dióxido de carbono", "ATP únicamente"],
                 correct: 1,
-                justification: "El prefijo preposicional latino 'sub-' significa 'debajo' o 'bajo'. Ejemplos: submarino (bajo el mar), subterráneo (bajo tierra)."
+                justification: "Durante la fotosíntesis, las plantas usan luz solar, CO₂ y agua para sintetizar glucosa (alimento) y liberar oxígeno como producto secundario, mediante la ecuación: 6CO₂ + 6H₂O + luz → C₆H₁₂O₆ + 6O₂."
             },
             {
-                question: "¿Qué prefijo latino significa 'más allá' o 'que excede'?",
-                options: ["Pre-", "Extra-", "Inter-", "Intra-"],
+                question: "¿Cuál es la función principal de los carbohidratos en los seres vivos?",
+                options: ["Catalizador de reacciones químicas", "Almacenamiento y obtención de energía", "Transmisión de información genética", "Defensa inmunológica"],
                 correct: 1,
-                justification: "El prefijo 'extra-' significa 'fuera de' o 'más allá de'. Ejemplos: extraordinario (que excede lo ordinario), extraterrestre (más allá de la Tierra)."
+                justification: "Los carbohidratos (como glucosa, glucógeno y almidón) son la principal fuente de energía inmediata para los organismos y también sirven como reserva energética."
             },
             {
-                question: "¿Cuál es un sinónimo contextual de 'adversidad'?",
-                options: ["Fortuna", "Dificultad", "Alegría", "Facilidad"],
+                question: "¿En qué órgano del sistema digestivo se absorbe la mayor parte de los nutrientes?",
+                options: ["Estómago", "Intestino delgado", "Colon", "Hígado"],
                 correct: 1,
-                justification: "En contexto, 'adversidad' se refiere a situaciones difíciles o desafortunadas, por lo que 'dificultad' es su sinónimo más apropiado."
+                justification: "El intestino delgado, especialmente el yeyuno, es donde ocurre la mayor absorción de nutrientes gracias a las vellosidades y microvellosidades intestinales que aumentan la superficie de contacto."
             },
             {
-                question: "Identifica la palabra con homonimia: 'El banco estaba lleno' / 'Me senté en el banco del parque'",
-                options: ["Son sinónimos", "Son homónimos (mismo sonido, diferente significado)", "Son antónimos", "Son parónimos"],
+                question: "¿Qué tipo de respuesta realizan las plantas cuando crecen hacia la luz?",
+                options: ["Geotropismo", "Fototropismo", "Quimiotropismo", "Tigmotropismo"],
                 correct: 1,
-                justification: "Las palabras homónimas tienen la misma forma escrita y fonética pero significados diferentes. 'Banco' puede ser institución financiera o asiento."
+                justification: "El fototropismo es la respuesta direccional de crecimiento de las plantas hacia la fuente de luz, principalmente en tallos y hojas, mediada por hormonas como las auxinas."
             },
             {
-                question: "¿Qué relación léxica existe entre 'vasto' (extenso) y 'basto' (tosco)?",
-                options: ["Sinonimia", "Homofonía", "Antonimia", "Paronimia"],
-                correct: 1,
-                justification: "Son palabras homófonas: suenan igual pero se escriben diferente y tienen significados distintos. 'Vasto' (con v) significa extenso, 'basto' (con b) significa tosco."
-            },
-            {
-                question: "Identifica el par de sinónimos:",
-                options: ["Rápido - Lento", "Claro - Luminoso", "Grande - Pequeño", "Alto - Bajo"],
-                correct: 1,
-                justification: "'Claro' y 'luminoso' son sinónimos porque comparten un significado similar relacionado con la luz. Los demás pares son antónimos."
-            },
-            {
-                question: "¿Cuál es el antónimo de 'efímero'?",
-                options: ["Breve", "Pasajero", "Duradero", "Temporal"],
+                question: "Los receptores que captan estímulos químicos, como los del gusto y olfato, se llaman:",
+                options: ["Mecanorreceptores", "Fotorreceptores", "Quimiorreceptores", "Termorreceptores"],
                 correct: 2,
-                justification: "'Efímero' significa que dura poco tiempo, por lo tanto su antónimo es 'duradero' (que permanece por mucho tiempo)."
+                justification: "Los quimiorreceptores detectan sustancias químicas en el ambiente. Se encuentran en las papilas gustativas de la lengua y en el epitelio olfativo de la nariz."
             },
             {
-                question: "¿Qué tipo de relación existe entre 'haya' (árbol) y 'halla' (del verbo hallar)?",
-                options: ["Sinonimia", "Homofonía", "Antonimia", "Polisemia"],
+                question: "¿Qué tipo de movimiento es el latido del corazón?",
+                options: ["Voluntario consciente", "Involuntario automático", "Reflejo condicionado", "Movimiento nástico"],
                 correct: 1,
-                justification: "Son palabras homófonas: se pronuncian igual pero tienen escritura y significados diferentes. 'Haya' es un árbol, 'halla' es forma verbal de hallar."
+                justification: "El latido cardíaco es un movimiento involuntario controlado por el sistema nervioso autónomo y el nodo sinusal (marcapasos natural), que funciona sin control consciente."
             },
             {
-                question: "Las palabras 'apto' e 'inepto' son:",
-                options: ["Sinónimos", "Homónimos", "Antónimos", "Parónimos"],
+                question: "La mitosis es un proceso de división celular que produce:",
+                options: ["Cuatro células haploides diferentes", "Dos células diploides idénticas", "Gametos sexuales", "Células con mutaciones"],
+                correct: 1,
+                justification: "La mitosis produce dos células hijas genéticamente idénticas a la célula madre, conservando el mismo número de cromosomas (diploides en organismos diploides). Es fundamental para crecimiento y reparación."
+            },
+            {
+                question: "¿Cuántas divisiones celulares ocurren durante la meiosis?",
+                options: ["Una división", "Dos divisiones consecutivas", "Tres divisiones", "Cuatro divisiones"],
+                correct: 1,
+                justification: "La meiosis consta de dos divisiones sucesivas (meiosis I y meiosis II) que reducen el número cromosómico a la mitad, produciendo cuatro células haploides (gametos) a partir de una célula diploide."
+            },
+            {
+                question: "¿Qué tipo de reproducción genera mayor variabilidad genética?",
+                options: ["Reproducción asexual", "Bipartición", "Reproducción sexual", "Gemación"],
                 correct: 2,
-                justification: "Son antónimos porque tienen significados opuestos. 'Apto' significa capaz o idóneo, mientras 'inepto' significa incapaz o no apto."
+                justification: "La reproducción sexual genera mayor variabilidad genética debido a la recombinación cromosómica durante la meiosis y la fusión aleatoria de gametos de diferentes progenitores."
             },
             {
-                question: "En la expresión 'cabo' (extremo) y 'cabo' (grado militar), la relación es de:",
-                options: ["Sinonimia", "Polisemia", "Antonimia", "Paronimia"],
-                correct: 1,
-                justification: "Es un caso de polisemia: una misma palabra con múltiples significados relacionados etimológicamente. 'Cabo' tiene varios significados distintos."
-            },
-            {
-                question: "Identifica la relación de antonimia:",
-                options: ["Ascender - Subir", "Expandir - Contraer", "Veloz - Rápido", "Inicio - Comienzo"],
-                correct: 1,
-                justification: "'Expandir' y 'contraer' son antónimos porque expresan acciones opuestas: aumentar de tamaño versus reducir de tamaño."
-            },
-            {
-                question: "¿Qué relación tienen las palabras 'actitud' y 'aptitud'?",
-                options: ["Son sinónimos", "Son homófonos", "Son parónimos", "Son antónimos"],
+                question: "¿Cuál es el principal desecho nitrogenado eliminado por los riñones humanos?",
+                options: ["Ácido úrico", "Amoníaco", "Urea", "Creatinina únicamente"],
                 correct: 2,
-                justification: "Son palabras parónimas: tienen escritura y pronunciación parecidas pero significados diferentes. 'Actitud' es disposición de ánimo, 'aptitud' es capacidad."
+                justification: "La urea es el principal producto de excreción nitrogenado en humanos, formado en el hígado a partir del amoníaco tóxico generado por el metabolismo de proteínas, y eliminado por los riñones."
             },
             {
-                question: "El prefijo 'bi-' o 'bis-' significa:",
-                options: ["Uno", "Dos", "Tres", "Medio"],
+                question: "Los lípidos tienen como función principal:",
+                options: ["Acelerar reacciones químicas", "Almacenar energía a largo plazo y formar membranas", "Transportar oxígeno", "Almacenar información genética"],
                 correct: 1,
-                justification: "El prefijo latino 'bi-' o 'bis-' significa 'dos' o 'doble'. Ejemplos: bicicleta (dos ruedas), bilingüe (dos lenguas), bisabuelo (dos generaciones antes)."
+                justification: "Los lípidos tienen múltiples funciones: almacenamiento energético a largo plazo (triglicéridos), componente estructural de membranas celulares (fosfolípidos) y función hormonal (esteroides)."
             },
             {
-                question: "La palabra 'cronología' está formada por raíces griegas que significan:",
-                options: ["Tiempo - escritura", "Tiempo - estudio", "Vida - estudio", "Tierra - medida"],
+                question: "El material genético de las células eucariotas se encuentra en:",
+                options: ["El citoplasma disperso", "El núcleo celular", "Los ribosomas", "Las mitocondrias únicamente"],
                 correct: 1,
-                justification: "'Cronología' proviene de 'cronos' (tiempo) + 'logos' (estudio/tratado), significando el estudio o ciencia del tiempo y la secuencia de eventos."
+                justification: "En células eucariotas, el ADN se encuentra organizado en cromosomas dentro del núcleo celular, protegido por la membrana nuclear. También hay pequeñas cantidades de ADN en mitocondrias y cloroplastos."
             },
             {
-                question: "¿Cuál es un sinónimo contextual de 'perspicaz'?",
-                options: ["Torpe", "Astuto", "Ingenuo", "Distraído"],
+                question: "Durante la respiración celular aeróbica se requiere:",
+                options: ["Oxígeno como aceptor final de electrones", "Ausencia total de oxígeno", "Solo luz solar", "Clorofila necesariamente"],
+                correct: 0,
+                justification: "La respiración aeróbica requiere oxígeno como aceptor final de electrones en la cadena respiratoria mitocondrial, permitiendo la producción eficiente de ATP (aproximadamente 36-38 moléculas por glucosa)."
+            },
+            {
+                question: "¿Qué estructura celular sintetiza las proteínas?",
+                options: ["Aparato de Golgi", "Ribosomas", "Lisosomas", "Centrosoma"],
                 correct: 1,
-                justification: "'Perspicaz' significa agudo, penetrante en la comprensión. Su sinónimo más apropiado es 'astuto', que indica inteligencia aguda y capacidad de discernimiento."
+                justification: "Los ribosomas son los orgánulos responsables de la síntesis proteica mediante el proceso de traducción, donde leen el ARN mensajero y ensamblan los aminoácidos en cadenas polipeptídicas."
+            },
+            {
+                question: "¿Qué estructura protege y da soporte a las células vegetales?",
+                options: ["Membrana plasmática", "Citoesqueleto", "Pared celular de celulosa", "Cápsula bacteriana"],
+                correct: 2,
+                justification: "Las células vegetales poseen pared celular compuesta principalmente de celulosa, externa a la membrana plasmática, que proporciona rigidez, soporte estructural y protección contra estrés mecánico."
+            },
+            {
+                question: "La absorción de agua por las raíces ocurre principalmente mediante:",
+                options: ["Transporte activo con gasto de ATP", "Ósmosis a través de pelos absorbentes", "Difusión facilitada por proteínas", "Endocitosis celular"],
+                correct: 1,
+                justification: "El agua ingresa a las células de la raíz principalmente por ósmosis (movimiento de agua desde zonas de menor a mayor concentración de solutos) a través de los pelos absorbentes que aumentan la superficie de absorción."
             }
         ];
 
@@ -441,7 +508,7 @@
                         `).join('')}
                     </div>
                     <div class="justification" id="justification">
-                        <strong>📖 Justificación:</strong> ${q.justification}
+                        <strong>🔬 Justificación:</strong> ${q.justification}
                     </div>
                 </div>
             `;
@@ -555,13 +622,13 @@
             let message = '';
 
             if (percentage >= 90) {
-                message = '¡Excelente! 🌟 Excelente Luz!! Tienes un dominio sobresaliente de razonamiento verbal.';
+                message = '¡Excelente! 🌟 Tienes un dominio sobresaliente de biología.';
             } else if (percentage >= 70) {
-                message = '¡Muy bien! 👏 Muy bien Luz! Tienes buenos conocimientos de razonamiento verbal.';
+                message = '¡Muy bien! 👏 Tienes buenos conocimientos de biología.';
             } else if (percentage >= 50) {
-                message = '¡Buen intento! 📖 Vamos Luz!! Sigue estudiando para mejorar.';
+                message = '¡Buen intento! 📖 Sigue estudiando para mejorar.';
             } else {
-                message = '¡Ánimo Luz! 💪 Repasa los temas y vuelve a intentarlo.';
+                message = '¡Ánimo! 💪 Repasa los temas y vuelve a intentarlo.';
             }
 
             document.getElementById('resultMessage').textContent = message;
