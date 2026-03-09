@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test de Biología - Academia_Sofía</title>
+    <title>Test de Historia Universal - Academia_Sofía</title>
     <style>
         * {
             margin: 0;
@@ -58,7 +58,7 @@
         .logo-container img {
             width: 100%;
             height: auto;
-            max-height: 200px; /* increased from 120px */
+            max-height: 200px;
             object-fit: contain;
             display: block;
         }
@@ -94,8 +94,6 @@
             text-align: center;
             margin-bottom: 30px;
         }
-
-        
 
         .header p {
             color: #666;
@@ -280,8 +278,6 @@
             opacity: 0.9;
         }
 
-       
-
         .results p {
             font-size: 1.2em;
             color: #666;
@@ -302,74 +298,25 @@
         }
 
         @media (max-width: 600px) {
-            .container {
-                padding: 25px;
-            }
-
-            .logo-container {
-                max-width: 200px; /* allow a bit more space */
-            }
-
-            .logo-container img {
-                max-height: 100px; /* slightly larger */
-            }
-
-            .academy-name {
-                font-size: 1.4em;
-            }
-
-            .academy-motto {
-                font-size: 0.9em;
-            }
-
-            .header h1 {
-                font-size: 1.8em;
-            }
-
-            .question-text {
-                font-size: 1.1em;
-            }
-
-            .nav-buttons {
-                flex-direction: column;
-            }
-
-            .score-circle {
-                width: 180px;
-                height: 180px;
-            }
-
-            .score-circle .score {
-                font-size: 2.8em;
-            }
-
-            .results-motto {
-                font-size: 0.9em;
-                padding: 12px 20px;
-            }
+            .container { padding: 25px; }
+            .logo-container { max-width: 200px; }
+            .logo-container img { max-height: 100px; }
+            .academy-name { font-size: 1.4em; }
+            .academy-motto { font-size: 0.9em; }
+            .header h1 { font-size: 1.8em; }
+            .question-text { font-size: 1.1em; }
+            .nav-buttons { flex-direction: column; }
+            .score-circle { width: 180px; height: 180px; }
+            .score-circle .score { font-size: 2.8em; }
+            .results-motto { font-size: 0.9em; padding: 12px 20px; }
         }
 
         @media (max-width: 400px) {
-            .container {
-                padding: 20px;
-            }
-
-            .logo-container {
-                max-width: 150px; /* a bit larger */
-            }
-
-            .logo-container img {
-                max-height: 80px;
-            }
-
-            .academy-motto {
-                font-size: 0.8em;
-            }
-
-            .option {
-                padding: 15px 20px;
-                font-size: 1em;
-            }
+            .container { padding: 20px; }
+            .logo-container { max-width: 150px; }
+            .logo-container img { max-height: 80px; }
+            .academy-motto { font-size: 0.8em; }
+            .option { padding: 15px 20px; font-size: 1em; }
         }
     </style>
 </head>
@@ -382,8 +329,8 @@
         </div>
 
         <div class="header">
-            <h1>🧬Examen de Biología</h1>
-            <p>Ciclo repaso - 20 Preguntas</p>
+            <h1>🏛️ Examen de Historia Universal</h1>
+            <p>Ciclo repaso - 36 Preguntas</p>
         </div>
 
         <div class="progress-bar">
@@ -396,7 +343,7 @@
             <h2>🎉 ¡Examen Completado!</h2>
             <div class="score-circle">
                 <div class="score" id="finalScore">0</div>
-                <div class="total">/ 20</div>
+                <div class="total">/ 36</div>
             </div>
             <p id="resultMessage"></p>
             <div class="results-motto">--Tutor Franklin--</div>
@@ -412,125 +359,228 @@
 
     <script>
         const questions = [
+            // I. REFORMA Y CONTRARREFORMA
             {
-                question: "¿Cuál de los siguientes elementos NO es un bioelemento primario?",
-                options: ["Carbono (C)", "Hidrógeno (H)", "Calcio (Ca)", "Oxígeno (O)"],
+                question: "¿Quién inició la Reforma Protestante en 1517?",
+                options: ["Juan Calvino", "Enrique VIII", "Martín Lutero", "Ignacio de Loyola"],
                 correct: 2,
-                justification: "Los bioelementos primarios son C, H, O, N, P y S que constituyen el 96% de la materia viva. El calcio es un bioelemento secundario importante pero en menor proporción."
+                justification: "En 1517, Martín Lutero publicó las 95 tesis en Wittenberg, criticando la venta de indulgencias y los abusos de la Iglesia Católica. Este hecho marcó el inicio de la Reforma Protestante."
             },
             {
-                question: "Las proteínas están formadas por la unión de:",
-                options: ["Monosacáridos", "Aminoácidos", "Nucleótidos", "Ácidos grasos"],
+                question: "¿Qué orden religiosa fue fundamental en la Contrarreforma?",
+                options: ["Franciscanos", "Dominicos", "Benedictinos", "Jesuitas"],
+                correct: 3,
+                justification: "La Compañía de Jesús, fundada por Ignacio de Loyola en 1540, fue clave para defender el catolicismo mediante la educación, las misiones y la lucha contra el protestantismo."
+            },
+            {
+                question: "¿Cuántos sacramentos reafirmó la Iglesia Católica en el Concilio de Trento?",
+                options: ["3", "5", "6", "7"],
+                correct: 3,
+                justification: "El Concilio de Trento (1545–1563) reafirmó los siete sacramentos frente a las críticas del protestantismo, que solo reconocía dos."
+            },
+            {
+                question: "¿Qué rey defendió el catolicismo en España durante la Contrarreforma?",
+                options: ["Carlos I", "Felipe II", "Fernando II", "Alfonso X"],
                 correct: 1,
-                justification: "Las proteínas son polímeros formados por la unión de aminoácidos mediante enlaces peptídicos. Existen 20 aminoácidos diferentes que forman todas las proteínas."
+                justification: "Felipe II fue un férreo defensor del catolicismo. Combatió el protestantismo, apoyó la Inquisición y fue pilar de la Contrarreforma en Europa."
             },
+            // II. ABSOLUTISMO Y DESPOTISMO ILUSTRADO
             {
-                question: "¿Qué característica distingue a las células eucariotas de las procariotas?",
-                options: ["Presencia de ribosomas", "Núcleo definido con membrana nuclear", "Capacidad de reproducirse", "Presencia de ADN"],
-                correct: 1,
-                justification: "Las células eucariotas poseen un núcleo verdadero delimitado por membrana nuclear que contiene el material genético, mientras que las procariotas tienen su ADN disperso en el citoplasma."
-            },
-            {
-                question: "¿Qué orgánulo celular es conocido como la 'central energética' de la célula?",
-                options: ["Cloroplasto", "Mitocondria", "Núcleo", "Lisosoma"],
-                correct: 1,
-                justification: "La mitocondria es el orgánulo donde ocurre la respiración celular aeróbica, proceso que produce ATP (adenosín trifosfato), la principal fuente de energía para las funciones celulares."
-            },
-            {
-                question: "En la fotosíntesis, las plantas capturan energía luminosa y producen:",
-                options: ["Proteínas y lípidos", "Glucosa y oxígeno", "Agua y dióxido de carbono", "ATP únicamente"],
-                correct: 1,
-                justification: "Durante la fotosíntesis, las plantas usan luz solar, CO₂ y agua para sintetizar glucosa (alimento) y liberar oxígeno como producto secundario, mediante la ecuación: 6CO₂ + 6H₂O + luz → C₆H₁₂O₆ + 6O₂."
-            },
-            {
-                question: "¿Cuál es la función principal de los carbohidratos en los seres vivos?",
-                options: ["Catalizador de reacciones químicas", "Almacenamiento y obtención de energía", "Transmisión de información genética", "Defensa inmunológica"],
-                correct: 1,
-                justification: "Los carbohidratos (como glucosa, glucógeno y almidón) son la principal fuente de energía inmediata para los organismos y también sirven como reserva energética."
-            },
-            {
-                question: "¿En qué órgano del sistema digestivo se absorbe la mayor parte de los nutrientes?",
-                options: ["Estómago", "Intestino delgado", "Colon", "Hígado"],
-                correct: 1,
-                justification: "El intestino delgado, especialmente el yeyuno, es donde ocurre la mayor absorción de nutrientes gracias a las vellosidades y microvellosidades intestinales que aumentan la superficie de contacto."
-            },
-            {
-                question: "¿Qué tipo de respuesta realizan las plantas cuando crecen hacia la luz?",
-                options: ["Geotropismo", "Fototropismo", "Quimiotropismo", "Tigmotropismo"],
-                correct: 1,
-                justification: "El fototropismo es la respuesta direccional de crecimiento de las plantas hacia la fuente de luz, principalmente en tallos y hojas, mediada por hormonas como las auxinas."
-            },
-            {
-                question: "Los receptores que captan estímulos químicos, como los del gusto y olfato, se llaman:",
-                options: ["Mecanorreceptores", "Fotorreceptores", "Quimiorreceptores", "Termorreceptores"],
+                question: "¿Qué rey de Prusia fue representante del Despotismo Ilustrado?",
+                options: ["Luis XIV", "Carlos III", "Federico II el Grande", "Pedro el Grande"],
                 correct: 2,
-                justification: "Los quimiorreceptores detectan sustancias químicas en el ambiente. Se encuentran en las papilas gustativas de la lengua y en el epitelio olfativo de la nariz."
+                justification: "Federico II el Grande aplicó reformas inspiradas en la Ilustración, modernizando la administración, el ejército y la educación del Estado prusiano."
             },
             {
-                question: "¿Qué tipo de movimiento es el latido del corazón?",
-                options: ["Voluntario consciente", "Involuntario automático", "Reflejo condicionado", "Movimiento nástico"],
+                question: "¿Qué rey español es el máximo representante del Despotismo Ilustrado?",
+                options: ["Felipe V", "Carlos III", "Fernando VI", "Carlos IV"],
                 correct: 1,
-                justification: "El latido cardíaco es un movimiento involuntario controlado por el sistema nervioso autónomo y el nodo sinusal (marcapasos natural), que funciona sin control consciente."
+                justification: "Carlos III impulsó profundas reformas económicas, administrativas y educativas bajo el lema ilustrado: 'Todo para el pueblo, pero sin el pueblo'."
             },
             {
-                question: "La mitosis es un proceso de división celular que produce:",
-                options: ["Cuatro células haploides diferentes", "Dos células diploides idénticas", "Gametos sexuales", "Células con mutaciones"],
+                question: "¿Qué defendía el filósofo John Locke?",
+                options: ["El poder absoluto del rey", "Los derechos naturales del individuo", "La soberanía popular total", "La unión de Iglesia y Estado"],
                 correct: 1,
-                justification: "La mitosis produce dos células hijas genéticamente idénticas a la célula madre, conservando el mismo número de cromosomas (diploides en organismos diploides). Es fundamental para crecimiento y reparación."
+                justification: "Locke afirmaba que todos los seres humanos nacen con derechos naturales inalienables que el Estado debe respetar. Esta idea es base del liberalismo político moderno."
             },
             {
-                question: "¿Cuántas divisiones celulares ocurren durante la meiosis?",
-                options: ["Una división", "Dos divisiones consecutivas", "Tres divisiones", "Cuatro divisiones"],
+                question: "¿Cuáles eran los derechos naturales según John Locke?",
+                options: ["Igualdad, fraternidad y libertad", "Vida, libertad y propiedad", "Educación, trabajo y salud", "Religión, cultura y seguridad"],
                 correct: 1,
-                justification: "La meiosis consta de dos divisiones sucesivas (meiosis I y meiosis II) que reducen el número cromosómico a la mitad, produciendo cuatro células haploides (gametos) a partir de una célula diploide."
+                justification: "Para Locke, los derechos naturales inalienables del ser humano son la vida, la libertad y la propiedad, pilares fundamentales del liberalismo clásico."
             },
+            // III. LA ILUSTRACIÓN
             {
-                question: "¿Qué tipo de reproducción genera mayor variabilidad genética?",
-                options: ["Reproducción asexual", "Bipartición", "Reproducción sexual", "Gemación"],
+                question: "¿Qué obra fue la más representativa de la Ilustración?",
+                options: ["El Príncipe", "El Leviatán", "La Enciclopedia", "El Capital"],
                 correct: 2,
-                justification: "La reproducción sexual genera mayor variabilidad genética debido a la recombinación cromosómica durante la meiosis y la fusión aleatoria de gametos de diferentes progenitores."
+                justification: "La Enciclopedia recopiló el conocimiento científico, filosófico y técnico del siglo XVIII, convirtiéndose en el símbolo del pensamiento ilustrado."
             },
             {
-                question: "¿Cuál es el principal desecho nitrogenado eliminado por los riñones humanos?",
-                options: ["Ácido úrico", "Amoníaco", "Urea", "Creatinina únicamente"],
+                question: "¿Quién dirigió la Enciclopedia junto a D'Alembert?",
+                options: ["Voltaire", "Rousseau", "Diderot", "Montesquieu"],
                 correct: 2,
-                justification: "La urea es el principal producto de excreción nitrogenado en humanos, formado en el hígado a partir del amoníaco tóxico generado por el metabolismo de proteínas, y eliminado por los riñones."
+                justification: "Denis Diderot, junto a Jean le Rond D'Alembert, dirigió la elaboración y publicación de la Enciclopedia entre 1751 y 1772."
             },
             {
-                question: "Los lípidos tienen como función principal:",
-                options: ["Acelerar reacciones químicas", "Almacenar energía a largo plazo y formar membranas", "Transportar oxígeno", "Almacenar información genética"],
+                question: "¿Cómo se conoce también al siglo XVIII?",
+                options: ["Siglo de las Revoluciones", "Siglo de Oro", "Siglo de las Luces", "Siglo del Progreso"],
+                correct: 2,
+                justification: "El siglo XVIII se denomina 'Siglo de las Luces' porque predominó la razón, la ciencia y el pensamiento crítico frente al dogma y la superstición."
+            },
+            {
+                question: "¿Qué pensador ilustrado escribió 'El contrato social'?",
+                options: ["Voltaire", "Montesquieu", "Rousseau", "Locke"],
+                correct: 2,
+                justification: "Jean-Jacques Rousseau planteó en 'El contrato social' el principio de soberanía popular: el poder legítimo emana del pueblo."
+            },
+            {
+                question: "¿Qué país destacó también en la Ilustración con pensadores como Locke y Newton?",
+                options: ["Francia", "Alemania", "Inglaterra", "Italia"],
+                correct: 2,
+                justification: "En Inglaterra destacaron John Locke en filosofía política e Isaac Newton en ciencias naturales, siendo referentes clave del pensamiento ilustrado."
+            },
+            // IV. INDEPENDENCIA DE EE.UU.
+            {
+                question: "¿Qué rey británico gobernaba durante la independencia de las colonias americanas?",
+                options: ["Jorge I", "Jorge II", "Jorge III", "Guillermo IV"],
+                correct: 2,
+                justification: "Durante el reinado de Jorge III se impusieron impuestos a las colonias americanas sin representación, lo que provocó la rebelión y finalmente la independencia."
+            },
+            {
+                question: "¿Qué batalla fue decisiva para asegurar la victoria estadounidense?",
+                options: ["Saratoga", "Lexington", "Yorktown", "Bunker Hill"],
+                correct: 2,
+                justification: "En 1781, las fuerzas británicas se rindieron ante George Washington en Yorktown, asegurando la independencia de los Estados Unidos de América."
+            },
+            {
+                question: "¿Cuáles eran los tres estamentos del Antiguo Régimen?",
+                options: ["Rey, nobleza y clero", "Clero, nobleza y tercer estado", "Aristocracia, burguesía y campesinado", "Iglesia, ejército y pueblo"],
                 correct: 1,
-                justification: "Los lípidos tienen múltiples funciones: almacenamiento energético a largo plazo (triglicéridos), componente estructural de membranas celulares (fosfolípidos) y función hormonal (esteroides)."
+                justification: "La sociedad del Antiguo Régimen estaba dividida en tres estamentos: el clero (primer estado), la nobleza (segundo estado) y el tercer estado (burguesía, artesanos y campesinos)."
             },
+            // V. REVOLUCIÓN FRANCESA
             {
-                question: "El material genético de las células eucariotas se encuentra en:",
-                options: ["El citoplasma disperso", "El núcleo celular", "Los ribosomas", "Las mitocondrias únicamente"],
+                question: "¿Qué asamblea proclamó la Primera República Francesa en 1792?",
+                options: ["Asamblea Nacional", "Convención Nacional", "Estados Generales", "Directorio"],
                 correct: 1,
-                justification: "En células eucariotas, el ADN se encuentra organizado en cromosomas dentro del núcleo celular, protegido por la membrana nuclear. También hay pequeñas cantidades de ADN en mitocondrias y cloroplastos."
+                justification: "La Convención Nacional abolió la monarquía y proclamó la Primera República Francesa en septiembre de 1792, tras la caída de Luis XVI."
             },
             {
-                question: "Durante la respiración celular aeróbica se requiere:",
-                options: ["Oxígeno como aceptor final de electrones", "Ausencia total de oxígeno", "Solo luz solar", "Clorofila necesariamente"],
+                question: "¿Qué periodo de la Revolución Francesa terminó con la caída de Robespierre?",
+                options: ["La Constituyente", "El Terror", "El Directorio", "El Consulado"],
+                correct: 1,
+                justification: "La caída y ejecución de Maximilien Robespierre en julio de 1794 (Termidor) puso fin al Régimen del Terror, caracterizado por miles de ejecuciones políticas."
+            },
+            {
+                question: "¿Qué grupo político representaba posiciones más moderadas durante la Revolución Francesa?",
+                options: ["Jacobinos", "Girondinos", "Montañeses", "Sans-culottes"],
+                correct: 1,
+                justification: "Los girondinos eran el sector moderado de la Convención, que buscaba reformas sin violencia extrema, en oposición a los radicales jacobinos."
+            },
+            {
+                question: "¿Qué grupo defendía los privilegios del rey durante la Revolución Francesa?",
+                options: ["Jacobinos", "Realistas", "Girondinos", "Termidorianos"],
+                correct: 1,
+                justification: "Los realistas o monárquicos defendían la institución de la monarquía y los privilegios del rey, oponiéndose a los cambios revolucionarios."
+            },
+            // VI. ERA NAPOLEÓNICA
+            {
+                question: "¿En qué año comenzó la Era Napoleónica?",
+                options: ["1789", "1795", "1799", "1804"],
+                correct: 2,
+                justification: "La Era Napoleónica comienza en 1799 con el Golpe de Estado del 18 de Brumario, mediante el cual Napoleón Bonaparte disolvió el Directorio y tomó el poder."
+            },
+            {
+                question: "¿Qué hecho marcó el inicio del poder personal de Napoleón?",
+                options: ["La batalla de Austerlitz", "El Golpe del 18 de Brumario", "La coronación como Emperador", "El Tratado de Amiens"],
+                correct: 1,
+                justification: "El Golpe del 18 de Brumario (9 de noviembre de 1799) fue el golpe de Estado con el que Napoleón disolvió el Directorio y estableció el Consulado, concentrando el poder en sus manos."
+            },
+            {
+                question: "¿A qué isla fue enviado Napoleón en su primer exilio en 1814?",
+                options: ["Santa Elena", "Córcega", "Elba", "Cerdeña"],
+                correct: 2,
+                justification: "Tras su primera abdicación en 1814, Napoleón fue exiliado a la isla de Elba. Escapó en 1815 y volvió al poder durante los Cien Días, hasta su derrota definitiva en Waterloo."
+            },
+            {
+                question: "¿Qué buscaba el Congreso de Viena (1814–1815)?",
+                options: ["Expandir el liberalismo en Europa", "Restaurar las monarquías y el orden conservador", "Crear una república europea", "Repartir las colonias americanas"],
+                correct: 1,
+                justification: "El Congreso de Viena buscaba restaurar el orden monárquico y el equilibrio político en Europa tras las guerras napoleónicas, frenando el avance del liberalismo y el nacionalismo."
+            },
+            {
+                question: "¿Qué periodo histórico se conoce como la Restauración?",
+                options: ["El retorno de Napoleón al poder", "La reorganización conservadora de Europa tras Napoleón", "La reconstrucción de Francia tras la guerra", "El restablecimiento de la República Francesa"],
+                correct: 1,
+                justification: "La Restauración es el periodo (1815–1830) en que se reestablecieron las monarquías absolutas en Europa y se intentó volver al orden previo a la Revolución Francesa."
+            },
+            {
+                question: "¿En qué ciudad y país se realizó el Congreso de Viena?",
+                options: ["Berlín, Prusia", "París, Francia", "Viena, Austria", "Londres, Inglaterra"],
+                correct: 2,
+                justification: "El congreso se celebró en Viena, capital del Imperio Austriaco, entre 1814 y 1815, siendo el escenario del nuevo orden europeo posnapoleónico."
+            },
+            {
+                question: "¿Quién fue el principal organizador del Congreso de Viena?",
+                options: ["Talleyrand", "Metternich", "Castlereagh", "Alejandro I"],
+                correct: 1,
+                justification: "El canciller austriaco Klemens von Metternich fue el gran arquitecto del Congreso de Viena y el principal defensor del principio de restauración y equilibrio europeo."
+            },
+            {
+                question: "¿Qué dinastía fue restaurada en Francia tras la caída de Napoleón?",
+                options: ["Habsburgo", "Borbones", "Valois", "Orleans"],
+                correct: 1,
+                justification: "Se restauró la monarquía francesa con Luis XVIII, perteneciente a la dinastía Borbón, la misma familia de Luis XVI, guillotinado durante la Revolución."
+            },
+            {
+                question: "¿Qué países integraron la Santa Alianza creada en 1815?",
+                options: ["Francia, Inglaterra y Austria", "Rusia, Austria y Prusia", "España, Portugal y Austria", "Prusia, Francia y Rusia"],
+                correct: 1,
+                justification: "La Santa Alianza fue firmada por Rusia, Austria y Prusia para defender los principios del absolutismo monárquico y sofocar cualquier movimiento liberal o revolucionario en Europa."
+            },
+            // VII. REVOLUCIONES DEL SIGLO XIX Y REVOLUCIÓN INDUSTRIAL
+            {
+                question: "¿Qué país logró su independencia en 1830 separándose del Reino de los Países Bajos?",
+                options: ["Grecia", "Polonia", "Bélgica", "Hungría"],
+                correct: 2,
+                justification: "Bélgica se independizó del Reino de los Países Bajos en 1830 tras una revolución inspirada en los ideales liberales y nacionalistas de la época."
+            },
+            {
+                question: "¿Cómo se conoce al conjunto de revoluciones liberales y nacionalistas que sacudieron Europa en 1848?",
+                options: ["Primavera de los Pueblos", "Revolución de las Naciones", "Otoño de las Monarquías", "La Gran Insurrección"],
                 correct: 0,
-                justification: "La respiración aeróbica requiere oxígeno como aceptor final de electrones en la cadena respiratoria mitocondrial, permitiendo la producción eficiente de ATP (aproximadamente 36-38 moléculas por glucosa)."
+                justification: "Las revoluciones de 1848 se conocen como la 'Primavera de los Pueblos' por su carácter simultáneo en varios países europeos y sus ideales de libertad, constitución y unidad nacional."
             },
             {
-                question: "¿Qué estructura celular sintetiza las proteínas?",
-                options: ["Aparato de Golgi", "Ribosomas", "Lisosomas", "Centrosoma"],
+                question: "¿Qué movimiento ideológico estuvo estrechamente ligado al liberalismo en el siglo XIX?",
+                options: ["Nacionalismo", "Socialismo", "Anarquismo", "Conservadurismo"],
+                correct: 0,
+                justification: "El nacionalismo y el liberalismo se desarrollaron juntos en el siglo XIX, ambos buscando libertades políticas y la autodeterminación de los pueblos frente al absolutismo."
+            },
+            {
+                question: "¿En qué siglo se inició la Revolución Industrial?",
+                options: ["Siglo XVI", "Siglo XVII", "Siglo XIX", "Siglo XVIII"],
+                correct: 3,
+                justification: "La Revolución Industrial comenzó alrededor de 1760 en Inglaterra, en el siglo XVIII, transformando radicalmente los métodos de producción y la organización social."
+            },
+            {
+                question: "¿Qué industria fue la primera en industrializarse durante la Revolución Industrial?",
+                options: ["Siderúrgica", "Textil", "Minera", "Alimentaria"],
                 correct: 1,
-                justification: "Los ribosomas son los orgánulos responsables de la síntesis proteica mediante el proceso de traducción, donde leen el ARN mensajero y ensamblan los aminoácidos en cadenas polipeptídicas."
+                justification: "La industria textil fue la primera en mecanizarse, con inventos como la lanzadera volante, la hiladora Spinning Jenny y el telar mecánico, que multiplicaron la producción."
             },
             {
-                question: "¿Qué estructura protege y da soporte a las células vegetales?",
-                options: ["Membrana plasmática", "Citoesqueleto", "Pared celular de celulosa", "Cápsula bacteriana"],
-                correct: 2,
-                justification: "Las células vegetales poseen pared celular compuesta principalmente de celulosa, externa a la membrana plasmática, que proporciona rigidez, soporte estructural y protección contra estrés mecánico."
-            },
-            {
-                question: "La absorción de agua por las raíces ocurre principalmente mediante:",
-                options: ["Transporte activo con gasto de ATP", "Ósmosis a través de pelos absorbentes", "Difusión facilitada por proteínas", "Endocitosis celular"],
+                question: "¿Quién perfeccionó la máquina de vapor, clave en la Revolución Industrial?",
+                options: ["Thomas Edison", "James Watt", "George Stephenson", "Robert Fulton"],
                 correct: 1,
-                justification: "El agua ingresa a las células de la raíz principalmente por ósmosis (movimiento de agua desde zonas de menor a mayor concentración de solutos) a través de los pelos absorbentes que aumentan la superficie de absorción."
+                justification: "James Watt mejoró significativamente la eficiencia de la máquina de vapor en 1769, convirtiéndola en la fuente de energía que impulsó fábricas, trenes y barcos durante la Revolución Industrial."
+            },
+            {
+                question: "¿Quién inventó el teléfono en 1876?",
+                options: ["Thomas Edison", "Graham Bell", "Nikola Tesla", "Guglielmo Marconi"],
+                correct: 1,
+                justification: "Alexander Graham Bell patentó el teléfono en 1876, uno de los inventos más trascendentales de la Segunda Revolución Industrial, que transformó las comunicaciones a nivel mundial."
             }
         ];
 
@@ -561,7 +611,7 @@
                         `).join('')}
                     </div>
                     <div class="justification" id="justification">
-                        <strong>🔬 Justificación:</strong> ${q.justification}
+                        <strong>📜 Justificación:</strong> ${q.justification}
                     </div>
                 </div>
             `;
@@ -675,9 +725,9 @@
             let message = '';
 
             if (percentage >= 90) {
-                message = '¡Excelente! 🌟 Tienes un dominio sobresaliente de biología.';
+                message = '¡Excelente! 🌟 Tienes un dominio sobresaliente de Historia Universal.';
             } else if (percentage >= 70) {
-                message = '¡Muy bien! 👏 Tienes buenos conocimientos de biología.';
+                message = '¡Muy bien! 👏 Tienes buenos conocimientos de Historia Universal.';
             } else if (percentage >= 50) {
                 message = '¡Buen intento! 📖 Sigue estudiando para mejorar.';
             } else {
