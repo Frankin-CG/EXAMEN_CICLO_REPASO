@@ -3,426 +3,383 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test de Historia Universal - Academia_Sofía</title>
+    <title>Examen de Geografía - Academia Sofía</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --navy: #0d1b3e;
+            --navy-mid: #162447;
+            --navy-light: #1f3a6e;
+            --gold: #c9a84c;
+            --gold-light: #e8c96a;
+            --gold-pale: #fdf6e3;
+            --cream: #faf8f2;
+            --text: #1a1a2e;
+            --text-soft: #4a4a6a;
+            --correct: #1a7a4a;
+            --correct-bg: #e6f7ee;
+            --incorrect: #c0392b;
+            --incorrect-bg: #fdecea;
+            --border: #d4c5a9;
         }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ff4757 0%, #ff6348 50%, #ffa502 100%);
+            font-family: 'Nunito', sans-serif;
+            background: var(--navy);
+            background-image:
+                radial-gradient(ellipse at 20% 20%, rgba(201,168,76,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, rgba(31,58,110,0.8) 0%, transparent 60%);
             min-height: 100vh;
-            padding: 20px;
+            padding: 30px 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
         }
-
         .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            max-width: 850px;
+            background: var(--cream);
+            border-radius: 24px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.3);
+            max-width: 860px;
             width: 100%;
-            padding: 40px;
-            animation: fadeIn 0.5s ease;
+            overflow: hidden;
+            animation: fadeUp 0.6s ease;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0);}
-        }
-
+        /* HEADER */
         .academy-header {
-            background: linear-gradient(135deg, #ff4757, #ff6348, #ffa502);
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
+            background: var(--navy);
+            background-image: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 32px 40px 24px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
-        }
-
-        .logo-container {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-container img {
-            width: 100%;
-            height: auto;
-            max-height: 200px;
-            object-fit: contain;
-            display: block;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .header p {
-            color: #666;
-            font-size: 1.1em;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 12px;
-            background: #e0e0e0;
-            border-radius: 10px;
-            margin-bottom: 30px;
+            position: relative;
             overflow: hidden;
         }
+        .academy-header::before {
+            content: '';
+            position: absolute;
+            top: -40px; left: -40px; right: -40px; bottom: -40px;
+            background-image: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 30px,
+                rgba(201,168,76,0.04) 30px,
+                rgba(201,168,76,0.04) 31px
+            );
+        }
+        .academy-header .logo-container {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto 16px;
+        }
+        .academy-header .logo-container img {
+            width: 100%; height: auto; max-height: 120px; object-fit: contain;
+        }
+        .gold-divider {
+            width: 80px; height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 10px auto 0;
+        }
 
+        /* INNER CONTENT */
+        .inner {
+            padding: 36px 44px 40px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9em;
+            color: var(--navy);
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+        .header h1 span { color: var(--gold); }
+        .header p {
+            color: var(--text-soft);
+            font-size: 1em;
+            font-weight: 600;
+        }
+
+        /* PROGRESS */
+        .progress-wrapper { margin-bottom: 28px; }
+        .progress-info { display: flex; justify-content: space-between; font-size: 0.85em; color: var(--text-soft); font-weight: 700; margin-bottom: 8px; }
+        .progress-bar {
+            width: 100%; height: 10px;
+            background: #e2ddd4;
+            border-radius: 10px;
+            overflow: hidden;
+        }
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #ff4757, #ff6348, #ffa502);
+            background: linear-gradient(90deg, var(--navy-light), var(--gold));
             width: 0%;
-            transition: width 0.3s ease;
+            transition: width 0.4s ease;
+            border-radius: 10px;
         }
 
-        .question-card {
-            display: none;
-            animation: slideIn 0.4s ease;
-        }
-
-        .question-card.active {
-            display: block;
-        }
-
+        /* QUESTION CARD */
+        .question-card { display: none; animation: slideIn 0.35s ease; }
+        .question-card.active { display: block; }
         @keyframes slideIn {
-            from { opacity: 0; transform: translateX(30px); }
+            from { opacity: 0; transform: translateX(20px); }
             to { opacity: 1; transform: translateX(0); }
         }
-
         .question-number {
-            color: #ff4757;
-            font-weight: bold;
-            font-size: 1.1em;
-            margin-bottom: 15px;
+            display: inline-block;
+            background: var(--navy);
+            color: var(--gold-light);
+            font-weight: 700;
+            font-size: 0.82em;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 50px;
+            margin-bottom: 14px;
         }
-
         .question-text {
-            font-size: 1.3em;
-            color: #333;
-            margin-bottom: 25px;
-            line-height: 1.6;
+            font-size: 1.2em;
+            color: var(--text);
+            margin-bottom: 22px;
+            line-height: 1.65;
+            font-weight: 600;
         }
-
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
+        .options { display: flex; flex-direction: column; gap: 12px; }
         .option {
-            padding: 18px 25px;
-            border: 2px solid #e0e0e0;
+            padding: 16px 22px;
+            border: 2px solid var(--border);
             border-radius: 12px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1.1em;
+            transition: all 0.25s ease;
+            font-size: 1.05em;
             background: white;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
-
+        .option-letter {
+            width: 30px; height: 30px; min-width: 30px;
+            border-radius: 50%;
+            background: var(--gold-pale);
+            border: 2px solid var(--gold);
+            color: var(--navy);
+            font-weight: 800;
+            font-size: 0.85em;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.25s ease;
+        }
         .option:hover {
-            border-color: #ff6348;
-            background: linear-gradient(to right, #fff5f5, #fffaf0);
-            transform: translateX(5px);
+            border-color: var(--navy-light);
+            background: #f0f4ff;
+            transform: translateX(6px);
+            box-shadow: 0 4px 16px rgba(13,27,62,0.1);
         }
-
-        .option.selected {
-            border-color: #ff6348;
-            background: linear-gradient(to right, #ffe5e5, #fff5e5);
+        .option:hover .option-letter {
+            background: var(--navy);
+            color: var(--gold-light);
+            border-color: var(--navy);
         }
-
+        .option.selected { border-color: var(--navy-light); background: #eef1fb; }
         .option.correct {
-            border-color: #4caf50;
-            background: #e8f5e9;
+            border-color: var(--correct);
+            background: var(--correct-bg);
         }
-
+        .option.correct .option-letter { background: var(--correct); color: white; border-color: var(--correct); }
         .option.incorrect {
-            border-color: #f44336;
-            background: #ffebee;
+            border-color: var(--incorrect);
+            background: var(--incorrect-bg);
         }
+        .option.incorrect .option-letter { background: var(--incorrect); color: white; border-color: var(--incorrect); }
+        .option.disabled { cursor: not-allowed; }
+        .option.disabled:hover { transform: none; box-shadow: none; }
 
-        .option.disabled {
-            cursor: not-allowed;
-            opacity: 0.7;
-        }
-
+        /* JUSTIFICATION */
         .justification {
             display: none;
             margin-top: 20px;
-            padding: 20px;
-            background: linear-gradient(to right, #fff5f5, #fffaf0);
-            border-left: 4px solid #ff6348;
-            border-radius: 8px;
-            animation: fadeIn 0.4s ease;
+            padding: 18px 22px;
+            background: linear-gradient(to right, #f0f4ff, #fdf6e3);
+            border-left: 4px solid var(--navy-light);
+            border-radius: 10px;
+            animation: fadeUp 0.4s ease;
+            font-size: 1em;
+            color: var(--text-soft);
+            line-height: 1.6;
         }
+        .justification.show { display: block; }
+        .justification strong { color: var(--navy); }
 
-        .justification.show {
-            display: block;
-        }
-
-        .justification strong {
-            color: #ff4757;
-        }
-
+        /* NAV BUTTONS */
         .nav-buttons {
             display: flex;
             justify-content: space-between;
             margin-top: 30px;
-            gap: 15px;
+            gap: 14px;
         }
-
         .btn {
-            padding: 15px 35px;
+            padding: 14px 32px;
             border: none;
             border-radius: 10px;
-            font-size: 1.1em;
+            font-size: 1em;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
+            transition: all 0.25s ease;
+            font-weight: 700;
+            font-family: 'Nunito', sans-serif;
         }
-
         .btn-primary {
-            background: linear-gradient(135deg, #ff4757, #ffa502);
-            color: white;
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: var(--gold-light);
+            box-shadow: 0 4px 16px rgba(13,27,62,0.3);
+            border: 2px solid transparent;
         }
-
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
-        }
-
-        .btn-secondary {
-            background: #e0e0e0;
-            color: #666;
-        }
-
-        .btn-secondary:hover {
-            background: #d0d0d0;
-        }
-
-        .btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        /* RESULTADOS */
-        .results {
-            display: none;
-            text-align: center;
-        }
-
-        .results.show {
-            display: block;
-        }
-
-        .results h2 {
-            font-size: 1.8em;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        /* Círculo de nota principal */
-        .score-circle {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ff4757, #ff6348, #ffa502);
+            box-shadow: 0 8px 24px rgba(13,27,62,0.4);
+            background: linear-gradient(135deg, var(--navy-light), var(--gold));
             color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 25px auto 15px;
-            box-shadow: 0 10px 30px rgba(255, 71, 87, 0.4);
         }
-
-        .score-circle .nota-label {
-            font-size: 0.95em;
-            opacity: 0.85;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 2px;
+        .btn-secondary {
+            background: white;
+            color: var(--text-soft);
+            border: 2px solid var(--border);
         }
-
-        .score-circle .nota-valor {
-            font-size: 4em;
-            font-weight: bold;
-            line-height: 1;
+        .btn-secondary:hover {
+            background: var(--gold-pale);
+            border-color: var(--gold);
+            color: var(--navy);
         }
+        .btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none !important; }
 
-        .score-circle .nota-total {
-            font-size: 1.1em;
-            opacity: 0.85;
+        /* RESULTS */
+        .results { display: none; text-align: center; }
+        .results.show { display: block; }
+        .results h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9em;
+            color: var(--navy);
+            margin-bottom: 8px;
         }
-
-        /* Detalle de puntaje */
+        .score-circle {
+            width: 200px; height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            border: 5px solid var(--gold);
+            color: white;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            margin: 28px auto 14px;
+            box-shadow: 0 12px 40px rgba(13,27,62,0.4), 0 0 0 10px rgba(201,168,76,0.1);
+        }
+        .nota-label { font-size: 0.82em; opacity: 0.75; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; color: var(--gold-light); }
+        .nota-valor { font-family: 'Playfair Display', serif; font-size: 4em; font-weight: 900; line-height: 1; color: var(--gold-light); }
+        .nota-total { font-size: 1em; opacity: 0.7; }
         .score-detail {
             display: inline-block;
-            background: #f8f8f8;
-            border: 2px solid #eee;
+            background: white;
+            border: 2px solid var(--border);
             border-radius: 12px;
             padding: 10px 28px;
             margin-bottom: 20px;
             font-size: 1em;
-            color: #555;
+            color: var(--text-soft);
         }
-
-        .score-detail span {
-            font-weight: bold;
-            color: #ff4757;
-        }
-
-        /* Barra de calificación */
-        .grade-bar-container {
-            width: 100%;
-            max-width: 480px;
-            margin: 0 auto 20px;
-        }
-
-        .grade-bar-bg {
-            width: 100%;
-            height: 18px;
-            background: #e0e0e0;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 6px;
-        }
-
-        .grade-bar-fill {
-            height: 100%;
-            border-radius: 10px;
-            transition: width 1s ease;
-            background: linear-gradient(90deg, #ff4757, #ff6348, #ffa502);
-        }
-
-        .grade-bar-labels {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.8em;
-            color: #aaa;
-            padding: 0 2px;
-        }
-
-        /* Badge de calificación */
+        .score-detail span { font-weight: 800; color: var(--navy); }
+        .grade-bar-container { width: 100%; max-width: 480px; margin: 0 auto 20px; }
+        .grade-bar-bg { width: 100%; height: 16px; background: #e2ddd4; border-radius: 10px; overflow: hidden; margin-bottom: 6px; }
+        .grade-bar-fill { height: 100%; border-radius: 10px; transition: width 1s ease; background: linear-gradient(90deg, var(--navy-light), var(--gold)); }
+        .grade-bar-labels { display: flex; justify-content: space-between; font-size: 0.78em; color: #aaa; padding: 0 2px; }
         .grade-badge {
             display: inline-block;
-            padding: 8px 22px;
+            padding: 8px 24px;
             border-radius: 50px;
-            font-weight: bold;
+            font-weight: 800;
             font-size: 1em;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             letter-spacing: 0.5px;
         }
-
-        .badge-excelente  { background: #e8f5e9; color: #2e7d32; border: 2px solid #4caf50; }
-        .badge-bueno      { background: #e3f2fd; color: #1565c0; border: 2px solid #42a5f5; }
-        .badge-regular    { background: #fff8e1; color: #f57f17; border: 2px solid #ffca28; }
-        .badge-desaprobado{ background: #ffebee; color: #c62828; border: 2px solid #ef5350; }
-
-        .results p.result-msg {
-            font-size: 1.15em;
-            color: #555;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
+        .badge-excelente   { background: #e6f7ee; color: #1a7a4a; border: 2px solid #2ecc71; }
+        .badge-bueno       { background: #e8f4fd; color: #1565c0; border: 2px solid #3498db; }
+        .badge-regular     { background: #fef9e7; color: #b7770d; border: 2px solid #f1c40f; }
+        .badge-desaprobado { background: #fdecea; color: #c0392b; border: 2px solid #e74c3c; }
+        .results p.result-msg { font-size: 1.1em; color: var(--text-soft); margin-bottom: 24px; line-height: 1.7; max-width: 500px; margin-left: auto; margin-right: auto; }
         .results-motto {
-            background: linear-gradient(135deg, #ff4757, #ffa502);
-            color: white;
-            padding: 15px 30px;
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: var(--gold-light);
+            padding: 14px 32px;
             border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1em;
+            font-weight: 800;
+            font-size: 1.05em;
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 8px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            border: 2px solid rgba(201,168,76,0.4);
         }
 
         @media (max-width: 600px) {
-            .container { padding: 25px; }
-            .logo-container { max-width: 200px; }
-            .logo-container img { max-height: 100px; }
-            .header h1 { font-size: 1.8em; }
-            .question-text { font-size: 1.1em; }
+            .inner { padding: 24px 20px; }
+            .academy-header { padding: 24px 20px; }
+            .header h1 { font-size: 1.5em; }
+            .question-text { font-size: 1.05em; }
             .nav-buttons { flex-direction: column; }
-            .score-circle { width: 180px; height: 180px; }
-            .score-circle .nota-valor { font-size: 3.2em; }
-            .results-motto { font-size: 0.9em; padding: 12px 20px; }
-        }
-
-        @media (max-width: 400px) {
-            .container { padding: 20px; }
-            .logo-container { max-width: 150px; }
-            .logo-container img { max-height: 80px; }
-            .option { padding: 15px 20px; font-size: 1em; }
+            .score-circle { width: 160px; height: 160px; }
+            .nota-valor { font-size: 3.2em; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="academy-header">
-            <div class="logo-container">
-                <img src="logo_SOFIA-Photoroom.png" alt="Logo Academia">
-            </div>
+<div class="container">
+    <div class="academy-header">
+        <div class="logo-container">
+            <img src="logo_SOFIA-Photoroom.png" alt="Logo Academia Sofía">
         </div>
+        <div class="gold-divider"></div>
+    </div>
 
+    <div class="inner">
         <div class="header">
-            <h1>🏛️ Examen de Historia Universal</h1>
-            <p>Ciclo repaso - 36 Preguntas</p>
+            <h1>🌍 Examen de <span>Geografía</span></h1>
+            <p>Ciclo Repaso · 34 Preguntas</p>
         </div>
 
-        <div class="progress-bar">
-            <div class="progress-fill" id="progressFill"></div>
+        <div class="progress-wrapper">
+            <div class="progress-info">
+                <span id="progressText">Pregunta 1 de 34</span>
+                <span id="progressPct">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
         </div>
 
         <div id="quizContainer"></div>
 
         <div class="results" id="results">
             <h2>🎉 ¡Examen Completado!</h2>
-
-            <!-- Círculo con nota vigesimal -->
             <div class="score-circle">
                 <div class="nota-label">Tu nota</div>
                 <div class="nota-valor" id="finalNota">0</div>
                 <div class="nota-total">/ 20</div>
             </div>
-
-            <!-- Detalle de respuestas correctas -->
             <div class="score-detail">
-                Respuestas correctas: <span id="finalScore">0</span> de <span id="totalQuestions">36</span>
+                Respuestas correctas: <span id="finalScore">0</span> de <span id="totalQuestions">34</span>
             </div>
-
-            <!-- Barra de progreso visual -->
             <div class="grade-bar-container">
                 <div class="grade-bar-bg">
                     <div class="grade-bar-fill" id="gradeBarFill" style="width:0%"></div>
                 </div>
-                <div class="grade-bar-labels">
-                    <span>0</span><span>5</span><span>10</span><span>15</span><span>20</span>
-                </div>
+                <div class="grade-bar-labels"><span>0</span><span>5</span><span>10</span><span>15</span><span>20</span></div>
             </div>
-
-            <!-- Badge de calificación -->
             <div id="gradeBadge" class="grade-badge"></div>
-
-            <!-- Mensaje motivador -->
             <p class="result-msg" id="resultMessage"></p>
-
-            <div class="results-motto">--Tutor Franklin--</div>
+            <div class="results-motto">— Tutor Franklin —</div>
             <br><br>
             <button class="btn btn-primary" onclick="restartQuiz()">🔄 Reintentar Examen</button>
         </div>
@@ -432,408 +389,347 @@
             <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Siguiente →</button>
         </div>
     </div>
+</div>
 
-    <script>
-        const questions = [
-            // I. REFORMA Y CONTRARREFORMA
-            {
-                question: "¿Quién inició la Reforma Protestante en 1517?",
-                options: ["Juan Calvino", "Enrique VIII", "Martín Lutero", "Ignacio de Loyola"],
-                correct: 2,
-                justification: "En 1517, Martín Lutero publicó las 95 tesis en Wittenberg, criticando la venta de indulgencias y los abusos de la Iglesia Católica. Este hecho marcó el inicio de la Reforma Protestante."
-            },
-            {
-                question: "¿Qué orden religiosa fue fundamental en la Contrarreforma?",
-                options: ["Franciscanos", "Dominicos", "Benedictinos", "Jesuitas"],
-                correct: 3,
-                justification: "La Compañía de Jesús, fundada por Ignacio de Loyola en 1540, fue clave para defender el catolicismo mediante la educación, las misiones y la lucha contra el protestantismo."
-            },
-            {
-                question: "¿Cuántos sacramentos reafirmó la Iglesia Católica en el Concilio de Trento?",
-                options: ["3", "5", "6", "7"],
-                correct: 3,
-                justification: "El Concilio de Trento (1545–1563) reafirmó los siete sacramentos frente a las críticas del protestantismo, que solo reconocía dos."
-            },
-            {
-                question: "¿Qué rey defendió el catolicismo en España durante la Contrarreforma?",
-                options: ["Carlos I", "Felipe II", "Fernando II", "Alfonso X"],
-                correct: 1,
-                justification: "Felipe II fue un férreo defensor del catolicismo. Combatió el protestantismo, apoyó la Inquisición y fue pilar de la Contrarreforma en Europa."
-            },
-            // II. ABSOLUTISMO Y DESPOTISMO ILUSTRADO
-            {
-                question: "¿Qué rey de Prusia fue representante del Despotismo Ilustrado?",
-                options: ["Luis XIV", "Carlos III", "Federico II el Grande", "Pedro el Grande"],
-                correct: 2,
-                justification: "Federico II el Grande aplicó reformas inspiradas en la Ilustración, modernizando la administración, el ejército y la educación del Estado prusiano."
-            },
-            {
-                question: "¿Qué rey español es el máximo representante del Despotismo Ilustrado?",
-                options: ["Felipe V", "Carlos III", "Fernando VI", "Carlos IV"],
-                correct: 1,
-                justification: "Carlos III impulsó profundas reformas económicas, administrativas y educativas bajo el lema ilustrado: 'Todo para el pueblo, pero sin el pueblo'."
-            },
-            {
-                question: "¿Qué defendía el filósofo John Locke?",
-                options: ["El poder absoluto del rey", "Los derechos naturales del individuo", "La soberanía popular total", "La unión de Iglesia y Estado"],
-                correct: 1,
-                justification: "Locke afirmaba que todos los seres humanos nacen con derechos naturales inalienables que el Estado debe respetar. Esta idea es base del liberalismo político moderno."
-            },
-            {
-                question: "¿Cuáles eran los derechos naturales según John Locke?",
-                options: ["Igualdad, fraternidad y libertad", "Vida, libertad y propiedad", "Educación, trabajo y salud", "Religión, cultura y seguridad"],
-                correct: 1,
-                justification: "Para Locke, los derechos naturales inalienables del ser humano son la vida, la libertad y la propiedad, pilares fundamentales del liberalismo clásico."
-            },
-            // III. LA ILUSTRACIÓN
-            {
-                question: "¿Qué obra fue la más representativa de la Ilustración?",
-                options: ["El Príncipe", "El Leviatán", "La Enciclopedia", "El Capital"],
-                correct: 2,
-                justification: "La Enciclopedia recopiló el conocimiento científico, filosófico y técnico del siglo XVIII, convirtiéndose en el símbolo del pensamiento ilustrado."
-            },
-            {
-                question: "¿Quién dirigió la Enciclopedia junto a D'Alembert?",
-                options: ["Voltaire", "Rousseau", "Diderot", "Montesquieu"],
-                correct: 2,
-                justification: "Denis Diderot, junto a Jean le Rond D'Alembert, dirigió la elaboración y publicación de la Enciclopedia entre 1751 y 1772."
-            },
-            {
-                question: "¿Cómo se conoce también al siglo XVIII?",
-                options: ["Siglo de las Revoluciones", "Siglo de Oro", "Siglo de las Luces", "Siglo del Progreso"],
-                correct: 2,
-                justification: "El siglo XVIII se denomina 'Siglo de las Luces' porque predominó la razón, la ciencia y el pensamiento crítico frente al dogma y la superstición."
-            },
-            {
-                question: "¿Qué pensador ilustrado escribió 'El contrato social'?",
-                options: ["Voltaire", "Montesquieu", "Rousseau", "Locke"],
-                correct: 2,
-                justification: "Jean-Jacques Rousseau planteó en 'El contrato social' el principio de soberanía popular: el poder legítimo emana del pueblo."
-            },
-            {
-                question: "¿Qué país destacó también en la Ilustración con pensadores como Locke y Newton?",
-                options: ["Francia", "Alemania", "Inglaterra", "Italia"],
-                correct: 2,
-                justification: "En Inglaterra destacaron John Locke en filosofía política e Isaac Newton en ciencias naturales, siendo referentes clave del pensamiento ilustrado."
-            },
-            // IV. INDEPENDENCIA DE EE.UU.
-            {
-                question: "¿Qué rey británico gobernaba durante la independencia de las colonias americanas?",
-                options: ["Jorge I", "Jorge II", "Jorge III", "Guillermo IV"],
-                correct: 2,
-                justification: "Durante el reinado de Jorge III se impusieron impuestos a las colonias americanas sin representación, lo que provocó la rebelión y finalmente la independencia."
-            },
-            {
-                question: "¿Qué batalla fue decisiva para asegurar la victoria estadounidense?",
-                options: ["Saratoga", "Lexington", "Yorktown", "Bunker Hill"],
-                correct: 2,
-                justification: "En 1781, las fuerzas británicas se rindieron ante George Washington en Yorktown, asegurando la independencia de los Estados Unidos de América."
-            },
-            {
-                question: "¿Cuáles eran los tres estamentos del Antiguo Régimen?",
-                options: ["Rey, nobleza y clero", "Clero, nobleza y tercer estado", "Aristocracia, burguesía y campesinado", "Iglesia, ejército y pueblo"],
-                correct: 1,
-                justification: "La sociedad del Antiguo Régimen estaba dividida en tres estamentos: el clero (primer estado), la nobleza (segundo estado) y el tercer estado (burguesía, artesanos y campesinos)."
-            },
-            // V. REVOLUCIÓN FRANCESA
-            {
-                question: "¿Qué asamblea proclamó la Primera República Francesa en 1792?",
-                options: ["Asamblea Nacional", "Convención Nacional", "Estados Generales", "Directorio"],
-                correct: 1,
-                justification: "La Convención Nacional abolió la monarquía y proclamó la Primera República Francesa en septiembre de 1792, tras la caída de Luis XVI."
-            },
-            {
-                question: "¿Qué periodo de la Revolución Francesa terminó con la caída de Robespierre?",
-                options: ["La Constituyente", "El Terror", "El Directorio", "El Consulado"],
-                correct: 1,
-                justification: "La caída y ejecución de Maximilien Robespierre en julio de 1794 (Termidor) puso fin al Régimen del Terror, caracterizado por miles de ejecuciones políticas."
-            },
-            {
-                question: "¿Qué grupo político representaba posiciones más moderadas durante la Revolución Francesa?",
-                options: ["Jacobinos", "Girondinos", "Montañeses", "Sans-culottes"],
-                correct: 1,
-                justification: "Los girondinos eran el sector moderado de la Convención, que buscaba reformas sin violencia extrema, en oposición a los radicales jacobinos."
-            },
-            {
-                question: "¿Qué grupo defendía los privilegios del rey durante la Revolución Francesa?",
-                options: ["Jacobinos", "Realistas", "Girondinos", "Termidorianos"],
-                correct: 1,
-                justification: "Los realistas o monárquicos defendían la institución de la monarquía y los privilegios del rey, oponiéndose a los cambios revolucionarios."
-            },
-            // VI. ERA NAPOLEÓNICA
-            {
-                question: "¿En qué año comenzó la Era Napoleónica?",
-                options: ["1789", "1795", "1799", "1804"],
-                correct: 2,
-                justification: "La Era Napoleónica comienza en 1799 con el Golpe de Estado del 18 de Brumario, mediante el cual Napoleón Bonaparte disolvió el Directorio y tomó el poder."
-            },
-            {
-                question: "¿Qué hecho marcó el inicio del poder personal de Napoleón?",
-                options: ["La batalla de Austerlitz", "El Golpe del 18 de Brumario", "La coronación como Emperador", "El Tratado de Amiens"],
-                correct: 1,
-                justification: "El Golpe del 18 de Brumario (9 de noviembre de 1799) fue el golpe de Estado con el que Napoleón disolvió el Directorio y estableció el Consulado, concentrando el poder en sus manos."
-            },
-            {
-                question: "¿A qué isla fue enviado Napoleón en su primer exilio en 1814?",
-                options: ["Santa Elena", "Córcega", "Elba", "Cerdeña"],
-                correct: 2,
-                justification: "Tras su primera abdicación en 1814, Napoleón fue exiliado a la isla de Elba. Escapó en 1815 y volvió al poder durante los Cien Días, hasta su derrota definitiva en Waterloo."
-            },
-            {
-                question: "¿Qué buscaba el Congreso de Viena (1814–1815)?",
-                options: ["Expandir el liberalismo en Europa", "Restaurar las monarquías y el orden conservador", "Crear una república europea", "Repartir las colonias americanas"],
-                correct: 1,
-                justification: "El Congreso de Viena buscaba restaurar el orden monárquico y el equilibrio político en Europa tras las guerras napoleónicas, frenando el avance del liberalismo y el nacionalismo."
-            },
-            {
-                question: "¿Qué periodo histórico se conoce como la Restauración?",
-                options: ["El retorno de Napoleón al poder", "La reorganización conservadora de Europa tras Napoleón", "La reconstrucción de Francia tras la guerra", "El restablecimiento de la República Francesa"],
-                correct: 1,
-                justification: "La Restauración es el periodo (1815–1830) en que se reestablecieron las monarquías absolutas en Europa y se intentó volver al orden previo a la Revolución Francesa."
-            },
-            {
-                question: "¿En qué ciudad y país se realizó el Congreso de Viena?",
-                options: ["Berlín, Prusia", "París, Francia", "Viena, Austria", "Londres, Inglaterra"],
-                correct: 2,
-                justification: "El congreso se celebró en Viena, capital del Imperio Austriaco, entre 1814 y 1815, siendo el escenario del nuevo orden europeo posnapoleónico."
-            },
-            {
-                question: "¿Quién fue el principal organizador del Congreso de Viena?",
-                options: ["Talleyrand", "Metternich", "Castlereagh", "Alejandro I"],
-                correct: 1,
-                justification: "El canciller austriaco Klemens von Metternich fue el gran arquitecto del Congreso de Viena y el principal defensor del principio de restauración y equilibrio europeo."
-            },
-            {
-                question: "¿Qué dinastía fue restaurada en Francia tras la caída de Napoleón?",
-                options: ["Habsburgo", "Borbones", "Valois", "Orleans"],
-                correct: 1,
-                justification: "Se restauró la monarquía francesa con Luis XVIII, perteneciente a la dinastía Borbón, la misma familia de Luis XVI, guillotinado durante la Revolución."
-            },
-            {
-                question: "¿Qué países integraron la Santa Alianza creada en 1815?",
-                options: ["Francia, Inglaterra y Austria", "Rusia, Austria y Prusia", "España, Portugal y Austria", "Prusia, Francia y Rusia"],
-                correct: 1,
-                justification: "La Santa Alianza fue firmada por Rusia, Austria y Prusia para defender los principios del absolutismo monárquico y sofocar cualquier movimiento liberal o revolucionario en Europa."
-            },
-            // VII. REVOLUCIONES DEL SIGLO XIX Y REVOLUCIÓN INDUSTRIAL
-            {
-                question: "¿Qué país logró su independencia en 1830 separándose del Reino de los Países Bajos?",
-                options: ["Grecia", "Polonia", "Bélgica", "Hungría"],
-                correct: 2,
-                justification: "Bélgica se independizó del Reino de los Países Bajos en 1830 tras una revolución inspirada en los ideales liberales y nacionalistas de la época."
-            },
-            {
-                question: "¿Cómo se conoce al conjunto de revoluciones liberales y nacionalistas que sacudieron Europa en 1848?",
-                options: ["Primavera de los Pueblos", "Revolución de las Naciones", "Otoño de las Monarquías", "La Gran Insurrección"],
-                correct: 0,
-                justification: "Las revoluciones de 1848 se conocen como la 'Primavera de los Pueblos' por su carácter simultáneo en varios países europeos y sus ideales de libertad, constitución y unidad nacional."
-            },
-            {
-                question: "¿Qué movimiento ideológico estuvo estrechamente ligado al liberalismo en el siglo XIX?",
-                options: ["Nacionalismo", "Socialismo", "Anarquismo", "Conservadurismo"],
-                correct: 0,
-                justification: "El nacionalismo y el liberalismo se desarrollaron juntos en el siglo XIX, ambos buscando libertades políticas y la autodeterminación de los pueblos frente al absolutismo."
-            },
-            {
-                question: "¿En qué siglo se inició la Revolución Industrial?",
-                options: ["Siglo XVI", "Siglo XVII", "Siglo XIX", "Siglo XVIII"],
-                correct: 3,
-                justification: "La Revolución Industrial comenzó alrededor de 1760 en Inglaterra, en el siglo XVIII, transformando radicalmente los métodos de producción y la organización social."
-            },
-            {
-                question: "¿Qué industria fue la primera en industrializarse durante la Revolución Industrial?",
-                options: ["Siderúrgica", "Textil", "Minera", "Alimentaria"],
-                correct: 1,
-                justification: "La industria textil fue la primera en mecanizarse, con inventos como la lanzadera volante, la hiladora Spinning Jenny y el telar mecánico, que multiplicaron la producción."
-            },
-            {
-                question: "¿Quién perfeccionó la máquina de vapor, clave en la Revolución Industrial?",
-                options: ["Thomas Edison", "James Watt", "George Stephenson", "Robert Fulton"],
-                correct: 1,
-                justification: "James Watt mejoró significativamente la eficiencia de la máquina de vapor en 1769, convirtiéndola en la fuente de energía que impulsó fábricas, trenes y barcos durante la Revolución Industrial."
-            },
-            {
-                question: "¿Quién inventó el teléfono en 1876?",
-                options: ["Thomas Edison", "Graham Bell", "Nikola Tesla", "Guglielmo Marconi"],
-                correct: 1,
-                justification: "Alexander Graham Bell patentó el teléfono en 1876, uno de los inventos más trascendentales de la Segunda Revolución Industrial, que transformó las comunicaciones a nivel mundial."
-            }
-        ];
+<script>
+const questions = [
+    {
+        question: "Son cuerpos opacos que no tienen luz propia, acompañan a las estrellas girando a su alrededor. ¿A qué nos referimos?",
+        options: ["Estrellas", "Galaxias", "Satélites", "Planetas", "Cometas"],
+        correct: 3,
+        justification: "Los planetas son cuerpos celestes opacos que no generan luz propia y giran alrededor de una estrella (como el Sol). Las estrellas sí tienen luz propia, las galaxias son conjuntos de estrellas, los satélites giran alrededor de planetas y los cometas son cuerpos helados con órbitas excéntricas."
+    },
+    {
+        question: "Acerca del planeta Venus, señale lo incorrecto.",
+        options: ["No posee satélites naturales.", "Posee la montaña más alta del Sistema Solar.", "Es llamado Lucero de la Mañana.", "Su día demora más que su año.", "Es el más cercano a la Tierra."],
+        correct: 1,
+        justification: "La afirmación incorrecta es la B, ya que la montaña más alta del Sistema Solar es el monte Olimpo en Marte (unos 22 km de altura). Venus no tiene esa característica."
+    },
+    {
+        question: "La Gran Mancha Roja de ______ es una tormenta mayor que el diámetro de la Tierra. Dura desde hace 300 años y provoca vientos de 400 km/h.",
+        options: ["Neptuno", "Urano", "Marte", "Júpiter", "Saturno"],
+        correct: 3,
+        justification: "La Gran Mancha Roja es una gigantesca tormenta en Júpiter, observada desde hace siglos y con vientos de hasta 400 km/h."
+    },
+    {
+        question: "¿Cómo se denomina la capa más externa del sol, visible durante los eclipses?",
+        options: ["Corona", "Núcleo", "Cromósfera", "Fotósfera", "Zona de radiación"],
+        correct: 0,
+        justification: "La corona solar es la capa más externa del Sol y se observa durante los eclipses totales como un halo brillante."
+    },
+    {
+        question: "El planeta Mercurio tiene el ______ periodo orbital del Sistema Solar.",
+        options: ["Mayor", "Anterior", "Igual", "Menor", "Posterior"],
+        correct: 3,
+        justification: "Mercurio es el planeta más cercano al Sol, por lo que tiene el período orbital más corto (88 días terrestres)."
+    },
+    {
+        question: "Acerca del Sistema Solar, marca lo incorrecto.",
+        options: ["Dos estrellas", "Ocho planetas y sus satélites", "Planetas enanos", "Asteroides", "Cometas, polvo y gas interplanetario"],
+        correct: 0,
+        justification: "El Sistema Solar tiene una sola estrella, el Sol. La opción A es incorrecta."
+    },
+    {
+        question: "Es el séptimo planeta desde el Sol y el tercero más grande del Sistema Solar.",
+        options: ["Urano", "Tierra", "Júpiter", "Neptuno", "Saturno"],
+        correct: 0,
+        justification: "Urano es el séptimo planeta desde el Sol y el tercero en tamaño, después de Júpiter y Saturno."
+    },
+    {
+        question: "El/la ______ contiene más del 99% de toda la masa del Sistema Solar.",
+        options: ["Luna", "Sol", "Núcleo de Júpiter", "Anillo de Saturno", "Espacio entre la Tierra y Marte"],
+        correct: 1,
+        justification: "El Sol contiene aproximadamente el 99.86% de la masa total del Sistema Solar."
+    },
+    {
+        question: "Los romanos le pusieron el nombre del mensajero de los dioses, porque se movía más rápido que los demás planetas.",
+        options: ["Venus", "Júpiter", "Marte", "Mercurio", "Saturno"],
+        correct: 3,
+        justification: "Mercurio era el dios mensajero en la mitología romana, y el planeta recibió ese nombre por su rápido movimiento orbital."
+    },
+    {
+        question: "Son grandes fragmentos de roca, entre las órbitas de Marte y Júpiter. Uno de ellos probablemente puso fin a la era de los dinosaurios, cuando impactó contra la Tierra.",
+        options: ["Galaxias", "Asteroides", "Estrellas", "Planetas", "Agujeros negros"],
+        correct: 1,
+        justification: "El cinturón de asteroides se encuentra entre Marte y Júpiter. Se cree que un asteroide impactó la Tierra y causó la extinción de los dinosaurios."
+    },
+    {
+        question: "Es un planeta que no tiene océanos y su densa atmósfera provoca un efecto invernadero que eleva la temperatura hasta los 480 °C.",
+        options: ["Mercurio", "Tierra", "Marte", "Venus", "Júpiter"],
+        correct: 3,
+        justification: "Venus tiene una atmósfera densa de CO₂ que genera un intenso efecto invernadero, con temperaturas superficiales de hasta 480 °C."
+    },
+    {
+        question: "El satélite con mayor actividad volcánica del Sistema Solar es:",
+        options: ["Selene", "Fobos", "Io", "Titán", "Europa"],
+        correct: 2,
+        justification: "Ío, una luna de Júpiter, es el cuerpo con mayor actividad volcánica del Sistema Solar debido a la intensa interacción gravitacional con Júpiter."
+    },
+    {
+        question: "La era espacial comenzó en 1957, cuando se lanzó el primer satélite denominado:",
+        options: ["Voyager I", "Vostok I", "Apolo 11", "Sputnik", "Skylab"],
+        correct: 3,
+        justification: "El Sputnik 1, lanzado por la Unión Soviética en 1957, fue el primer satélite artificial en orbitar la Tierra, marcando el inicio de la era espacial."
+    },
+    {
+        question: "Es la constelación zodiacal que se puede observar entre el 22 de junio al 22 de julio.",
+        options: ["Acuario", "Géminis", "Aries", "Cáncer", "Leo"],
+        correct: 3,
+        justification: "Según la astrología tropical, el signo zodiacal de Cáncer abarca aproximadamente del 22 de junio al 22 de julio."
+    },
+    {
+        question: "Las estrellas que tienen una masa similar a la del sol terminan al final de su ciclo de vida como:",
+        options: ["Agujeros negros", "Estrellas de neutrones", "Pulsares", "Enanas blancas", "Cefeidas"],
+        correct: 3,
+        justification: "Estrellas como el Sol, al agotar su combustible nuclear, se convierten en enanas blancas tras expulsar sus capas exteriores como nebulosa planetaria."
+    },
+    {
+        question: "La estrella más próxima al sol es:",
+        options: ["Sirio", "Aldebarán", "Antares", "Betelgeuse", "Próxima Centauri"],
+        correct: 4,
+        justification: "Próxima Centauri es una estrella enana roja que forma parte del sistema Alfa Centauri y está a unos 4.22 años luz de distancia, siendo la más cercana al Sol."
+    },
+    {
+        question: "El movimiento de rotación de la Vía Láctea fue descubierto en 1924 por:",
+        options: ["Hendrik Oort", "Edwin Hubble", "George Gamow", "Alexander Friedman", "Stephen Alexander"],
+        correct: 0,
+        justification: "El astrónomo neerlandés Jan Hendrik Oort demostró en 1924 que la Vía Láctea rota, basándose en estudios de movimientos estelares."
+    },
+    {
+        question: "Las galaxias que predominan en los cúmulos de galaxias son:",
+        options: ["Elípticas", "Espirales", "Irregulares", "Cuadráticas", "Ninguna de las anteriores"],
+        correct: 0,
+        justification: "En los cúmulos de galaxias predominan las galaxias elípticas porque, debido a la alta densidad de galaxias en estas regiones, ocurren frecuentes fusiones y colisiones entre ellas. Estos eventos destruyen las formas espirales originales y dan origen a galaxias más grandes y masivas de forma elíptica."
+    },
+    {
+        question: "Es el conjunto de estrellas, gases y polvo cósmico.",
+        options: ["Constelaciones", "Universos", "Galaxias", "Sistemas planetarios", "Figuras estelares"],
+        correct: 2,
+        justification: "Una galaxia es un sistema masivo de estrellas, gas interestelar, polvo y materia oscura, unidos por la gravedad."
+    },
+    {
+        question: "Son características del Universo, excepto:",
+        options: ["Isótropo", "Está en expansión", "Evolutivo", "Iluminado", "Silencioso"],
+        correct: 3,
+        justification: "Isótropo significa que una propiedad es igual en todas las direcciones. No es una característica que describa al universo en general (a gran escala el universo es homogéneo e isótropo, pero en este contexto es la opción que no corresponde como característica destacada). Las demás opciones sí son propiedades reconocidas del cosmos."
+    },
+    {
+        question: "El término 'universos-islas' fue acuñado por ______ para referirse a las galaxias.",
+        options: ["Boris Chumbile", "Stephen Hawking", "Edwin Hubble", "Emanuel Kant", "Pierre Simon de Laplace"],
+        correct: 3,
+        justification: "El filósofo Immanuel Kant usó el término 'universos-isla' para referirse a las galaxias, anticipando que eran sistemas estelares independientes fuera de la Vía Láctea."
+    },
+    {
+        question: "El movimiento de recesión de las galaxias fue descubierto en 1929 por:",
+        options: ["Ruben Piuranus", "Edwin Hubble", "George Gamow", "Alexander Friedman", "Stephen Alexander"],
+        correct: 1,
+        justification: "Edwin Hubble descubrió que las galaxias se alejan de nosotros, formulando la ley de Hubble, base de la expansión del universo."
+    },
+    {
+        question: "La teoría que sostiene que el universo no tuvo principio y no tendrá un final es:",
+        options: ["Gran estallido", "Big Bang", "Cíclico", "Estacionaria", "Pulsante"],
+        correct: 3,
+        justification: "La teoría del estado estacionario propone un universo sin principio ni fin, en expansión pero con densidad constante, aunque hoy es menos aceptada que el Big Bang."
+    },
+    {
+        question: "Las galaxias que en su interior poseen estrellas rojas, serán consideradas:",
+        options: ["Jóvenes", "Infantes", "Viejas", "Adolescentes", "Nacientes"],
+        correct: 2,
+        justification: "Las estrellas rojas suelen ser de tipo espectral tardío (enanas rojas o gigantes rojas), indicando poblaciones estelares viejas. Las galaxias con muchas estrellas rojas tienden a ser más antiguas."
+    },
+    {
+        question: "¿A qué se refiere la toponimia?",
+        options: ["Seudónimo de la fauna", "Apodo de la flora", "Nociones climáticas", "Nombres y significados de los lugares", "Datos de los productos límite"],
+        correct: 3,
+        justification: "La toponimia es el estudio del origen y significado de los nombres propios de los lugares (topónimos)."
+    },
+    {
+        question: "La Quina o Cascarilla es una vegetación característica de la región:",
+        options: ["Chala", "Omagua", "Puna", "Quechua", "Rupa Rupa"],
+        correct: 1,
+        justification: "La quina (Cinchona officinalis) es un árbol típico de la región Yunga, utilizado por sus propiedades medicinales contra la malaria."
+    },
+    {
+        question: "¿En qué región natural se encuentra la ciudad de Puno?",
+        options: ["Suni", "Puna", "Chala", "Yunga", "Quechua"],
+        correct: 0,
+        justification: "Según Javier Pulgar Vidal, Puno se ubica en la región Puna, a orillas del lago Titicaca, por encima de los 4000 msnm."
+    },
+    {
+        question: "El significado de la palabra Suni en runa simi es:",
+        options: ["Cálido", "Templado", "Blanco", "Soroche", "Alto"],
+        correct: 4,
+        justification: "En quechua (runa simi), 'suni' significa 'alto' o 'largo', haciendo referencia a la región de tierras altas."
+    },
+    {
+        question: "Identifique y señale la región natural donde se encuentran los pasos o abras.",
+        options: ["Yunga", "Quechua", "Puna", "Chala", "Jalca"],
+        correct: 2,
+        justification: "Los pasos o abras (zonas de menor altitud para cruzar la cordillera) se ubican en la región Puna, generalmente sobre los 4000 msnm."
+    },
+    {
+        question: "La yareta es típica de la región:",
+        options: ["Costa", "Rupa Rupa", "Janca", "Quechua", "Suni"],
+        correct: 2,
+        justification: "La yareta (Azorella compacta) es una planta que crece en la región Janca o Cordillera, por encima de los 4800 msnm, en suelos rocosos y fríos."
+    },
+    {
+        question: "Las 8 regiones establecidas por Javier Pulgar Vidal, corresponden a un corte de forma ______.",
+        options: ["Longitudinal", "Transversal", "Latitudinal", "Altitudinal", "Tradicional"],
+        correct: 3,
+        justification: "La clasificación de Pulgar Vidal se basa en pisos altitudinales, es decir, regiones determinadas por la altura sobre el nivel del mar."
+    },
+    {
+        question: "Es considerada como la región más nubosa y lluviosa del país.",
+        options: ["Puna", "Chala", "Jalca", "Rupa Rupa", "Selva baja"],
+        correct: 3,
+        justification: "La región Rupa Rupa o Selva Alta es conocida por su alta nubosidad y precipitaciones abundantes, especialmente en la ceja de selva."
+    },
+    {
+        question: "Según Antonio Brack Egg, la ciudad de Ayacucho se encuentra en la Ecorregión de:",
+        options: ["Quechua", "Puna", "Páramo", "Serranía esteparia", "Sabana de palmera"],
+        correct: 3,
+        justification: "Antonio Brack Egg clasificó Ayacucho dentro de la ecorregión Serranía esteparia, caracterizada por valles interandinos y laderas con vegetación xerofítica."
+    },
+    {
+        question: "Identifique y marque la parte del territorio peruano que no consideró Pulgar Vidal en su división regional.",
+        options: ["Las cordilleras", "Los pongos", "El mar", "La flora", "La fauna"],
+        correct: 2,
+        justification: "La clasificación de Pulgar Vidal se centra en las regiones naturales del territorio continental (pisos altitudinales), sin incluir el mar peruano."
+    }
+];
 
-        let currentQuestion = 0;
-        let score = 0;
-        let answered = false;
-        const userAnswers = [];
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+const userAnswers = [];
 
-        function initQuiz() {
-            renderQuestion();
-            updateProgress();
-            updateButtons();
-        }
+function initQuiz() { renderQuestion(); updateProgress(); updateButtons(); }
 
-        function renderQuestion() {
-            const q = questions[currentQuestion];
-            const container = document.getElementById('quizContainer');
-            container.innerHTML = `
-                <div class="question-card active">
-                    <div class="question-number">Pregunta ${currentQuestion + 1} de ${questions.length}</div>
-                    <div class="question-text">${q.question}</div>
-                    <div class="options">
-                        ${q.options.map((option, index) => `
-                            <div class="option" onclick="selectOption(${index})" data-index="${index}">
-                                <strong>${String.fromCharCode(65 + index)})</strong> ${option}
-                            </div>
-                        `).join('')}
+function renderQuestion() {
+    const q = questions[currentQuestion];
+    const container = document.getElementById('quizContainer');
+    const letters = ['A', 'B', 'C', 'D', 'E'];
+    container.innerHTML = `
+        <div class="question-card active">
+            <div class="question-number">Pregunta ${currentQuestion + 1} de ${questions.length}</div>
+            <div class="question-text">${q.question}</div>
+            <div class="options">
+                ${q.options.map((option, index) => `
+                    <div class="option" onclick="selectOption(${index})" data-index="${index}">
+                        <span class="option-letter">${letters[index]}</span>
+                        <span>${option}</span>
                     </div>
-                    <div class="justification" id="justification">
-                        <strong>📜 Justificación:</strong> ${q.justification}
-                    </div>
-                </div>
-            `;
-            if (userAnswers[currentQuestion] !== undefined) {
-                showPreviousAnswer();
-            }
-        }
+                `).join('')}
+            </div>
+            <div class="justification" id="justification">
+                <strong>📖 Justificación:</strong> ${q.justification}
+            </div>
+        </div>
+    `;
+    if (userAnswers[currentQuestion] !== undefined) showPreviousAnswer();
+}
 
-        function selectOption(index) {
-            if (answered) return;
-            const options = document.querySelectorAll('.option');
-            options.forEach(opt => opt.classList.remove('selected'));
-            options[index].classList.add('selected');
-            answered = true;
-            userAnswers[currentQuestion] = index;
-            const q = questions[currentQuestion];
-            setTimeout(() => {
-                if (index === q.correct) {
-                    options[index].classList.add('correct');
-                    score++;
-                } else {
-                    options[index].classList.add('incorrect');
-                    options[q.correct].classList.add('correct');
-                }
-                options.forEach(opt => opt.classList.add('disabled'));
-                document.getElementById('justification').classList.add('show');
-                updateButtons();
-            }, 300);
-        }
+function selectOption(index) {
+    if (answered) return;
+    const options = document.querySelectorAll('.option');
+    options.forEach(opt => opt.classList.remove('selected'));
+    options[index].classList.add('selected');
+    answered = true;
+    userAnswers[currentQuestion] = index;
+    const q = questions[currentQuestion];
+    setTimeout(() => {
+        if (index === q.correct) { options[index].classList.add('correct'); score++; }
+        else { options[index].classList.add('incorrect'); options[q.correct].classList.add('correct'); }
+        options.forEach(opt => opt.classList.add('disabled'));
+        document.getElementById('justification').classList.add('show');
+        updateButtons();
+    }, 300);
+}
 
-        function showPreviousAnswer() {
-            const options = document.querySelectorAll('.option');
-            const userAnswer = userAnswers[currentQuestion];
-            const q = questions[currentQuestion];
-            options[userAnswer].classList.add('selected');
-            if (userAnswer === q.correct) {
-                options[userAnswer].classList.add('correct');
-            } else {
-                options[userAnswer].classList.add('incorrect');
-                options[q.correct].classList.add('correct');
-            }
-            options.forEach(opt => opt.classList.add('disabled'));
-            document.getElementById('justification').classList.add('show');
-            answered = true;
-        }
+function showPreviousAnswer() {
+    const options = document.querySelectorAll('.option');
+    const userAnswer = userAnswers[currentQuestion];
+    const q = questions[currentQuestion];
+    options[userAnswer].classList.add('selected');
+    if (userAnswer === q.correct) options[userAnswer].classList.add('correct');
+    else { options[userAnswer].classList.add('incorrect'); options[q.correct].classList.add('correct'); }
+    options.forEach(opt => opt.classList.add('disabled'));
+    document.getElementById('justification').classList.add('show');
+    answered = true;
+}
 
-        function nextQuestion() {
-            if (!answered && userAnswers[currentQuestion] === undefined) {
-                alert('Por favor, selecciona una respuesta antes de continuar.');
-                return;
-            }
-            if (currentQuestion < questions.length - 1) {
-                currentQuestion++;
-                answered = userAnswers[currentQuestion] !== undefined;
-                renderQuestion();
-                updateProgress();
-                updateButtons();
-                window.scrollTo(0, 0);
-            } else {
-                showResults();
-            }
-        }
+function nextQuestion() {
+    if (!answered && userAnswers[currentQuestion] === undefined) { alert('Por favor, selecciona una respuesta antes de continuar.'); return; }
+    if (currentQuestion < questions.length - 1) {
+        currentQuestion++;
+        answered = userAnswers[currentQuestion] !== undefined;
+        renderQuestion(); updateProgress(); updateButtons();
+        window.scrollTo(0, 0);
+    } else { showResults(); }
+}
 
-        function previousQuestion() {
-            if (currentQuestion > 0) {
-                currentQuestion--;
-                answered = true;
-                renderQuestion();
-                updateProgress();
-                updateButtons();
-                window.scrollTo(0, 0);
-            }
-        }
+function previousQuestion() {
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        answered = true;
+        renderQuestion(); updateProgress(); updateButtons();
+        window.scrollTo(0, 0);
+    }
+}
 
-        function updateButtons() {
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            prevBtn.disabled = currentQuestion === 0;
-            if (currentQuestion === questions.length - 1) {
-                nextBtn.textContent = answered ? 'Ver Resultados 🎯' : 'Finalizar Quiz 🎯';
-            } else {
-                nextBtn.textContent = 'Siguiente →';
-            }
-        }
+function updateButtons() {
+    document.getElementById('prevBtn').disabled = currentQuestion === 0;
+    document.getElementById('nextBtn').textContent = (currentQuestion === questions.length - 1)
+        ? (answered ? 'Ver Resultados 🎯' : 'Finalizar 🎯')
+        : 'Siguiente →';
+}
 
-        function updateProgress() {
-            const progress = ((currentQuestion + 1) / questions.length) * 100;
-            document.getElementById('progressFill').style.width = progress + '%';
-        }
+function updateProgress() {
+    const pct = Math.round(((currentQuestion + 1) / questions.length) * 100);
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressText').textContent = `Pregunta ${currentQuestion + 1} de ${questions.length}`;
+    document.getElementById('progressPct').textContent = pct + '%';
+}
 
-        function showResults() {
-            document.getElementById('quizContainer').style.display = 'none';
-            document.getElementById('navButtons').style.display = 'none';
-            document.getElementById('results').classList.add('show');
+function showResults() {
+    document.getElementById('quizContainer').style.display = 'none';
+    document.getElementById('navButtons').style.display = 'none';
+    document.getElementById('results').classList.add('show');
+    const total = questions.length;
+    const nota = Math.round((score / total) * 20 * 10) / 10;
+    const notaDisplay = Number.isInteger(nota) ? nota : nota.toFixed(1);
+    document.getElementById('finalScore').textContent = score;
+    document.getElementById('totalQuestions').textContent = total;
+    document.getElementById('finalNota').textContent = notaDisplay;
+    setTimeout(() => { document.getElementById('gradeBarFill').style.width = ((nota / 20) * 100) + '%'; }, 200);
+    const badge = document.getElementById('gradeBadge');
+    const msg = document.getElementById('resultMessage');
+    if (nota >= 17) {
+        badge.textContent = '🏆 Sobresaliente'; badge.className = 'grade-badge badge-excelente';
+        msg.textContent = '¡Excelente desempeño! Dominas con solidez los temas de Geografía. ¡Así se llega a la universidad! 🌟';
+    } else if (nota >= 14) {
+        badge.textContent = '👏 Aprobado — Bueno'; badge.className = 'grade-badge badge-bueno';
+        msg.textContent = '¡Muy bien! Tienes buenos conocimientos. Refuerza los temas donde fallaste y estarás listo para el examen de admisión. 📚';
+    } else if (nota >= 11) {
+        badge.textContent = '📖 Aprobado — Regular'; badge.className = 'grade-badge badge-regular';
+        msg.textContent = 'Vas por buen camino, pero aún hay temas que necesitan más repaso. ¡Tú puedes mejorar, sigue adelante! ✏️';
+    } else {
+        badge.textContent = '💪 Desaprobado — Sigue intentando'; badge.className = 'grade-badge badge-desaprobado';
+        msg.textContent = 'No te rindas. Cada error es una lección. Repasa los temas con calma, vuelve a intentarlo y verás cómo mejoras. ¡Ánimo! 🔥';
+    }
+}
 
-            const total = questions.length;
+function restartQuiz() {
+    currentQuestion = 0; score = 0; answered = false; userAnswers.length = 0;
+    document.getElementById('gradeBarFill').style.width = '0%';
+    document.getElementById('quizContainer').style.display = 'block';
+    document.getElementById('navButtons').style.display = 'flex';
+    document.getElementById('results').classList.remove('show');
+    initQuiz();
+}
 
-            // Nota vigesimal redondeada a 1 decimal
-            const nota = Math.round((score / total) * 20 * 10) / 10;
-            const notaDisplay = Number.isInteger(nota) ? nota : nota.toFixed(1);
-
-            document.getElementById('finalScore').textContent = score;
-            document.getElementById('totalQuestions').textContent = total;
-            document.getElementById('finalNota').textContent = notaDisplay;
-
-            // Barra de nota
-            const porcentajeBarra = (nota / 20) * 100;
-            setTimeout(() => {
-                document.getElementById('gradeBarFill').style.width = porcentajeBarra + '%';
-            }, 200);
-
-            // Badge y mensaje según nota
-            const badge = document.getElementById('gradeBadge');
-            const msg   = document.getElementById('resultMessage');
-
-            if (nota >= 17) {
-                badge.textContent = '🏆 Sobresaliente';
-                badge.className = 'grade-badge badge-excelente';
-                msg.textContent = '¡Excelente desempeño! Dominas con solidez los temas de Historia Universal. ¡Así se llega a la universidad! 🌟';
-            } else if (nota >= 14) {
-                badge.textContent = '👏 Aprobado — Bueno';
-                badge.className = 'grade-badge badge-bueno';
-                msg.textContent = '¡Muy bien! Tienes buenos conocimientos. Refuerza los temas donde fallaste y estarás listo para el examen de admisión. 📚';
-            } else if (nota >= 11) {
-                badge.textContent = '📖 Aprobado — Regular';
-                badge.className = 'grade-badge badge-regular';
-                msg.textContent = 'Vas por buen camino, pero aún hay temas que necesitan más repaso. ¡Tú puedes mejorar, sigue adelante! ✏️';
-            } else {
-                badge.textContent = '💪 Desaprobado — Sigue intentando';
-                badge.className = 'grade-badge badge-desaprobado';
-                msg.textContent = 'No te rindas. Cada error es una lección. Repasa los temas con calma, vuelve a intentarlo y verás cómo mejoras. ¡Ánimo! 🔥';
-            }
-        }
-
-        function restartQuiz() {
-            currentQuestion = 0;
-            score = 0;
-            answered = false;
-            userAnswers.length = 0;
-            document.getElementById('gradeBarFill').style.width = '0%';
-            document.getElementById('quizContainer').style.display = 'block';
-            document.getElementById('navButtons').style.display = 'flex';
-            document.getElementById('results').classList.remove('show');
-            initQuiz();
-        }
-
-        initQuiz();
-    </script>
+initQuiz();
+</script>
 </body>
 </html>
