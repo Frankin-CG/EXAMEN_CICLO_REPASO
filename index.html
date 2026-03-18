@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examen de Biología - Academia Sofía</title>
+    <title>Examen de Lenguaje - Academia Sofía</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --green: #0a7c4e;
-            --green-mid: #1a9e66;
-            --green-light: #2ecc8a;
-            --green-pale: #e6f7f1;
-            --green-ultra: #f0fdf8;
-            --gold: #c9a84c;
-            --gold-light: #e8c96a;
-            --gold-pale: #fdf6e3;
+            --red: #c0392b;
+            --red-mid: #e74c3c;
+            --red-light: #f1948a;
+            --red-pale: #fdecea;
+            --red-ultra: #fff5f5;
+            --rose: #fce8e8;
+            --cream: #fff9f9;
             --warm-white: #ffffff;
-            --cream: #f8fdf9;
-            --text: #0d2e1e;
-            --text-soft: #4a7a5e;
-            --border: #b8e0ce;
+            --text: #2e0a0a;
+            --text-soft: #7a3a3a;
+            --border: #f5b8b8;
+            --border-pale: #fad4d4;
             --correct: #1a7a4a;
             --correct-bg: #e6f7ee;
             --incorrect: #c0392b;
@@ -28,7 +27,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Nunito', sans-serif;
-            background: linear-gradient(135deg, #e6f7f1 0%, #f0fdf8 40%, #fdf6e3 100%);
+            background: linear-gradient(135deg, #fdecea 0%, #fff5f5 40%, #fff0f0 100%);
             min-height: 100vh;
             padding: 30px 20px;
             display: flex;
@@ -38,7 +37,7 @@
         .container {
             background: var(--warm-white);
             border-radius: 24px;
-            box-shadow: 0 20px 60px rgba(10,124,78,0.15), 0 0 0 1px rgba(10,124,78,0.12);
+            box-shadow: 0 20px 60px rgba(192,57,43,0.15), 0 0 0 1px rgba(192,57,43,0.12);
             max-width: 860px;
             width: 100%;
             overflow: hidden;
@@ -51,7 +50,7 @@
 
         /* HEADER */
         .academy-header {
-            background: linear-gradient(135deg, var(--green) 0%, var(--green-mid) 60%, #27ae74 100%);
+            background: linear-gradient(135deg, var(--red) 0%, var(--red-mid) 60%, #e85d4a 100%);
             padding: 32px 40px 24px;
             text-align: center;
             position: relative;
@@ -63,14 +62,14 @@
             top: -40px; left: -40px; right: -40px; bottom: -40px;
             background-image: repeating-linear-gradient(
                 45deg, transparent, transparent 28px,
-                rgba(255,255,255,0.05) 28px, rgba(255,255,255,0.05) 29px
+                rgba(255,255,255,0.06) 28px, rgba(255,255,255,0.06) 29px
             );
         }
         .academy-header::after {
             content: '';
             position: absolute;
             bottom: 0; left: 0; right: 0; height: 4px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,220,210,0.8), transparent);
         }
         .logo-container {
             position: relative;
@@ -78,9 +77,9 @@
             margin: 0 auto 16px;
         }
         .logo-container img { width: 100%; height: auto; max-height: 120px; object-fit: contain; }
-        .gold-divider {
+        .divider {
             width: 80px; height: 3px;
-            background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
             margin: 10px auto 0;
         }
 
@@ -94,7 +93,7 @@
             margin-bottom: 6px;
             letter-spacing: -0.5px;
         }
-        .header h1 span { color: var(--green); }
+        .header h1 span { color: var(--red); }
         .header p { color: var(--text-soft); font-size: 1em; font-weight: 600; }
 
         /* PROGRESS */
@@ -106,11 +105,11 @@
         }
         .progress-bar {
             width: 100%; height: 10px;
-            background: var(--green-pale); border-radius: 10px; overflow: hidden;
+            background: var(--red-pale); border-radius: 10px; overflow: hidden;
         }
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, var(--green), var(--gold));
+            background: linear-gradient(90deg, var(--red), var(--red-light));
             width: 0%; transition: width 0.4s ease; border-radius: 10px;
         }
 
@@ -123,8 +122,8 @@
         }
         .question-number {
             display: inline-block;
-            background: var(--green-pale);
-            color: var(--green);
+            background: var(--red-pale);
+            color: var(--red);
             font-weight: 700; font-size: 0.82em;
             letter-spacing: 1.5px; text-transform: uppercase;
             padding: 5px 14px; border-radius: 50px; margin-bottom: 14px;
@@ -137,7 +136,7 @@
         .options { display: flex; flex-direction: column; gap: 12px; }
         .option {
             padding: 16px 22px;
-            border: 2px solid var(--border);
+            border: 2px solid var(--border-pale);
             border-radius: 12px; cursor: pointer;
             transition: all 0.25s ease;
             font-size: 1.05em; background: var(--warm-white);
@@ -147,23 +146,23 @@
         .option-letter {
             width: 30px; height: 30px; min-width: 30px;
             border-radius: 50%;
-            background: var(--green-ultra);
-            border: 2px solid var(--green-light);
-            color: var(--green);
+            background: var(--red-ultra);
+            border: 2px solid var(--border);
+            color: var(--red);
             font-weight: 800; font-size: 0.85em;
             display: flex; align-items: center; justify-content: center;
             transition: all 0.25s ease;
         }
         .option:hover {
-            border-color: var(--green);
-            background: var(--green-ultra);
+            border-color: var(--red-mid);
+            background: var(--red-ultra);
             transform: translateX(6px);
-            box-shadow: 0 4px 16px rgba(10,124,78,0.1);
+            box-shadow: 0 4px 16px rgba(192,57,43,0.12);
         }
         .option:hover .option-letter {
-            background: var(--green); color: white; border-color: var(--green);
+            background: var(--red); color: white; border-color: var(--red);
         }
-        .option.selected { border-color: var(--green); background: var(--green-pale); }
+        .option.selected { border-color: var(--red-mid); background: var(--red-pale); }
         .option.correct { border-color: var(--correct); background: var(--correct-bg); }
         .option.correct .option-letter { background: var(--correct); color: white; border-color: var(--correct); }
         .option.incorrect { border-color: var(--incorrect); background: var(--incorrect-bg); }
@@ -175,14 +174,14 @@
         .justification {
             display: none;
             margin-top: 20px; padding: 18px 22px;
-            background: linear-gradient(to right, var(--green-ultra), var(--gold-pale));
-            border-left: 4px solid var(--green);
+            background: linear-gradient(to right, var(--red-ultra), #fff8f8);
+            border-left: 4px solid var(--red-mid);
             border-radius: 10px;
             animation: fadeUp 0.4s ease;
             font-size: 1em; color: var(--text-soft); line-height: 1.6;
         }
         .justification.show { display: block; }
-        .justification strong { color: var(--green); }
+        .justification strong { color: var(--red); }
 
         /* NAV */
         .nav-buttons { display: flex; justify-content: space-between; margin-top: 30px; gap: 14px; }
@@ -193,22 +192,21 @@
             font-family: 'Nunito', sans-serif;
         }
         .btn-primary {
-            background: linear-gradient(135deg, var(--green), var(--green-mid));
+            background: linear-gradient(135deg, var(--red), var(--red-mid));
             color: white;
-            box-shadow: 0 4px 16px rgba(10,124,78,0.3);
+            box-shadow: 0 4px 16px rgba(192,57,43,0.3);
             border: 2px solid transparent;
         }
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(10,124,78,0.4);
-            background: linear-gradient(135deg, var(--green-mid), var(--gold));
-            color: white;
+            box-shadow: 0 8px 24px rgba(192,57,43,0.4);
+            background: linear-gradient(135deg, var(--red-mid), var(--red-light));
         }
         .btn-secondary {
-            background: var(--warm-white); color: var(--text-soft); border: 2px solid var(--border);
+            background: var(--warm-white); color: var(--text-soft); border: 2px solid var(--border-pale);
         }
         .btn-secondary:hover {
-            background: var(--green-pale); border-color: var(--green); color: var(--green);
+            background: var(--red-pale); border-color: var(--red-mid); color: var(--red);
         }
         .btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none !important; }
 
@@ -221,28 +219,28 @@
         }
         .score-circle {
             width: 200px; height: 200px; border-radius: 50%;
-            background: linear-gradient(135deg, var(--green), var(--green-mid));
-            border: 5px solid var(--gold);
+            background: linear-gradient(135deg, var(--red), var(--red-mid));
+            border: 5px solid var(--rose);
             color: white;
             display: flex; flex-direction: column;
             justify-content: center; align-items: center;
             margin: 28px auto 14px;
-            box-shadow: 0 12px 40px rgba(10,124,78,0.3), 0 0 0 10px rgba(201,168,76,0.1);
+            box-shadow: 0 12px 40px rgba(192,57,43,0.3), 0 0 0 10px rgba(192,57,43,0.08);
         }
-        .nota-label { font-size: 0.82em; opacity: 0.85; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; color: var(--gold-light); }
+        .nota-label { font-size: 0.82em; opacity: 0.85; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; color: rgba(255,255,255,0.9); }
         .nota-valor { font-family: 'Playfair Display', serif; font-size: 4em; font-weight: 900; line-height: 1; color: white; }
-        .nota-total { font-size: 1em; opacity: 0.75; color: var(--gold-light); }
+        .nota-total { font-size: 1em; opacity: 0.75; color: rgba(255,220,215,0.9); }
         .score-detail {
             display: inline-block; background: var(--warm-white);
-            border: 2px solid var(--border); border-radius: 12px;
+            border: 2px solid var(--border-pale); border-radius: 12px;
             padding: 10px 28px; margin-bottom: 20px;
             font-size: 1em; color: var(--text-soft);
         }
-        .score-detail span { font-weight: 800; color: var(--green); }
+        .score-detail span { font-weight: 800; color: var(--red); }
         .grade-bar-container { width: 100%; max-width: 480px; margin: 0 auto 20px; }
-        .grade-bar-bg { width: 100%; height: 16px; background: var(--green-pale); border-radius: 10px; overflow: hidden; margin-bottom: 6px; }
-        .grade-bar-fill { height: 100%; border-radius: 10px; transition: width 1s ease; background: linear-gradient(90deg, var(--green), var(--gold)); }
-        .grade-bar-labels { display: flex; justify-content: space-between; font-size: 0.78em; color: #bbb; padding: 0 2px; }
+        .grade-bar-bg { width: 100%; height: 16px; background: var(--red-pale); border-radius: 10px; overflow: hidden; margin-bottom: 6px; }
+        .grade-bar-fill { height: 100%; border-radius: 10px; transition: width 1s ease; background: linear-gradient(90deg, var(--red), var(--red-light)); }
+        .grade-bar-labels { display: flex; justify-content: space-between; font-size: 0.78em; color: #ccc; padding: 0 2px; }
         .grade-badge {
             display: inline-block; padding: 8px 24px; border-radius: 50px;
             font-weight: 800; font-size: 1em; margin-bottom: 16px; letter-spacing: 0.5px;
@@ -256,14 +254,14 @@
             line-height: 1.7; max-width: 500px; margin-left: auto; margin-right: auto;
         }
         .results-motto {
-            background: linear-gradient(135deg, var(--green), var(--green-mid));
-            color: var(--gold-light);
+            background: linear-gradient(135deg, var(--red), var(--red-mid));
+            color: white;
             padding: 14px 32px; border-radius: 50px;
             font-weight: 800; font-size: 1.05em;
             display: inline-block; margin-top: 8px;
             letter-spacing: 1.5px; text-transform: uppercase;
-            box-shadow: 0 4px 16px rgba(10,124,78,0.3);
-            border: 2px solid rgba(201,168,76,0.4);
+            box-shadow: 0 4px 16px rgba(192,57,43,0.3);
+            border: 2px solid rgba(255,200,195,0.4);
         }
 
         @media (max-width: 600px) {
@@ -283,18 +281,18 @@
         <div class="logo-container">
             <img src="logo_SOFIA-Photoroom.png" alt="Logo Academia Sofía">
         </div>
-        <div class="gold-divider"></div>
+        <div class="divider"></div>
     </div>
 
     <div class="inner">
         <div class="header">
-            <h1>🧬 Examen de <span>Biología</span></h1>
-            <p>Ciclo Repaso · 33 Preguntas</p>
+            <h1>📝 Examen de <span>Lenguaje</span></h1>
+            <p>Ciclo Repaso · 35 Preguntas </p>
         </div>
 
         <div class="progress-wrapper">
             <div class="progress-info">
-                <span id="progressText">Pregunta 1 de 33</span>
+                <span id="progressText">Pregunta 1 de 35</span>
                 <span id="progressPct">0%</span>
             </div>
             <div class="progress-bar">
@@ -312,7 +310,7 @@
                 <div class="nota-total">/ 20</div>
             </div>
             <div class="score-detail">
-                Respuestas correctas: <span id="finalScore">0</span> de <span id="totalQuestions">33</span>
+                Respuestas correctas: <span id="finalScore">0</span> de <span id="totalQuestions">35</span>
             </div>
             <div class="grade-bar-container">
                 <div class="grade-bar-bg">
@@ -337,202 +335,424 @@
 <script>
 const questions = [
     {
-        question: "El fragmento de ADN que contiene la información necesaria para la síntesis de una proteína o para determinar un carácter hereditario se denomina:",
-        options: ["Cromosoma", "Locus", "Gen", "Alelo", "Genotipo"],
+        question: "En la oración «Las niñas cantaban alegremente», ¿cuál es la flexión verbal correcta del verbo 'cantaban'?",
+        options: [
+            "Modo indicativo, tiempo presente, 3.ª persona del plural",
+            "Modo indicativo, tiempo pretérito imperfecto, 3.ª persona del plural",
+            "Modo subjuntivo, tiempo imperfecto, 3.ª persona del plural",
+            "Modo indicativo, tiempo pretérito perfecto, 3.ª persona del singular",
+            "Modo indicativo, tiempo futuro, 3.ª persona del plural"
+        ],
+        correct: 1,
+        justification: "«Cantaban» es pretérito imperfecto de indicativo, 3.ª persona del plural: indica acción pasada continua o habitual. La morfología flexiva verbal incluye modo, tiempo, número y persona."
+    },
+    {
+        question: "¿En cuál de las siguientes oraciones el verbo actúa como AUXILIAR?",
+        options: [
+            "El profesor tiene muchos libros en su oficina.",
+            "María ha terminado el informe antes del mediodía.",
+            "Los estudiantes tienen ganas de aprobar.",
+            "El juez fue muy severo con el acusado.",
+            "Ella quiere un café con leche."
+        ],
+        correct: 1,
+        justification: "En «ha terminado», el verbo «haber» funciona como auxiliar que, junto al participio «terminado», forma la perífrasis verbal de aspecto perfectivo (pretérito perfecto compuesto). En las demás opciones los verbos son plenos."
+    },
+    {
+        question: "Analiza la estructura morfológica de la palabra «desafortunadamente». ¿Cuál es el análisis correcto?",
+        options: [
+            "Raíz: fortun- / sufijo: -adamente / sin prefijo",
+            "Prefijo: des- / raíz: afortun- / sufijo: -mente",
+            "Prefijo: des- / raíz: fortun- / sufijo adjetival: -ada / sufijo adverbial: -mente",
+            "Prefijo: des- / raíz: fort- / sufijo: -unadament- / sufijo: -e",
+            "Sin prefijo / raíz: desafortuna- / sufijo: -damente"
+        ],
         correct: 2,
-        justification: "El gen es la unidad básica de la herencia y contiene la información genética para producir proteínas o determinar características."
+        justification: "La estructura es: prefijo «des-» + raíz «fortun-» + sufijo adjetival «-ada» + sufijo adverbial «-mente». Es un ejemplo de derivación por prefijación y sufijación simultáneas sobre la base nominal «fortuna»."
     },
     {
-        question: "El lugar específico que ocupa un gen dentro de un cromosoma se denomina:",
-        options: ["Locus", "Cromatina", "Alelo", "Fenotipo", "Centrómero"],
-        correct: 0,
-        justification: "El locus es la posición fija que ocupa un gen en un cromosoma."
+        question: "¿Cuál de las siguientes palabras está formada ÚNICAMENTE por el proceso de DERIVACIÓN?",
+        options: [
+            "Bocacalle (boca + calle)",
+            "Enamorar (en- + amor + -ar)",
+            "Girasol (gira + sol)",
+            "Sol (morfema libre, palabra simple)",
+            "Desorden (prefijo des- + base orden)"
+        ],
+        correct: 4,
+        justification: "«Desorden» se forma añadiendo el prefijo derivativo «des-» a la base «orden», sin que intervenga composición ni parasíntesis. Las otras opciones corresponden a composición (A, C), parasíntesis (B) o palabra simple (D)."
     },
     {
-        question: "Cuando un individuo posee dos alelos iguales para un carácter se dice que presenta un genotipo:",
-        options: ["Heterocigoto", "Dominante", "Recesivo", "Homocigoto", "Híbrido"],
+        question: "Identifica la palabra formada por el proceso de COMPOSICIÓN:",
+        options: [
+            "Rápidamente",
+            "Desorden",
+            "Girasol",
+            "Lectora",
+            "Subterráneo"
+        ],
+        correct: 2,
+        justification: "«Girasol» se forma por composición de dos raíces léxicas: «gira» (de girar) + «sol». La composición une dos o más lexemas para crear una nueva palabra con significado propio y diferente al de sus componentes."
+    },
+    {
+        question: "¿Cuál de las siguientes palabras es un ejemplo de PARASÍNTESIS?",
+        options: [
+            "Correr",
+            "Deslealtad",
+            "Maniobra",
+            "Enamorar",
+            "Portavoz"
+        ],
         correct: 3,
-        justification: "Un individuo homocigoto posee dos alelos iguales para un mismo gen (por ejemplo AA o aa)."
+        justification: "«Enamorar» es parasintética porque se forma simultáneamente con prefijo «en-» + base «amor» + sufijo verbal «-ar». Ninguna de las partes aisladas (*enamar o *amorar) existe como palabra independiente en español."
     },
     {
-        question: "El conjunto de características observables de un organismo producto de la interacción entre genotipo y ambiente se denomina:",
-        options: ["Genotipo", "Fenotipo", "Locus", "Alelo", "Mutación"],
+        question: "Señala la opción que distingue CORRECTAMENTE entre sigla y acrónimo:",
+        options: [
+            "ONU es acrónimo porque se lee letra por letra; radar es sigla porque se pronuncia como palabra.",
+            "ONU es sigla porque se lee letra por letra; radar es acrónimo porque se pronuncia como una palabra.",
+            "Ambas son siglas porque provienen de iniciales de palabras.",
+            "Ambas son acrónimos porque pueden pronunciarse como palabras.",
+            "La diferencia entre sigla y acrónimo es solo ortográfica, no fonética."
+        ],
         correct: 1,
-        justification: "El fenotipo corresponde a las características visibles o expresadas de un organismo, resultado de su genotipo y el ambiente."
+        justification: "Las siglas se deletrean letra a letra (O-N-U = Organización de las Naciones Unidas); los acrónimos se pronuncian como una sola palabra (radar, de Radio Detection And Ranging). La distinción es fonológica y morfológica."
     },
     {
-        question: "Según la Primera Ley de Mendel, el cruce entre dos líneas puras produce en la generación F1 individuos:",
-        options: ["Homocigotos dominantes", "Homocigotos recesivos", "Heterocigotos uniformes", "Mutantes", "Diferentes entre sí"],
-        correct: 2,
-        justification: "La Ley de Uniformidad establece que la primera generación filial (F1) es uniforme y heterocigota al cruzar dos líneas puras."
-    },
-    {
-        question: "La proporción fenotípica 3:1 observada en la segunda generación filial (F2) corresponde a la:",
-        options: ["Ley de la uniformidad", "Ley de la segregación", "Ley de la dominancia incompleta", "Ley de la mutación", "Ley de la evolución"],
+        question: "En la oración «El amor es el motor de grandes hazañas», ¿qué tipo de sustantivo es «amor»?",
+        options: [
+            "Concreto, contable, propio",
+            "Abstracto, incontable, común",
+            "Concreto, incontable, colectivo",
+            "Abstracto, contable, propio",
+            "Concreto, contable, común"
+        ],
         correct: 1,
-        justification: "En la F2 los alelos se separan durante la formación de gametos (segregación), produciendo la proporción fenotípica 3:1."
+        justification: "«Amor» es abstracto (no percibible sensorialmente), incontable (no se pluraliza con sentido habitual) y común (no designa un individuo específico sino una categoría). Son sus tres rasgos morfosemánticos fundamentales."
     },
     {
-        question: "La hemofilia es una enfermedad hereditaria ligada al cromosoma:",
-        options: ["X", "Y", "Autosómico dominante", "Autosómico recesivo", "Mitocondrial"],
-        correct: 0,
-        justification: "La hemofilia es un trastorno genético recesivo ligado al cromosoma X, por eso afecta principalmente a varones."
-    },
-    {
-        question: "En el sistema ABO, el grupo sanguíneo AB presenta el genotipo:",
-        options: ["IAIA", "IBIB", "IAIB", "ii", "IAi"],
-        correct: 2,
-        justification: "El grupo AB resulta de la codominancia de los alelos IA e IB, ambos se expresan simultáneamente."
-    },
-    {
-        question: "La presencia de un cromosoma extra en un par de cromosomas homólogos se denomina:",
-        options: ["Monosomía", "Trisomía", "Diploidía", "Haploidía", "Euploidía"],
+        question: "En «El examen fue sumamente difícil», el adjetivo «difícil» cumple la función sintáctica de:",
+        options: [
+            "Modificador directo del sustantivo «examen»",
+            "Atributo del sujeto",
+            "Complemento circunstancial de modo",
+            "Complemento predicativo del objeto directo",
+            "Modificador indirecto del núcleo verbal"
+        ],
         correct: 1,
-        justification: "La trisomía ocurre cuando existen tres cromosomas en lugar de dos en un par homólogo (ejemplo: síndrome de Down = trisomía 21)."
+        justification: "Con verbos copulativos como «ser», «estar» o «parecer», el adjetivo funciona como atributo: se refiere al sujeto y es exigido por el verbo. Sin el atributo, la oración queda incompleta («El examen fue» carece de sentido pleno)."
     },
     {
-        question: "El síndrome caracterizado por la presencia de un cromosoma X adicional en varones (47, XXY) se denomina:",
-        options: ["Síndrome de Down", "Síndrome de Turner", "Síndrome de Klinefelter", "Síndrome de Patau", "Síndrome de Edwards"],
-        correct: 2,
-        justification: "El síndrome de Klinefelter ocurre en varones con cariotipo XXY (47 cromosomas), causando infertilidad y otras características."
-    },
-    {
-        question: "La teoría que sostiene que un ser supremo creó el universo y todos los seres vivos se denomina:",
-        options: ["Abiogénesis", "Panspermia", "Creacionismo", "Quimiosintética", "Mutacionismo"],
-        correct: 2,
-        justification: "El creacionismo sostiene que la vida fue creada por un ser divino o supremo, de forma intencional y directa."
-    },
-    {
-        question: "La idea de que la vida podía originarse espontáneamente a partir de materia inerte se conoce como:",
-        options: ["Biogénesis", "Generación espontánea", "Evolución", "Selección natural", "Mutación"],
+        question: "En «Aquellos estudiantes que aprobaron recibirán sus diplomas», la palabra «Aquellos» es:",
+        options: [
+            "Pronombre demostrativo",
+            "Determinante demostrativo",
+            "Adjetivo calificativo",
+            "Pronombre indefinido",
+            "Determinante posesivo"
+        ],
         correct: 1,
-        justification: "La generación espontánea era una teoría antigua que afirmaba que la vida surgía directamente de materia no viva."
+        justification: "«Aquellos» precede y acompaña directamente al sustantivo «estudiantes», actuando como determinante demostrativo. Si estuviera solo (sin el sustantivo), sería pronombre. Esta distinción es clave en morfología."
     },
     {
-        question: "El científico que refutó definitivamente la generación espontánea mediante el experimento del matraz de cuello de cisne fue:",
-        options: ["Oparin", "Darwin", "Pasteur", "Lamarck", "Arrhenius"],
-        correct: 2,
-        justification: "Louis Pasteur demostró con su famoso experimento que los microorganismos provienen siempre de otros microorganismos, no de la materia inerte."
-    },
-    {
-        question: "La teoría que plantea que la vida llegó a la Tierra desde el espacio exterior se denomina:",
-        options: ["Abiogénesis", "Panspermia", "Creacionismo", "Biogénesis", "Quimiosíntesis"],
+        question: "¿En cuál de las siguientes oraciones el verbo es INTRANSITIVO?",
+        options: [
+            "El alcalde inauguró la nueva plaza.",
+            "Los niños duermen profundamente.",
+            "María compró varios libros de historia.",
+            "El jurado otorgó el premio al ganador.",
+            "Ella recibió una carta de su familia."
+        ],
         correct: 1,
-        justification: "La panspermia propone que la vida o sus precursores llegaron a la Tierra desde el espacio en meteoritos o cometas."
+        justification: "«Dormir» es intransitivo porque no admite complemento directo; la acción no recae sobre ningún objeto. El elemento «profundamente» es complemento circunstancial de modo, no objeto directo. En las demás opciones sí hay CD."
     },
     {
-        question: "Según la teoría quimiosintética de Oparin, los primeros agregados moleculares que dieron origen a la vida fueron llamados:",
-        options: ["Mutaciones", "Protobiontes", "Coacervados", "Genes", "Células"],
+        question: "Identifica el tipo de conjunción empleada en: «Estudia mucho, pero no logra aprobar»:",
+        options: [
+            "Conjunción copulativa",
+            "Conjunción disyuntiva",
+            "Conjunción adversativa",
+            "Conjunción causal",
+            "Conjunción concesiva"
+        ],
         correct: 2,
-        justification: "Oparin propuso que los coacervados fueron estructuras coloidales precursoras de las primeras células, capaces de crecer y dividirse."
+        justification: "«Pero» es una conjunción coordinante adversativa que expresa oposición o contraste entre las dos proposiciones. Es la conjunción adversativa más frecuente del español, junto a «mas», «sino» y «aunque»."
     },
     {
-        question: "El principio que propone que el uso frecuente de un órgano provoca su desarrollo pertenece a la teoría de:",
-        options: ["Darwin", "Lamarck", "Mendel", "Oparin", "Wallace"],
+        question: "¿En cuál de las siguientes oraciones la preposición está usada INCORRECTAMENTE?",
+        options: [
+            "Llegó a tiempo para la reunión.",
+            "Confío en la honestidad de mis amigos.",
+            "Le informé al director sobre el problema.",
+            "De acuerdo a las normas, está prohibido.",
+            "Salió de la oficina a las cinco."
+        ],
+        correct: 3,
+        justification: "La forma correcta es «de acuerdo con», no «de acuerdo a». Esta última es un galicismo (calco del francés *d'accord à*) que la RAE considera incorrecto en el español estándar. El régimen preposicional del español exige «con»."
+    },
+    {
+        question: "En «Habló muy pausadamente», la palabra «muy» modifica a:",
+        options: [
+            "Al verbo «habló» directamente",
+            "Al adverbio «pausadamente» (adverbio de adverbio)",
+            "A toda la oración",
+            "Al sujeto tácito de la oración",
+            "Al predicado verbal completo"
+        ],
         correct: 1,
-        justification: "Lamarck planteó la ley del uso y desuso: los órganos que se usan frecuentemente se desarrollan, y los que no se usan se atrofian."
+        justification: "«Muy» es un adverbio de grado que modifica e intensifica al adverbio de modo «pausadamente». Los adverbios de grado pueden modificar adjetivos, adverbios y locuciones adverbiales, pero no directamente a verbos."
     },
     {
-        question: "La teoría de Darwin explica la evolución mediante el proceso denominado:",
-        options: ["Mutación genética", "Selección natural", "Deriva genética", "Hibridación", "Panspermia"],
+        question: "¿Cuál de las siguientes es una FRASE y no una oración?",
+        options: [
+            "Los pájaros cantan en el amanecer.",
+            "Ella llegó tarde al examen.",
+            "La brillante luz del sol de verano.",
+            "Nosotros ganamos el campeonato.",
+            "El perro ladra sin parar."
+        ],
+        correct: 2,
+        justification: "«La brillante luz del sol de verano» es una frase nominal porque carece de verbo conjugado en forma personal. Una oración requiere necesariamente un predicado con verbo conjugado. Las opciones A, B, D y E sí tienen verbo conjugado."
+    },
+    {
+        question: "¿Cuál de las siguientes oraciones es UNIMEMBRE?",
+        options: [
+            "Los estudiantes leen con atención.",
+            "Ella canta muy bien.",
+            "Llueve intensamente en la sierra.",
+            "El director habló con firmeza.",
+            "Nosotros ganamos el partido."
+        ],
+        correct: 2,
+        justification: "«Llueve intensamente en la sierra» es unimembre porque contiene un verbo impersonal meteorológico («llover») que no admite sujeto gramatical. No puede dividirse en sujeto y predicado porque el verbo no concuerda con ningún sujeto."
+    },
+    {
+        question: "En «Los brillantes alumnos de la universidad aprobaron el examen», ¿cuál es el NÚCLEO del sujeto?",
+        options: [
+            "Los brillantes alumnos",
+            "Alumnos",
+            "Los alumnos de la universidad",
+            "Universidad",
+            "Brillantes"
+        ],
         correct: 1,
-        justification: "La selección natural favorece a los individuos mejor adaptados al ambiente, que sobreviven y se reproducen con mayor éxito."
+        justification: "El núcleo del sujeto es siempre el sustantivo o pronombre principal: «alumnos». Los demás elementos son sus modificadores: «los» (determinante), «brillantes» (modificador directo) y «de la universidad» (modificador indirecto)."
     },
     {
-        question: "La teoría sintética de la evolución combina la selección natural con los conocimientos de:",
-        options: ["Fisiología", "Citología", "Genética", "Ecología", "Botánica"],
+        question: "Identifica el COMPLEMENTO INDIRECTO en: «El profesor entregó los certificados a los egresados»:",
+        options: [
+            "El profesor",
+            "Los certificados",
+            "A los egresados",
+            "Entregó los certificados",
+            "Con mucho esfuerzo"
+        ],
         correct: 2,
-        justification: "La síntesis moderna o neodarwinismo integra la genética mendeliana y la genética de poblaciones con la teoría de Darwin."
+        justification: "«A los egresados» es el complemento indirecto: indica el destinatario de la acción. Se verifica reemplazándolo por el pronombre átono «les»: «El profesor les entregó los certificados». El CD es «los certificados» (¿qué entregó?)."
     },
     {
-        question: "El sistema de clasificación de los seres vivos en cinco reinos fue propuesto por:",
-        options: ["Aristóteles", "Linneo", "Whittaker", "Haeckel", "Woese"],
-        correct: 2,
-        justification: "Robert Whittaker propuso en 1969 la clasificación en cinco reinos: Monera, Protista, Fungi, Plantae y Animalia."
+        question: "En «El libro fue escrito por García Márquez en Bogotá», ¿cuál es el complemento agente?",
+        options: [
+            "El libro",
+            "En Bogotá",
+            "Fue escrito",
+            "Por García Márquez",
+            "García Márquez en Bogotá"
+        ],
+        correct: 3,
+        justification: "«Por García Márquez» es el complemento agente, propio de las oraciones pasivas, que indica quién realiza la acción. Se introduce con la preposición «por» y puede transformarse en sujeto al pasar a la voz activa: «García Márquez escribió el libro»."
     },
     {
-        question: "El sistema de nomenclatura que utiliza dos palabras en latín para nombrar a las especies se denomina:",
-        options: ["Clasificación jerárquica", "Nomenclatura binomial", "Sistemática molecular", "Dominio biológico", "Taxonomía evolutiva"],
+        question: "¿En cuál de las siguientes oraciones hay un error de CONCORDANCIA gramatical?",
+        options: [
+            "Las alumnas estudiosas aprobaron el examen.",
+            "Hubieron muchos problemas durante el proceso.",
+            "Los niños y las niñas jugaron en el parque.",
+            "Ella misma resolvió el problema.",
+            "Los jóvenes talentosos ganaron el concurso."
+        ],
         correct: 1,
-        justification: "Linneo estableció la nomenclatura binomial, usando dos nombres en latín: género y especie (ejemplo: Homo sapiens)."
+        justification: "«Hubieron» es incorrecto. El verbo «haber» usado como impersonal existencial no varía en número; siempre debe estar en singular. La forma correcta es «Hubo muchos problemas». Es el solecismo de concordancia más frecuente en español."
     },
     {
-        question: "La ciencia que estudia las relaciones entre los seres vivos y su ambiente se denomina:",
-        options: ["Genética", "Taxonomía", "Ecología", "Citología", "Anatomía"],
+        question: "Selecciona el conector más adecuado: «Estudió toda la noche; _______, no pudo terminar el examen a tiempo»:",
+        options: [
+            "Por lo tanto",
+            "Además",
+            "Sin embargo",
+            "Es decir",
+            "Por ejemplo"
+        ],
         correct: 2,
-        justification: "La ecología analiza las interacciones entre los organismos y entre estos y su entorno físico y biológico."
+        justification: "«Sin embargo» es un conector adversativo que expresa contraste: a pesar del esfuerzo (estudiar toda la noche), el resultado fue contrario al esperado. Los conectores A y B son consecutivo y aditivo, respectivamente, que contradirían la lógica del texto."
     },
     {
-        question: "El conjunto de individuos de la misma especie que habitan en un área determinada se denomina:",
-        options: ["Comunidad", "Ecosistema", "Población", "Nicho", "Biosfera"],
+        question: "¿Qué tipo de relación lógica establece el conector «por consiguiente»?",
+        options: [
+            "Adversativa",
+            "Causal",
+            "Consecutiva",
+            "Concesiva",
+            "Aditiva"
+        ],
         correct: 2,
-        justification: "Una población está formada por individuos de la misma especie que comparten un mismo lugar y tiempo."
+        justification: "«Por consiguiente» es un conector consecutivo o de conclusión: introduce la consecuencia lógica que se deriva de lo expresado anteriormente. Equivale a «por tanto», «en consecuencia» y «así pues». No debe confundirse con los causales («porque», «puesto que»)."
     },
     {
-        question: "El conjunto de poblaciones que interactúan en un mismo lugar se denomina:",
-        options: ["Ecosistema", "Comunidad", "Bioma", "Nicho", "Hábitat"],
+        question: "En el enunciado «Este libro que te di ayer lo encontré aquí», ¿cuáles son los elementos que funcionan como deícticos de persona, lugar y tiempo, respectivamente?",
+        options: [
+            "«libro», «encontré» y «ayer»",
+            "«Este», «lo» y «aquí»",
+            "«te», «aquí» y «ayer»",
+            "«Este», «aquí» y «libro»",
+            "«lo», «ayer» y «encontré»"
+        ],
+        correct: 2,
+        justification: "«te» es deíctico de persona (2.ª persona, deixis personal); «aquí» es deíctico de lugar (deixis espacial); «ayer» es deíctico de tiempo (deixis temporal). La pregunta solicita un representante de cada tipo de deixis, lo que determina unívocamente la respuesta correcta."
+    },
+    {
+        question: "¿En cuál de las siguientes oraciones el uso de la coma es INCORRECTO?",
+        options: [
+            "Juan, el más inteligente del grupo, aprobó primero.",
+            "Compré pan, leche, huevos y frutas.",
+            "Si estudias con dedicación, aprobarás el examen.",
+            "El director, ordenó silencio en la sala.",
+            "Aunque llovía, salimos a caminar."
+        ],
+        correct: 3,
+        justification: "En «El director, ordenó silencio», la coma es incorrecta porque separa el sujeto («El director») de su predicado («ordenó silencio»). La RAE prohíbe expresamente colocar coma entre el sujeto y el verbo principal, salvo que medie un inciso."
+    },
+    {
+        question: "¿En cuál de las opciones los dos puntos están usados CORRECTAMENTE?",
+        options: [
+            "Llegó tarde: porque el bus se averió.",
+            "Ella desea: estudiar medicina en la UNSCH.",
+            "El juez sentenció: «El acusado es culpable».",
+            "Los días hábiles son: lunes, martes y miércoles.",
+            "Compró: libros, cuadernos y lapiceros."
+        ],
+        correct: 2,
+        justification: "Los dos puntos se usan correctamente antes de una cita textual introducida por un verbo de lengua (sentenció, dijo, afirmó). En las opciones A, B y E los dos puntos interrumpen incorrectamente el vínculo entre el verbo y sus complementos directos."
+    },
+    {
+        question: "¿Cuál es el uso CORRECTO de la raya (—) en el texto escrito?",
+        options: [
+            "Para separar sílabas al final de una línea.",
+            "Para unir palabras compuestas como «físico-matemático».",
+            "Para encerrar incisos o aclaraciones en un texto narrativo.",
+            "Para indicar la división silábica en el diccionario.",
+            "Para separar prefijos de palabras como «ex-presidente»."
+        ],
+        correct: 2,
+        justification: "La raya (—) se usa para encerrar incisos o aclaraciones (función similar a los paréntesis), para introducir el diálogo en narrativa y para el comentario del narrador dentro del diálogo. Las opciones A, B, D y E corresponden al guion corto (-), signo distinto."
+    },
+    {
+        question: "¿En cuál de los siguientes casos el uso de las comillas es el ÚNICO recurso ortográfico adecuado y no puede reemplazarse por ningún otro signo?",
+        options: [
+            "Para introducir el diálogo en textos narrativos.",
+            "Para encerrar aclaraciones o datos complementarios dentro de una oración.",
+            "Para indicar que una palabra se emplea en sentido irónico o con significado especial.",
+            "Para marcar una pausa larga con suspenso al final de una frase.",
+            "Para separar una aclaración extensa del resto del texto narrativo."
+        ],
+        correct: 2,
+        justification: "Cuando una palabra se usa en sentido irónico, metafórico o impropio, las comillas son el único recurso adecuado. En cambio, el diálogo (A) puede marcarse con raya; las aclaraciones (B, E) admiten paréntesis o rayas; las pausas (D) corresponden a puntos suspensivos."
+    },
+    {
+        question: "¿En cuál de las siguientes opciones el uso de los puntos suspensivos es INCORRECTO?",
+        options: [
+            "«No sé cómo decirte esto… es muy complicado».",
+            "«Vine, vi… y perdí todo».",
+            "«Los países visitados fueron: Francia, Italia, España…».",
+            "«Dijo que vendría… pero ya son las diez de la noche».",
+            "«El examen consta de 30 preguntas... de opción múltiple»."
+        ],
+        correct: 4,
+        justification: "En «30 preguntas... de opción múltiple», los puntos suspensivos son innecesarios porque no hay pausa significativa, enumeración incompleta ni suspenso expresivo. Interrumpen artificialmente una frase que no lo requiere, constituyendo un uso incorrecto."
+    },
+    {
+        question: "¿Cuál es la característica que distingue al OFICIO de los demás documentos administrativos?",
+        options: [
+            "Es un documento personal que se dirige a una autoridad para solicitar algo.",
+            "Es un documento de comunicación oficial entre instituciones o dependencias del Estado.",
+            "Es un documento interno que resume los acuerdos de una reunión.",
+            "Es un documento que informa sobre los resultados de una investigación encargada.",
+            "Es un documento breve que sirve para recordar o instruir sobre algo urgente."
+        ],
         correct: 1,
-        justification: "La comunidad o biocenosis es el conjunto de poblaciones de diferentes especies que conviven e interactúan en un área determinada."
+        justification: "El oficio es un documento de carácter institucional usado entre organismos públicos o entre dependencias de una misma institución. A diferencia de la solicitud (personal), el memorando (interno y breve) o el informe (técnico), el oficio es el canal formal interinstitucional."
     },
     {
-        question: "Los organismos que producen su propio alimento mediante fotosíntesis o quimiosíntesis se denominan:",
-        options: ["Consumidores", "Descomponedores", "Productores", "Parásitos", "Detritívoros"],
+        question: "En la redacción de una SOLICITUD, ¿qué parte del documento contiene la presentación personal del solicitante y el fundamento legal del pedido?",
+        options: [
+            "El encabezamiento",
+            "La conclusión o cierre",
+            "El cuerpo o texto",
+            "La sumilla",
+            "El pie de firma"
+        ],
         correct: 2,
-        justification: "Los productores (plantas, algas, cianobacterias) generan materia orgánica a partir de compuestos inorgánicos usando energía solar o química."
+        justification: "El cuerpo o texto de la solicitud contiene: la presentación del solicitante (nombre, DNI, domicilio), la exposición de motivos con el fundamento legal o reglamentario y el petitorio concreto. El encabezamiento solo identifica al destinatario; la sumilla resume el asunto."
     },
     {
-        question: "Los organismos que se alimentan directamente de plantas son llamados:",
-        options: ["Consumidores terciarios", "Carnívoros", "Herbívoros", "Descomponedores", "Omnívoros"],
-        correct: 2,
-        justification: "Los herbívoros son consumidores primarios que se alimentan directamente de los productores (vegetales)."
-    },
-    {
-        question: "Los organismos que degradan materia orgánica muerta y reciclan nutrientes en el ecosistema son:",
-        options: ["Productores", "Consumidores", "Descomponedores", "Parásitos", "Autótrofos"],
-        correct: 2,
-        justification: "Los descomponedores (hongos y bacterias) degradan materia orgánica muerta y devuelven los nutrientes al suelo."
-    },
-    {
-        question: "El lugar físico donde vive un organismo se denomina:",
-        options: ["Nicho ecológico", "Hábitat", "Biocenosis", "Población", "Ecosistema"],
+        question: "¿Cuál es la principal función del MEMORANDO como documento administrativo?",
+        options: [
+            "Solicitar un trámite ante una autoridad superior externa.",
+            "Comunicar disposiciones, informaciones o recordatorios de forma interna y breve.",
+            "Presentar los resultados detallados de una comisión de trabajo.",
+            "Establecer comunicación formal entre dos entidades públicas distintas.",
+            "Certificar hechos o situaciones con valor legal ante terceros."
+        ],
         correct: 1,
-        justification: "El hábitat es el ambiente físico específico donde vive y se desarrolla una especie determinada."
+        justification: "El memorando es un documento de comunicación interna, breve y directo, utilizado dentro de una institución para transmitir órdenes, disposiciones o recordatorios entre áreas o funcionarios del mismo organismo. No se dirige a entidades externas."
     },
     {
-        question: "La función o papel que desempeña una especie dentro de un ecosistema se llama:",
-        options: ["Hábitat", "Nicho ecológico", "Biotopo", "Bioma", "Comunidad"],
-        correct: 1,
-        justification: "El nicho ecológico describe el rol funcional de una especie: qué come, cómo se relaciona y cómo influye en el ecosistema."
-    },
-    {
-        question: "La relación interespecífica en la que ambas especies se benefician se denomina:",
-        options: ["Parasitismo", "Comensalismo", "Mutualismo", "Depredación", "Competencia"],
+        question: "A diferencia de otros documentos administrativos, el INFORME se caracteriza por:",
+        options: [
+            "Ser un documento de comunicación entre instituciones del Estado.",
+            "Presentar un pedido formal ante una autoridad competente.",
+            "Exponer de manera objetiva y fundamentada hechos, situaciones o resultados ante quien lo solicitó.",
+            "Registrar los acuerdos adoptados en una sesión o reunión oficial.",
+            "Comunicar de forma breve y directa una disposición interna."
+        ],
         correct: 2,
-        justification: "En el mutualismo ambas especies obtienen beneficios de la relación (ejemplo: las abejas y las flores)."
+        justification: "El informe es un documento técnico-administrativo que expone con objetividad y sustento hechos investigados, situaciones evaluadas o tareas encargadas. Siempre lo elabora un subordinado para el superior que lo solicitó, con estructura argumentativa y conclusiones."
     },
     {
-        question: "La región de la Tierra donde existe vida y donde funcionan los ecosistemas se denomina:",
-        options: ["Litosfera", "Hidrosfera", "Biosfera", "Estratosfera", "Geosfera"],
-        correct: 2,
-        justification: "La biosfera incluye todos los ambientes de la Tierra donde existe vida: agua, suelo y aire hasta cierta altitud."
-    },
-    {
-        question: "En un cruce monohíbrido entre dos individuos heterocigotos (Aa × Aa), la proporción genotípica esperada en F2 será:",
-        options: ["1 AA : 2 Aa : 1 aa", "3 AA : 1 aa", "1 AA : 1 aa", "2 AA : 1 aa", "1 Aa : 3 aa"],
-        correct: 0,
-        justification: "El cuadro de Punnett del cruce Aa × Aa produce: 1 AA : 2 Aa : 1 aa. Esta es la proporción genotípica 1:2:1."
-    },
-    {
-        question: "Si un individuo presenta genotipo AA y expresa el carácter dominante, se afirma que su condición genética es:",
-        options: ["Homocigoto dominante", "Homocigoto recesivo", "Heterocigoto", "Haploide", "Diploide"],
-        correct: 0,
-        justification: "AA indica dos alelos dominantes iguales, por lo tanto el individuo es homocigoto dominante."
-    },
-    {
-        question: "En un cruce entre un individuo heterocigoto y uno homocigoto recesivo (Aa × aa), la proporción fenotípica esperada será:",
-        options: ["3 : 1", "1 : 1", "1 : 2 : 1", "2 : 1", "4 : 0"],
+        question: "¿Cuál de las siguientes oraciones contiene el vicio del lenguaje denominado PLEONASMO?",
+        options: [
+            "«Tuvo que ir al médico por el accidente que sufrió».",
+            "«Subió arriba a buscar sus documentos».",
+            "«El gerente hizo una reunión con los trabajadores».",
+            "«Le dije a Juan que viniera».",
+            "«La mayoría de los alumnos aprobaron el examen»."
+        ],
         correct: 1,
-        justification: "El cruce Aa × aa produce 50% Aa (fenotipo dominante) y 50% aa (fenotipo recesivo), por tanto proporción fenotípica 1:1."
+        justification: "«Subió arriba» es un pleonasmo: redundancia innecesaria porque el verbo «subir» ya implica dirección hacia arriba. Otros ejemplos: «bajar abajo», «salir afuera», «entrar adentro». El pleonasmo puede ser vicioso (innecesario) o expresivo (literario)."
+    },
+    {
+        question: "Identifica el vicio de dicción presente en: «Vi a la empleada del director con el maletín»:",
+        options: [
+            "Pleonasmo, por redundancia innecesaria",
+            "Solecismo, por error de concordancia",
+            "Anfibología, por ambigüedad en el sentido",
+            "Cacofonía, por repetición de sonidos desagradables",
+            "Barbarismo, por uso de palabra extranjera incorrecta"
+        ],
+        correct: 2,
+        justification: "La anfibología es un vicio sintáctico que produce ambigüedad: no queda claro si el maletín lo tenía la empleada o el director. Esta doble interpretación surge por la construcción sintáctica imprecisa del complemento con preposición «con»."
+    },
+    {
+        question: "En la oración «Hubieron muchos inconvenientes en el proceso electoral», el vicio cometido es:",
+        options: [
+            "Pleonasmo",
+            "Anfibología",
+            "Cacofonía",
+            "Solecismo",
+            "Barbarismo"
+        ],
+        correct: 3,
+        justification: "Es un solecismo: error morfosintáctico por usar «haber» impersonal existencial en plural («hubieron») cuando debe permanecer invariable en singular («Hubo muchos inconvenientes»). El solecismo es el vicio que viola las reglas gramaticales del idioma."
     }
 ];
 
@@ -560,7 +780,7 @@ function renderQuestion() {
                 `).join('')}
             </div>
             <div class="justification" id="justification">
-                <strong>🧬 Justificación:</strong> ${q.justification}
+                <strong>💡 Justificación:</strong> ${q.justification}
             </div>
         </div>
     `;
@@ -648,10 +868,10 @@ function showResults() {
     const msg = document.getElementById('resultMessage');
     if (nota >= 17) {
         badge.textContent = '🏆 Sobresaliente'; badge.className = 'grade-badge badge-excelente';
-        msg.textContent = '¡Excelente desempeño! Dominas con solidez los temas de Biología. ¡Así se llega a la universidad! 🌟';
+        msg.textContent = '¡Excelente desempeño! Dominas con solidez los temas de Lenguaje. ¡Así se llega a la universidad! 🌟';
     } else if (nota >= 14) {
         badge.textContent = '👏 Aprobado — Bueno'; badge.className = 'grade-badge badge-bueno';
-        msg.textContent = '¡Muy bien! Tienes buenos conocimientos en Biología. Refuerza los temas donde fallaste y estarás listo para el examen de admisión. 📚';
+        msg.textContent = '¡Muy bien! Tienes buenos conocimientos de Lenguaje. Refuerza los temas donde fallaste y estarás listo para el examen de admisión. 📚';
     } else if (nota >= 11) {
         badge.textContent = '📖 Aprobado — Regular'; badge.className = 'grade-badge badge-regular';
         msg.textContent = 'Vas por buen camino, pero aún hay temas que necesitan más repaso. ¡Tú puedes mejorar, sigue adelante! ✏️';
