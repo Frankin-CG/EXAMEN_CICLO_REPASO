@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examen de Lenguaje - Academia Sofía</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Examen de Literatura - Academia Sofía</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --red: #c0392b;
-            --red-mid: #e74c3c;
-            --red-light: #f1948a;
-            --red-pale: #fdecea;
-            --red-ultra: #fff5f5;
-            --rose: #fce8e8;
-            --cream: #fff9f9;
+            --navy: #9e0570;
+            --navy-mid: #68044f;
+            --navy-light: #a30889;
+            --navy-pale: #e8eef8;
+            --navy-ultra: #f4f7fd;
+            --gold: #3f0430;
+            --gold-light: #e8b84b;
+            --gold-pale: #fdf6e3;
+            --cream: #fafbff;
             --warm-white: #ffffff;
-            --text: #2e0a0a;
-            --text-soft: #7a3a3a;
-            --border: #f5b8b8;
-            --border-pale: #fad4d4;
-            --correct: #1a7a4a;
-            --correct-bg: #e6f7ee;
-            --incorrect: #c0392b;
+            --text: #0a1a35;
+            --text-soft: #4a6080;
+            --border: #c5d5ec;
+            --border-pale: #dde8f5;
+            --correct: #1a6b3a;
+            --correct-bg: #e6f5ee;
+            --incorrect: #a0230e;
             --incorrect-bg: #fdecea;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Nunito', sans-serif;
-            background: linear-gradient(135deg, #fdecea 0%, #fff5f5 40%, #fff0f0 100%);
+            font-family: 'DM Sans', sans-serif;
+            background: linear-gradient(135deg, #e8eef8 0%, #f4f7fd 50%, #fdf6e3 100%);
             min-height: 100vh;
             padding: 30px 20px;
             display: flex;
@@ -36,8 +38,8 @@
         }
         .container {
             background: var(--warm-white);
-            border-radius: 24px;
-            box-shadow: 0 20px 60px rgba(192,57,43,0.15), 0 0 0 1px rgba(192,57,43,0.12);
+            border-radius: 20px;
+            box-shadow: 0 24px 64px rgba(21, 51, 116, 0.18), 0 0 0 1px rgba(15,32,68,0.10);
             max-width: 860px;
             width: 100%;
             overflow: hidden;
@@ -50,7 +52,7 @@
 
         /* HEADER */
         .academy-header {
-            background: linear-gradient(135deg, var(--red) 0%, var(--red-mid) 60%, #e85d4a 100%);
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #1e4880 100%);
             padding: 32px 40px 24px;
             text-align: center;
             position: relative;
@@ -62,14 +64,14 @@
             top: -40px; left: -40px; right: -40px; bottom: -40px;
             background-image: repeating-linear-gradient(
                 45deg, transparent, transparent 28px,
-                rgba(255,255,255,0.06) 28px, rgba(255,255,255,0.06) 29px
+                rgba(201,151,44,0.08) 28px, rgba(201,151,44,0.08) 29px
             );
         }
         .academy-header::after {
             content: '';
             position: absolute;
             bottom: 0; left: 0; right: 0; height: 4px;
-            background: linear-gradient(90deg, transparent, rgba(255,220,210,0.8), transparent);
+            background: linear-gradient(90deg, transparent, rgba(201,151,44,0.8), transparent);
         }
         .logo-container {
             position: relative;
@@ -79,7 +81,7 @@
         .logo-container img { width: 100%; height: auto; max-height: 120px; object-fit: contain; }
         .divider {
             width: 80px; height: 3px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+            background: linear-gradient(90deg, transparent, rgba(201,151,44,0.9), transparent);
             margin: 10px auto 0;
         }
 
@@ -87,13 +89,13 @@
         .inner { padding: 36px 44px 40px; background: var(--cream); }
         .header { text-align: center; margin-bottom: 28px; }
         .header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.9em;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.1em;
             color: var(--text);
             margin-bottom: 6px;
             letter-spacing: -0.5px;
         }
-        .header h1 span { color: var(--red); }
+        .header h1 span { color: var(--navy-light); }
         .header p { color: var(--text-soft); font-size: 1em; font-weight: 600; }
 
         /* PROGRESS */
@@ -105,11 +107,11 @@
         }
         .progress-bar {
             width: 100%; height: 10px;
-            background: var(--red-pale); border-radius: 10px; overflow: hidden;
+            background: var(--navy-pale); border-radius: 10px; overflow: hidden;
         }
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, var(--red), var(--red-light));
+            background: linear-gradient(90deg, var(--navy), var(--gold));
             width: 0%; transition: width 0.4s ease; border-radius: 10px;
         }
 
@@ -122,15 +124,15 @@
         }
         .question-number {
             display: inline-block;
-            background: var(--red-pale);
-            color: var(--red);
+            background: var(--navy-pale);
+            color: var(--navy-mid);
             font-weight: 700; font-size: 0.82em;
             letter-spacing: 1.5px; text-transform: uppercase;
             padding: 5px 14px; border-radius: 50px; margin-bottom: 14px;
             border: 1.5px solid var(--border);
         }
         .question-text {
-            font-size: 1.2em; color: var(--text);
+            font-size: 1.18em; color: var(--text);
             margin-bottom: 22px; line-height: 1.65; font-weight: 600;
         }
         .options { display: flex; flex-direction: column; gap: 12px; }
@@ -139,49 +141,54 @@
             border: 2px solid var(--border-pale);
             border-radius: 12px; cursor: pointer;
             transition: all 0.25s ease;
-            font-size: 1.05em; background: var(--warm-white);
+            font-size: 1.04em; background: var(--warm-white);
             color: var(--text);
             display: flex; align-items: center; gap: 12px;
         }
         .option-letter {
             width: 30px; height: 30px; min-width: 30px;
             border-radius: 50%;
-            background: var(--red-ultra);
+            background: var(--navy-ultra);
             border: 2px solid var(--border);
-            color: var(--red);
+            color: var(--navy-mid);
             font-weight: 800; font-size: 0.85em;
             display: flex; align-items: center; justify-content: center;
             transition: all 0.25s ease;
         }
         .option:hover {
-            border-color: var(--red-mid);
-            background: var(--red-ultra);
+            border-color: var(--gold);
+            background: var(--gold-pale);
             transform: translateX(6px);
-            box-shadow: 0 4px 16px rgba(192,57,43,0.12);
+            box-shadow: 0 4px 16px rgba(201,151,44,0.15);
         }
         .option:hover .option-letter {
-            background: var(--red); color: white; border-color: var(--red);
+            background: var(--gold); color: white; border-color: var(--gold);
         }
-        .option.selected { border-color: var(--red-mid); background: var(--red-pale); }
+        .option.selected { border-color: var(--navy-light); background: var(--navy-pale); }
         .option.correct { border-color: var(--correct); background: var(--correct-bg); }
         .option.correct .option-letter { background: var(--correct); color: white; border-color: var(--correct); }
         .option.incorrect { border-color: var(--incorrect); background: var(--incorrect-bg); }
         .option.incorrect .option-letter { background: var(--incorrect); color: white; border-color: var(--incorrect); }
         .option.disabled { cursor: not-allowed; }
-        .option.disabled:hover { transform: none; box-shadow: none; }
+        .option.disabled:hover { transform: none; box-shadow: none; background: var(--warm-white); border-color: var(--border-pale); }
+        .option.disabled:hover .option-letter { background: var(--navy-ultra); color: var(--navy-mid); border-color: var(--border); }
+        .option.correct.disabled:hover, .option.correct.disabled { border-color: var(--correct); background: var(--correct-bg); }
+        .option.correct.disabled:hover .option-letter { background: var(--correct); color: white; border-color: var(--correct); }
+        .option.incorrect.disabled:hover, .option.incorrect.disabled { border-color: var(--incorrect); background: var(--incorrect-bg); }
+        .option.incorrect.disabled:hover .option-letter { background: var(--incorrect); color: white; border-color: var(--incorrect); }
 
         /* JUSTIFICATION */
         .justification {
             display: none;
             margin-top: 20px; padding: 18px 22px;
-            background: linear-gradient(to right, var(--red-ultra), #fff8f8);
-            border-left: 4px solid var(--red-mid);
+            background: linear-gradient(to right, var(--gold-pale), #fffdf5);
+            border-left: 4px solid var(--gold);
             border-radius: 10px;
             animation: fadeUp 0.4s ease;
             font-size: 1em; color: var(--text-soft); line-height: 1.6;
         }
         .justification.show { display: block; }
-        .justification strong { color: var(--red); }
+        .justification strong { color: var(--navy-mid); }
 
         /* NAV */
         .nav-buttons { display: flex; justify-content: space-between; margin-top: 30px; gap: 14px; }
@@ -189,24 +196,24 @@
             padding: 14px 32px; border: none; border-radius: 10px;
             font-size: 1em; cursor: pointer;
             transition: all 0.25s ease; font-weight: 700;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'DM Sans', sans-serif;
         }
         .btn-primary {
-            background: linear-gradient(135deg, var(--red), var(--red-mid));
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
             color: white;
-            box-shadow: 0 4px 16px rgba(192,57,43,0.3);
+            box-shadow: 0 4px 16px rgba(15,32,68,0.28);
             border: 2px solid transparent;
         }
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(192,57,43,0.4);
-            background: linear-gradient(135deg, var(--red-mid), var(--red-light));
+            box-shadow: 0 8px 24px rgba(15,32,68,0.38);
+            background: linear-gradient(135deg, var(--navy-light), var(--gold));
         }
         .btn-secondary {
             background: var(--warm-white); color: var(--text-soft); border: 2px solid var(--border-pale);
         }
         .btn-secondary:hover {
-            background: var(--red-pale); border-color: var(--red-mid); color: var(--red);
+            background: var(--navy-pale); border-color: var(--navy-light); color: var(--navy);
         }
         .btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none !important; }
 
@@ -214,33 +221,33 @@
         .results { display: none; text-align: center; }
         .results.show { display: block; }
         .results h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.9em; color: var(--text); margin-bottom: 8px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2em; color: var(--text); margin-bottom: 8px;
         }
         .score-circle {
             width: 200px; height: 200px; border-radius: 50%;
-            background: linear-gradient(135deg, var(--red), var(--red-mid));
-            border: 5px solid var(--rose);
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            border: 5px solid var(--navy-pale);
             color: white;
             display: flex; flex-direction: column;
             justify-content: center; align-items: center;
             margin: 28px auto 14px;
-            box-shadow: 0 12px 40px rgba(192,57,43,0.3), 0 0 0 10px rgba(192,57,43,0.08);
+            box-shadow: 0 12px 40px rgba(15,32,68,0.30), 0 0 0 10px rgba(15,32,68,0.07);
         }
-        .nota-label { font-size: 0.82em; opacity: 0.85; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; color: rgba(255,255,255,0.9); }
-        .nota-valor { font-family: 'Playfair Display', serif; font-size: 4em; font-weight: 900; line-height: 1; color: white; }
-        .nota-total { font-size: 1em; opacity: 0.75; color: rgba(255,220,215,0.9); }
+        .nota-label { font-size: 0.82em; opacity: 0.85; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; color: rgba(255,255,255,0.85); }
+        .nota-valor { font-family: 'Cormorant Garamond', serif; font-size: 4em; font-weight: 800; line-height: 1; color: white; }
+        .nota-total { font-size: 1em; opacity: 0.75; color: rgba(201,210,230,0.9); }
         .score-detail {
             display: inline-block; background: var(--warm-white);
             border: 2px solid var(--border-pale); border-radius: 12px;
             padding: 10px 28px; margin-bottom: 20px;
             font-size: 1em; color: var(--text-soft);
         }
-        .score-detail span { font-weight: 800; color: var(--red); }
+        .score-detail span { font-weight: 800; color: var(--navy-mid); }
         .grade-bar-container { width: 100%; max-width: 480px; margin: 0 auto 20px; }
-        .grade-bar-bg { width: 100%; height: 16px; background: var(--red-pale); border-radius: 10px; overflow: hidden; margin-bottom: 6px; }
-        .grade-bar-fill { height: 100%; border-radius: 10px; transition: width 1s ease; background: linear-gradient(90deg, var(--red), var(--red-light)); }
-        .grade-bar-labels { display: flex; justify-content: space-between; font-size: 0.78em; color: #ccc; padding: 0 2px; }
+        .grade-bar-bg { width: 100%; height: 16px; background: var(--navy-pale); border-radius: 10px; overflow: hidden; margin-bottom: 6px; }
+        .grade-bar-fill { height: 100%; border-radius: 10px; transition: width 1s ease; background: linear-gradient(90deg, var(--navy), var(--gold)); }
+        .grade-bar-labels { display: flex; justify-content: space-between; font-size: 0.78em; color: #aaa; padding: 0 2px; }
         .grade-badge {
             display: inline-block; padding: 8px 24px; border-radius: 50px;
             font-weight: 800; font-size: 1em; margin-bottom: 16px; letter-spacing: 0.5px;
@@ -254,20 +261,20 @@
             line-height: 1.7; max-width: 500px; margin-left: auto; margin-right: auto;
         }
         .results-motto {
-            background: linear-gradient(135deg, var(--red), var(--red-mid));
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
             color: white;
             padding: 14px 32px; border-radius: 50px;
             font-weight: 800; font-size: 1.05em;
             display: inline-block; margin-top: 8px;
             letter-spacing: 1.5px; text-transform: uppercase;
-            box-shadow: 0 4px 16px rgba(192,57,43,0.3);
-            border: 2px solid rgba(255,200,195,0.4);
+            box-shadow: 0 4px 16px rgba(15,32,68,0.28);
+            border: 2px solid rgba(201,151,44,0.4);
         }
 
         @media (max-width: 600px) {
             .inner { padding: 24px 20px; }
             .academy-header { padding: 24px 20px; }
-            .header h1 { font-size: 1.5em; }
+            .header h1 { font-size: 1.6em; }
             .question-text { font-size: 1.05em; }
             .nav-buttons { flex-direction: column; }
             .score-circle { width: 160px; height: 160px; }
@@ -286,13 +293,13 @@
 
     <div class="inner">
         <div class="header">
-            <h1>📝 Examen de <span>Lenguaje</span></h1>
-            <p>Ciclo Repaso · 35 Preguntas </p>
+            <h1>📚 Examen de <span>Literatura</span></h1>
+            <p>Ciclo Repaso · 26 Preguntas</p>
         </div>
 
         <div class="progress-wrapper">
             <div class="progress-info">
-                <span id="progressText">Pregunta 1 de 35</span>
+                <span id="progressText">Pregunta 1 de 26</span>
                 <span id="progressPct">0%</span>
             </div>
             <div class="progress-bar">
@@ -310,7 +317,7 @@
                 <div class="nota-total">/ 20</div>
             </div>
             <div class="score-detail">
-                Respuestas correctas: <span id="finalScore">0</span> de <span id="totalQuestions">35</span>
+                Respuestas correctas: <span id="finalScore">0</span> de <span id="totalQuestions">26</span>
             </div>
             <div class="grade-bar-container">
                 <div class="grade-bar-bg">
@@ -335,424 +342,175 @@
 <script>
 const questions = [
     {
-        question: "En la oración «Las niñas cantaban alegremente», ¿cuál es la flexión verbal correcta del verbo 'cantaban'?",
-        options: [
-            "Modo indicativo, tiempo presente, 3.ª persona del plural",
-            "Modo indicativo, tiempo pretérito imperfecto, 3.ª persona del plural",
-            "Modo subjuntivo, tiempo imperfecto, 3.ª persona del plural",
-            "Modo indicativo, tiempo pretérito perfecto, 3.ª persona del singular",
-            "Modo indicativo, tiempo futuro, 3.ª persona del plural"
-        ],
+        question: "Querrán volarlo y no podrán volarlo / Querrán romperlo y no podrán romperlo / Querrán matarlo y no podrán matarlo — <em>Canto coral a Túpac Amaru</em>. ¿Qué especie lírica se evidencia en los versos anteriores?",
+        options: ["Elegía", "Oda", "Égloga", "Madrigal"],
         correct: 1,
-        justification: "«Cantaban» es pretérito imperfecto de indicativo, 3.ª persona del plural: indica acción pasada continua o habitual. La morfología flexiva verbal incluye modo, tiempo, número y persona."
+        justification: "Los versos exaltan heroicamente a Túpac Amaru con fervor y grandiosidad, lo cual es característico de la <strong>Oda</strong>, especie lírica que exalta personas, hechos o valores con entusiasmo y elevación."
     },
     {
-        question: "¿En cuál de las siguientes oraciones el verbo actúa como AUXILIAR?",
+        question: "«Aguedita, Nativa, Miguel? / Llamo, busco al tanteo en la oscuridad. / No me vayan a haber dejado solo, / y el único recluso sea yo...» — <em>III, poemario Trilce</em>. ¿Cuál es la intención comunicativa del poeta César Vallejo?",
         options: [
-            "El profesor tiene muchos libros en su oficina.",
-            "María ha terminado el informe antes del mediodía.",
-            "Los estudiantes tienen ganas de aprobar.",
-            "El juez fue muy severo con el acusado.",
-            "Ella quiere un café con leche."
-        ],
-        correct: 1,
-        justification: "En «ha terminado», el verbo «haber» funciona como auxiliar que, junto al participio «terminado», forma la perífrasis verbal de aspecto perfectivo (pretérito perfecto compuesto). En las demás opciones los verbos son plenos."
-    },
-    {
-        question: "Analiza la estructura morfológica de la palabra «desafortunadamente». ¿Cuál es el análisis correcto?",
-        options: [
-            "Raíz: fortun- / sufijo: -adamente / sin prefijo",
-            "Prefijo: des- / raíz: afortun- / sufijo: -mente",
-            "Prefijo: des- / raíz: fortun- / sufijo adjetival: -ada / sufijo adverbial: -mente",
-            "Prefijo: des- / raíz: fort- / sufijo: -unadament- / sufijo: -e",
-            "Sin prefijo / raíz: desafortuna- / sufijo: -damente"
+            "La soledad que deja el abandono amoroso.",
+            "Exalta a los que nos abandonaron.",
+            "El sufrimiento y soledad que causa la muerte.",
+            "El egocentrismo al exaltar el yo."
         ],
         correct: 2,
-        justification: "La estructura es: prefijo «des-» + raíz «fortun-» + sufijo adjetival «-ada» + sufijo adverbial «-mente». Es un ejemplo de derivación por prefijación y sufijación simultáneas sobre la base nominal «fortuna»."
+        justification: "Vallejo llama a sus hermanos fallecidos desde la oscuridad, expresando el <strong>dolor y la soledad que provoca la muerte</strong> de los seres queridos. La oscuridad y la búsqueda infructuosa refuerzan el sentimiento de pérdida irreparable."
     },
     {
-        question: "¿Cuál de las siguientes palabras está formada ÚNICAMENTE por el proceso de DERIVACIÓN?",
-        options: [
-            "Bocacalle (boca + calle)",
-            "Enamorar (en- + amor + -ar)",
-            "Girasol (gira + sol)",
-            "Sol (morfema libre, palabra simple)",
-            "Desorden (prefijo des- + base orden)"
-        ],
-        correct: 4,
-        justification: "«Desorden» se forma añadiendo el prefijo derivativo «des-» a la base «orden», sin que intervenga composición ni parasíntesis. Las otras opciones corresponden a composición (A, C), parasíntesis (B) o palabra simple (D)."
-    },
-    {
-        question: "Identifica la palabra formada por el proceso de COMPOSICIÓN:",
-        options: [
-            "Rápidamente",
-            "Desorden",
-            "Girasol",
-            "Lectora",
-            "Subterráneo"
-        ],
+        question: "«A ver. Aquello sea sin ser más. / A ver. No trascienda hacia afuera.» ¿Qué figura literaria se evidencia?",
+        options: ["Sinestesia", "Elipsis", "Anáfora", "Animismo"],
         correct: 2,
-        justification: "«Girasol» se forma por composición de dos raíces léxicas: «gira» (de girar) + «sol». La composición une dos o más lexemas para crear una nueva palabra con significado propio y diferente al de sus componentes."
+        justification: "La repetición de la expresión «A ver» al inicio de cada verso es una <strong>Anáfora</strong>: figura literaria que consiste en repetir una o varias palabras al comienzo de versos u oraciones consecutivas para producir énfasis o musicalidad."
     },
     {
-        question: "¿Cuál de las siguientes palabras es un ejemplo de PARASÍNTESIS?",
-        options: [
-            "Correr",
-            "Deslealtad",
-            "Maniobra",
-            "Enamorar",
-            "Portavoz"
-        ],
+        question: "Los relatos clásicos sobre Medusa tienen que ver con su muerte a manos del héroe y semidiós Perseo. Cuenta el mito que el rey de Sérifos, Polidectes, le encargó a Perseo la tarea de matar a la criatura y llevarle su cabeza cercenada. ¿Qué especie narrativa se evidencia?",
+        options: ["Leyenda", "Fábula", "Cuento", "Mito"],
         correct: 3,
-        justification: "«Enamorar» es parasintética porque se forma simultáneamente con prefijo «en-» + base «amor» + sufijo verbal «-ar». Ninguna de las partes aisladas (*enamar o *amorar) existe como palabra independiente en español."
+        justification: "Se trata de un <strong>Mito</strong>: narración de origen anónimo y popular que explica, a través de seres sobrenaturales y héroes, el origen del mundo o de fenómenos naturales y culturales. La participación de semidioses y criaturas mitológicas confirma esta clasificación."
     },
     {
-        question: "Señala la opción que distingue CORRECTAMENTE entre sigla y acrónimo:",
-        options: [
-            "ONU es acrónimo porque se lee letra por letra; radar es sigla porque se pronuncia como palabra.",
-            "ONU es sigla porque se lee letra por letra; radar es acrónimo porque se pronuncia como una palabra.",
-            "Ambas son siglas porque provienen de iniciales de palabras.",
-            "Ambas son acrónimos porque pueden pronunciarse como palabras.",
-            "La diferencia entre sigla y acrónimo es solo ortográfica, no fonética."
-        ],
-        correct: 1,
-        justification: "Las siglas se deletrean letra a letra (O-N-U = Organización de las Naciones Unidas); los acrónimos se pronuncian como una sola palabra (radar, de Radio Detection And Ranging). La distinción es fonológica y morfológica."
-    },
-    {
-        question: "En la oración «El amor es el motor de grandes hazañas», ¿qué tipo de sustantivo es «amor»?",
-        options: [
-            "Concreto, contable, propio",
-            "Abstracto, incontable, común",
-            "Concreto, incontable, colectivo",
-            "Abstracto, contable, propio",
-            "Concreto, contable, común"
-        ],
-        correct: 1,
-        justification: "«Amor» es abstracto (no percibible sensorialmente), incontable (no se pluraliza con sentido habitual) y común (no designa un individuo específico sino una categoría). Son sus tres rasgos morfosemánticos fundamentales."
-    },
-    {
-        question: "En «El examen fue sumamente difícil», el adjetivo «difícil» cumple la función sintáctica de:",
-        options: [
-            "Modificador directo del sustantivo «examen»",
-            "Atributo del sujeto",
-            "Complemento circunstancial de modo",
-            "Complemento predicativo del objeto directo",
-            "Modificador indirecto del núcleo verbal"
-        ],
-        correct: 1,
-        justification: "Con verbos copulativos como «ser», «estar» o «parecer», el adjetivo funciona como atributo: se refiere al sujeto y es exigido por el verbo. Sin el atributo, la oración queda incompleta («El examen fue» carece de sentido pleno)."
-    },
-    {
-        question: "En «Aquellos estudiantes que aprobaron recibirán sus diplomas», la palabra «Aquellos» es:",
-        options: [
-            "Pronombre demostrativo",
-            "Determinante demostrativo",
-            "Adjetivo calificativo",
-            "Pronombre indefinido",
-            "Determinante posesivo"
-        ],
-        correct: 1,
-        justification: "«Aquellos» precede y acompaña directamente al sustantivo «estudiantes», actuando como determinante demostrativo. Si estuviera solo (sin el sustantivo), sería pronombre. Esta distinción es clave en morfología."
-    },
-    {
-        question: "¿En cuál de las siguientes oraciones el verbo es INTRANSITIVO?",
-        options: [
-            "El alcalde inauguró la nueva plaza.",
-            "Los niños duermen profundamente.",
-            "María compró varios libros de historia.",
-            "El jurado otorgó el premio al ganador.",
-            "Ella recibió una carta de su familia."
-        ],
-        correct: 1,
-        justification: "«Dormir» es intransitivo porque no admite complemento directo; la acción no recae sobre ningún objeto. El elemento «profundamente» es complemento circunstancial de modo, no objeto directo. En las demás opciones sí hay CD."
-    },
-    {
-        question: "Identifica el tipo de conjunción empleada en: «Estudia mucho, pero no logra aprobar»:",
-        options: [
-            "Conjunción copulativa",
-            "Conjunción disyuntiva",
-            "Conjunción adversativa",
-            "Conjunción causal",
-            "Conjunción concesiva"
-        ],
+        question: "«La llama que latía en su pecho se apagó». ¿Qué figura literaria se evidencia en el verso anterior?",
+        options: ["Anáfora", "Hipérbole", "Metáfora", "Hipérbaton"],
         correct: 2,
-        justification: "«Pero» es una conjunción coordinante adversativa que expresa oposición o contraste entre las dos proposiciones. Es la conjunción adversativa más frecuente del español, junto a «mas», «sino» y «aunque»."
+        justification: "Es una <strong>Metáfora</strong>: se compara la vida o la pasión del personaje con una llama que se apaga, sin usar conectores comparativos. La metáfora sustituye directamente un concepto por otro con el que guarda una relación de semejanza."
     },
     {
-        question: "¿En cuál de las siguientes oraciones la preposición está usada INCORRECTAMENTE?",
-        options: [
-            "Llegó a tiempo para la reunión.",
-            "Confío en la honestidad de mis amigos.",
-            "Le informé al director sobre el problema.",
-            "De acuerdo a las normas, está prohibido.",
-            "Salió de la oficina a las cinco."
-        ],
+        question: "Disciplina literaria que se encarga de analizar e interpretar la obra literaria dando juicios coherentes.",
+        options: ["Historia literaria", "Crítica literaria", "Teoría literaria", "La verosimilitud"],
+        correct: 1,
+        justification: "La <strong>Crítica literaria</strong> es la disciplina que analiza, interpreta y emite juicios valorativos sobre las obras literarias, a diferencia de la Historia literaria (que estudia la evolución de la literatura en el tiempo) y la Teoría literaria (que establece los principios generales del fenómeno literario)."
+    },
+    {
+        question: "«Nuestras vidas son los ríos / que van a dar en el mar / que es el morir: / allí van los señoríos / derechos a se acabar». ¿Qué especie lírica se evidencia?",
+        options: ["Elegía", "Madrigal", "Epístola", "Oda"],
+        correct: 0,
+        justification: "Estos versos de Jorge Manrique (Coplas a la muerte de su padre) expresan lamento por la muerte y el paso del tiempo, características propias de la <strong>Elegía</strong>: composición lírica que expresa dolor por la muerte de alguien o por una pérdida irreparable."
+    },
+    {
+        question: "«Del salón en el ángulo obscuro, / de su dueño tal vez olvidada, / silenciosa y cubierta de polvo / veíase el arpa.» ¿Qué figura literaria se evidencia?",
+        options: ["Hipérbole", "Hipérbaton", "Sinestesia", "Anáfora"],
+        correct: 1,
+        justification: "El orden sintáctico natural está alterado: lo correcto sería «El arpa se veía en el ángulo oscuro del salón...». Esta inversión deliberada del orden de los elementos es el <strong>Hipérbaton</strong>, figura de construcción muy frecuente en la poesía romántica española."
+    },
+    {
+        question: "MONTESCO: No la sé ni puedo indagarla. / BENVOLIO: ¿No has podido arrancarle ninguna explicación? / MONTESCO: Ni yo, ni nadie. No sé si piensa bien o mal, pero él es el único consejero de sí mismo. ¿Qué género literario se evidencia en el ejemplo anterior?",
+        options: ["Épico", "Dramático", "Lírico", "Narrativo"],
+        correct: 1,
+        justification: "El <strong>género Dramático</strong> se caracteriza por estar escrito en forma de diálogo entre personajes, destinado a la representación escénica. La forma dialogada entre Montesco y Benvolio (de Romeo y Julieta, de Shakespeare) es su rasgo definitorio."
+    },
+    {
+        question: "La literatura parte de la realidad, de las experiencias del poeta, de las manifestaciones históricas y culturales. Sin embargo, posee una naturaleza llamada la ___.",
+        options: ["Narración", "Creación", "Verosimilitud", "Racionalidad"],
+        correct: 2,
+        justification: "La <strong>verosimilitud</strong> es la propiedad de la literatura de parecer real o creíble aunque sea ficción. Aunque la obra literaria surge de la realidad, se transforma en un mundo propio que debe resultar coherente y creíble para el lector."
+    },
+    {
+        question: "El profesor de Literatura, en su clase sobre el Medievalismo, menciona a los estudiantes: «De todos los pecados existentes en la juventud, es el más grave e imperdonable desde los tiempos más memorables». ¿A qué pecado se refiere el profesor?",
+        options: ["Herejía", "Violencia", "Lujuria", "Traición"],
         correct: 3,
-        justification: "La forma correcta es «de acuerdo con», no «de acuerdo a». Esta última es un galicismo (calco del francés *d'accord à*) que la RAE considera incorrecto en el español estándar. El régimen preposicional del español exige «con»."
+        justification: "En el Medievalismo, la <strong>traición</strong> era considerada el peor pecado. Esto se refleja claramente en la <em>Divina Comedia</em> de Dante, donde los traidores ocupan el noveno y último círculo del Infierno (el más profundo y terrible)."
     },
     {
-        question: "En «Habló muy pausadamente», la palabra «muy» modifica a:",
-        options: [
-            "Al verbo «habló» directamente",
-            "Al adverbio «pausadamente» (adverbio de adverbio)",
-            "A toda la oración",
-            "Al sujeto tácito de la oración",
-            "Al predicado verbal completo"
-        ],
-        correct: 1,
-        justification: "«Muy» es un adverbio de grado que modifica e intensifica al adverbio de modo «pausadamente». Los adverbios de grado pueden modificar adjetivos, adverbios y locuciones adverbiales, pero no directamente a verbos."
-    },
-    {
-        question: "¿Cuál de las siguientes es una FRASE y no una oración?",
-        options: [
-            "Los pájaros cantan en el amanecer.",
-            "Ella llegó tarde al examen.",
-            "La brillante luz del sol de verano.",
-            "Nosotros ganamos el campeonato.",
-            "El perro ladra sin parar."
-        ],
-        correct: 2,
-        justification: "«La brillante luz del sol de verano» es una frase nominal porque carece de verbo conjugado en forma personal. Una oración requiere necesariamente un predicado con verbo conjugado. Las opciones A, B, D y E sí tienen verbo conjugado."
-    },
-    {
-        question: "¿Cuál de las siguientes oraciones es UNIMEMBRE?",
-        options: [
-            "Los estudiantes leen con atención.",
-            "Ella canta muy bien.",
-            "Llueve intensamente en la sierra.",
-            "El director habló con firmeza.",
-            "Nosotros ganamos el partido."
-        ],
-        correct: 2,
-        justification: "«Llueve intensamente en la sierra» es unimembre porque contiene un verbo impersonal meteorológico («llover») que no admite sujeto gramatical. No puede dividirse en sujeto y predicado porque el verbo no concuerda con ningún sujeto."
-    },
-    {
-        question: "En «Los brillantes alumnos de la universidad aprobaron el examen», ¿cuál es el NÚCLEO del sujeto?",
-        options: [
-            "Los brillantes alumnos",
-            "Alumnos",
-            "Los alumnos de la universidad",
-            "Universidad",
-            "Brillantes"
-        ],
-        correct: 1,
-        justification: "El núcleo del sujeto es siempre el sustantivo o pronombre principal: «alumnos». Los demás elementos son sus modificadores: «los» (determinante), «brillantes» (modificador directo) y «de la universidad» (modificador indirecto)."
-    },
-    {
-        question: "Identifica el COMPLEMENTO INDIRECTO en: «El profesor entregó los certificados a los egresados»:",
-        options: [
-            "El profesor",
-            "Los certificados",
-            "A los egresados",
-            "Entregó los certificados",
-            "Con mucho esfuerzo"
-        ],
-        correct: 2,
-        justification: "«A los egresados» es el complemento indirecto: indica el destinatario de la acción. Se verifica reemplazándolo por el pronombre átono «les»: «El profesor les entregó los certificados». El CD es «los certificados» (¿qué entregó?)."
-    },
-    {
-        question: "En «El libro fue escrito por García Márquez en Bogotá», ¿cuál es el complemento agente?",
-        options: [
-            "El libro",
-            "En Bogotá",
-            "Fue escrito",
-            "Por García Márquez",
-            "García Márquez en Bogotá"
-        ],
+        question: "En la epopeya <em>Odisea</em>, Ulises recorrió distintos países, vivió tantos males y penurias, enfrentó a enemigos y conoció muchos dioses. ¿A qué parte de la epopeya hace referencia?",
+        options: ["La telemaquía", "La venganza", "Asesinato de los dioses", "Las peripecias de Ulises"],
         correct: 3,
-        justification: "«Por García Márquez» es el complemento agente, propio de las oraciones pasivas, que indica quién realiza la acción. Se introduce con la preposición «por» y puede transformarse en sujeto al pasar a la voz activa: «García Márquez escribió el libro»."
+        justification: "Lo descrito corresponde a <strong>las peripecias de Ulises</strong>: la parte central de la Odisea que narra las aventuras, sufrimientos y encuentros del héroe durante su largo viaje de regreso a Ítaca tras la guerra de Troya."
     },
     {
-        question: "¿En cuál de las siguientes oraciones hay un error de CONCORDANCIA gramatical?",
-        options: [
-            "Las alumnas estudiosas aprobaron el examen.",
-            "Hubieron muchos problemas durante el proceso.",
-            "Los niños y las niñas jugaron en el parque.",
-            "Ella misma resolvió el problema.",
-            "Los jóvenes talentosos ganaron el concurso."
-        ],
-        correct: 1,
-        justification: "«Hubieron» es incorrecto. El verbo «haber» usado como impersonal existencial no varía en número; siempre debe estar en singular. La forma correcta es «Hubo muchos problemas». Es el solecismo de concordancia más frecuente en español."
+        question: "En la epopeya alegórica <em>Divina Comedia</em>, Dante observó a seres y hombres como: gorgonas, minotauro, centauros, héroes griegos y latinos. ¿A qué mundo dantesco hace referencia la descripción?",
+        options: ["Infierno", "Purgatorio", "Paraíso", "Paraíso Terrenal"],
+        correct: 0,
+        justification: "Los seres monstruosos (gorgonas, minotauro, centauros) y los héroes paganos greco-latinos habitan el <strong>Infierno</strong> en la obra de Dante. El Purgatorio y el Paraíso están poblados por almas purificadas y seres celestiales, respectivamente."
     },
     {
-        question: "Selecciona el conector más adecuado: «Estudió toda la noche; _______, no pudo terminar el examen a tiempo»:",
-        options: [
-            "Por lo tanto",
-            "Además",
-            "Sin embargo",
-            "Es decir",
-            "Por ejemplo"
-        ],
+        question: "Movimiento universal que tiene rasgos humanísticos y el predominio de la razón. Se le considera como el modelo de los demás movimientos literarios.",
+        options: ["Renacimiento", "Medievalismo", "Clasicismo", "Escolasticismo"],
         correct: 2,
-        justification: "«Sin embargo» es un conector adversativo que expresa contraste: a pesar del esfuerzo (estudiar toda la noche), el resultado fue contrario al esperado. Los conectores A y B son consecutivo y aditivo, respectivamente, que contradirían la lógica del texto."
+        justification: "El <strong>Clasicismo</strong> grecolatino es considerado el modelo universal de la literatura por su equilibrio, armonía, racionalidad y humanismo. Los escritores del Renacimiento y siglos posteriores tomaron la literatura clásica griega y latina como referente supremo."
     },
     {
-        question: "¿Qué tipo de relación lógica establece el conector «por consiguiente»?",
-        options: [
-            "Adversativa",
-            "Causal",
-            "Consecutiva",
-            "Concesiva",
-            "Aditiva"
-        ],
+        question: "En la novela <em>La familia de Pascual Duarte</em>, el protagonista es quien narra su historia desde la infancia que no era precisamente buenos recuerdos que tuvo, hasta el momento en que comete matricidio. Estos episodios tienen una connotación:",
+        options: ["Dramática", "Subliminal", "Irónica", "Romántica"],
+        correct: 0,
+        justification: "Los episodios violentos y trágicos de la vida de Pascual Duarte, culminando en el matricidio (asesinato de la madre), tienen una clara connotación <strong>dramática</strong>. La novela de Camilo José Cela es el ejemplo más representativo del tremendismo español."
+    },
+    {
+        question: "Jóvenes poetas que exaltan la tradición y el folclore andaluz. Asimismo, son influenciados por las innovaciones literarias del siglo XX.",
+        options: ["Generación del 27", "Generación finisecular", "Generación del 36", "Generación del 98"],
+        correct: 0,
+        justification: "La <strong>Generación del 27</strong> fusionó magistralmente la tradición popular andaluza (el romancero, el cante jondo) con las vanguardias europeas del siglo XX. Sus principales representantes son Federico García Lorca, Rafael Alberti y Pedro Salinas."
+    },
+    {
+        question: "Grupo de escritores que exalta el paisaje y la historia medieval de España de forma crítica y realista.",
+        options: ["Generación del 27", "Generación de la vanguardia", "Generación del 98", "Generación de la dictadura"],
         correct: 2,
-        justification: "«Por consiguiente» es un conector consecutivo o de conclusión: introduce la consecuencia lógica que se deriva de lo expresado anteriormente. Equivale a «por tanto», «en consecuencia» y «así pues». No debe confundirse con los causales («porque», «puesto que»)."
+        justification: "La <strong>Generación del 98</strong> se caracterizó por reflexionar críticamente sobre el problema de España, exaltando el paisaje castellano y revisando la historia medieval hispánica con una mirada pesimista y regeneracionista. Sus figuras clave son Unamuno, Azorín y Machado."
     },
     {
-        question: "En el enunciado «Este libro que te di ayer lo encontré aquí», ¿cuáles son los elementos que funcionan como deícticos de persona, lugar y tiempo, respectivamente?",
-        options: [
-            "«libro», «encontré» y «ayer»",
-            "«Este», «lo» y «aquí»",
-            "«te», «aquí» y «ayer»",
-            "«Este», «aquí» y «libro»",
-            "«lo», «ayer» y «encontré»"
-        ],
-        correct: 2,
-        justification: "«te» es deíctico de persona (2.ª persona, deixis personal); «aquí» es deíctico de lugar (deixis espacial); «ayer» es deíctico de tiempo (deixis temporal). La pregunta solicita un representante de cada tipo de deixis, lo que determina unívocamente la respuesta correcta."
-    },
-    {
-        question: "¿En cuál de las siguientes oraciones el uso de la coma es INCORRECTO?",
-        options: [
-            "Juan, el más inteligente del grupo, aprobó primero.",
-            "Compré pan, leche, huevos y frutas.",
-            "Si estudias con dedicación, aprobarás el examen.",
-            "El director, ordenó silencio en la sala.",
-            "Aunque llovía, salimos a caminar."
-        ],
+        question: "Obra literaria que evidencia la idealización de la mujer amada, la creación poética, el desamor y la religión.",
+        options: ["Campos de Castilla", "Romancero gitano", "Rima LIII", "Rimas"],
         correct: 3,
-        justification: "En «El director, ordenó silencio», la coma es incorrecta porque separa el sujeto («El director») de su predicado («ordenó silencio»). La RAE prohíbe expresamente colocar coma entre el sujeto y el verbo principal, salvo que medie un inciso."
+        justification: "Las <strong>Rimas</strong> de Gustavo Adolfo Bécquer abordan precisamente estos cuatro grandes temas: la idealización de la mujer amada, la reflexión sobre la propia creación poética, el dolor del desamor y la dimensión espiritual/religiosa. Son el máximo exponente del Romanticismo tardío español."
     },
     {
-        question: "¿En cuál de las opciones los dos puntos están usados CORRECTAMENTE?",
-        options: [
-            "Llegó tarde: porque el bus se averió.",
-            "Ella desea: estudiar medicina en la UNSCH.",
-            "El juez sentenció: «El acusado es culpable».",
-            "Los días hábiles son: lunes, martes y miércoles.",
-            "Compró: libros, cuadernos y lapiceros."
-        ],
-        correct: 2,
-        justification: "Los dos puntos se usan correctamente antes de una cita textual introducida por un verbo de lengua (sentenció, dijo, afirmó). En las opciones A, B y E los dos puntos interrumpen incorrectamente el vínculo entre el verbo y sus complementos directos."
-    },
-    {
-        question: "¿Cuál es el uso CORRECTO de la raya (—) en el texto escrito?",
-        options: [
-            "Para separar sílabas al final de una línea.",
-            "Para unir palabras compuestas como «físico-matemático».",
-            "Para encerrar incisos o aclaraciones en un texto narrativo.",
-            "Para indicar la división silábica en el diccionario.",
-            "Para separar prefijos de palabras como «ex-presidente»."
-        ],
-        correct: 2,
-        justification: "La raya (—) se usa para encerrar incisos o aclaraciones (función similar a los paréntesis), para introducir el diálogo en narrativa y para el comentario del narrador dentro del diálogo. Las opciones A, B, D y E corresponden al guion corto (-), signo distinto."
-    },
-    {
-        question: "¿En cuál de los siguientes casos el uso de las comillas es el ÚNICO recurso ortográfico adecuado y no puede reemplazarse por ningún otro signo?",
-        options: [
-            "Para introducir el diálogo en textos narrativos.",
-            "Para encerrar aclaraciones o datos complementarios dentro de una oración.",
-            "Para indicar que una palabra se emplea en sentido irónico o con significado especial.",
-            "Para marcar una pausa larga con suspenso al final de una frase.",
-            "Para separar una aclaración extensa del resto del texto narrativo."
-        ],
-        correct: 2,
-        justification: "Cuando una palabra se usa en sentido irónico, metafórico o impropio, las comillas son el único recurso adecuado. En cambio, el diálogo (A) puede marcarse con raya; las aclaraciones (B, E) admiten paréntesis o rayas; las pausas (D) corresponden a puntos suspensivos."
-    },
-    {
-        question: "¿En cuál de las siguientes opciones el uso de los puntos suspensivos es INCORRECTO?",
-        options: [
-            "«No sé cómo decirte esto… es muy complicado».",
-            "«Vine, vi… y perdí todo».",
-            "«Los países visitados fueron: Francia, Italia, España…».",
-            "«Dijo que vendría… pero ya son las diez de la noche».",
-            "«El examen consta de 30 preguntas... de opción múltiple»."
-        ],
-        correct: 4,
-        justification: "En «30 preguntas... de opción múltiple», los puntos suspensivos son innecesarios porque no hay pausa significativa, enumeración incompleta ni suspenso expresivo. Interrumpen artificialmente una frase que no lo requiere, constituyendo un uso incorrecto."
-    },
-    {
-        question: "¿Cuál es la característica que distingue al OFICIO de los demás documentos administrativos?",
-        options: [
-            "Es un documento personal que se dirige a una autoridad para solicitar algo.",
-            "Es un documento de comunicación oficial entre instituciones o dependencias del Estado.",
-            "Es un documento interno que resume los acuerdos de una reunión.",
-            "Es un documento que informa sobre los resultados de una investigación encargada.",
-            "Es un documento breve que sirve para recordar o instruir sobre algo urgente."
-        ],
+        question: "«Mi madre tampoco lloró la muerte de su hijo; secas debiera tener las entrañas una mujer con corazón tan duro que unas lágrimas no le quedaran siquiera para señalar la desgracia de la criatura...» Del fragmento de <em>La familia de Pascual Duarte</em>, se evidencia una tendencia:",
+        options: ["Realista", "Tremendista", "Surrealista", "Existencialista"],
         correct: 1,
-        justification: "El oficio es un documento de carácter institucional usado entre organismos públicos o entre dependencias de una misma institución. A diferencia de la solicitud (personal), el memorando (interno y breve) o el informe (técnico), el oficio es el canal formal interinstitucional."
+        justification: "El <strong>tremendismo</strong> es una tendencia narrativa española que se caracteriza por la presentación cruda y violenta de la realidad, con personajes marginales y situaciones desgarradoras. Este fragmento de Cela es el ejemplo más paradigmático de dicha corriente literaria."
     },
     {
-        question: "En la redacción de una SOLICITUD, ¿qué parte del documento contiene la presentación personal del solicitante y el fundamento legal del pedido?",
-        options: [
-            "El encabezamiento",
-            "La conclusión o cierre",
-            "El cuerpo o texto",
-            "La sumilla",
-            "El pie de firma"
-        ],
-        correct: 2,
-        justification: "El cuerpo o texto de la solicitud contiene: la presentación del solicitante (nombre, DNI, domicilio), la exposición de motivos con el fundamento legal o reglamentario y el petitorio concreto. El encabezamiento solo identifica al destinatario; la sumilla resume el asunto."
-    },
-    {
-        question: "¿Cuál es la principal función del MEMORANDO como documento administrativo?",
-        options: [
-            "Solicitar un trámite ante una autoridad superior externa.",
-            "Comunicar disposiciones, informaciones o recordatorios de forma interna y breve.",
-            "Presentar los resultados detallados de una comisión de trabajo.",
-            "Establecer comunicación formal entre dos entidades públicas distintas.",
-            "Certificar hechos o situaciones con valor legal ante terceros."
-        ],
+        question: "Las etapas de la poesía vallejiana se dividen en tres: modernista, vanguardista y compromiso social o revolucionaria. ¿Qué poemario evidencia aspectos de su tercera etapa?",
+        options: ["Los heraldos negros", "España, aparta de mí este cáliz", "Trilce", "Masa"],
         correct: 1,
-        justification: "El memorando es un documento de comunicación interna, breve y directo, utilizado dentro de una institución para transmitir órdenes, disposiciones o recordatorios entre áreas o funcionarios del mismo organismo. No se dirige a entidades externas."
+        justification: "<em><strong>España, aparta de mí este cáliz</strong></em> pertenece a la etapa de <strong>compromiso social y revolucionaria</strong> de Vallejo, inspirada en la Guerra Civil Española (1936-1939). Refleja la solidaridad del poeta con los republicanos y su visión humanista y colectiva del sufrimiento."
     },
     {
-        question: "A diferencia de otros documentos administrativos, el INFORME se caracteriza por:",
-        options: [
-            "Ser un documento de comunicación entre instituciones del Estado.",
-            "Presentar un pedido formal ante una autoridad competente.",
-            "Exponer de manera objetiva y fundamentada hechos, situaciones o resultados ante quien lo solicitó.",
-            "Registrar los acuerdos adoptados en una sesión o reunión oficial.",
-            "Comunicar de forma breve y directa una disposición interna."
-        ],
+        question: "En la narrativa urbana en la década del 50, aparece el migrante provinciano, quien sufre por no tener trabajo, vivienda ni alimentos. ¿Cuál de las obras citadas se relaciona con la falta de una vivienda?",
+        options: ["Los gallinazos sin pluma", "Los inocentes", "Al pie del acantilado", "Alienación", "El trompo"],
         correct: 2,
-        justification: "El informe es un documento técnico-administrativo que expone con objetividad y sustento hechos investigados, situaciones evaluadas o tareas encargadas. Siempre lo elabora un subordinado para el superior que lo solicitó, con estructura argumentativa y conclusiones."
+        justification: "En <em><strong>Al pie del acantilado</strong></em> de Julio Ramón Ribeyro, la familia protagonista vive literalmente sin vivienda formal, instalándose de manera precaria en los acantilados de Lima. La falta de techo es el conflicto central y simbólico del relato."
     },
     {
-        question: "¿Cuál de las siguientes oraciones contiene el vicio del lenguaje denominado PLEONASMO?",
-        options: [
-            "«Tuvo que ir al médico por el accidente que sufrió».",
-            "«Subió arriba a buscar sus documentos».",
-            "«El gerente hizo una reunión con los trabajadores».",
-            "«Le dije a Juan que viniera».",
-            "«La mayoría de los alumnos aprobaron el examen»."
-        ],
+        question: "La narrativa de la generación del 50 surge con el crecimiento y la modernización de la ciudad de Lima y la llegada del migrante provinciano. Uno de los escritores que inició con esta temática es:",
+        options: ["Oswaldo Reynoso", "Julio Ramón Ribeyro", "Mario Vargas Llosa", "José María Arguedas", "José Diez Canseco"],
         correct: 1,
-        justification: "«Subió arriba» es un pleonasmo: redundancia innecesaria porque el verbo «subir» ya implica dirección hacia arriba. Otros ejemplos: «bajar abajo», «salir afuera», «entrar adentro». El pleonasmo puede ser vicioso (innecesario) o expresivo (literario)."
+        justification: "<strong>Julio Ramón Ribeyro</strong> es uno de los principales iniciadores y representantes de la narrativa urbana del 50, retratando con maestría al migrante provinciano y a los marginados de Lima en cuentos como <em>Los gallinazos sin pluma</em> y <em>Al pie del acantilado</em>."
     },
     {
-        question: "Identifica el vicio de dicción presente en: «Vi a la empleada del director con el maletín»:",
-        options: [
-            "Pleonasmo, por redundancia innecesaria",
-            "Solecismo, por error de concordancia",
-            "Anfibología, por ambigüedad en el sentido",
-            "Cacofonía, por repetición de sonidos desagradables",
-            "Barbarismo, por uso de palabra extranjera incorrecta"
-        ],
-        correct: 2,
-        justification: "La anfibología es un vicio sintáctico que produce ambigüedad: no queda claro si el maletín lo tenía la empleada o el director. Esta doble interpretación surge por la construcción sintáctica imprecisa del complemento con preposición «con»."
+        question: "Narrador urbanista que en sus narraciones retrata características y comportamientos de los adolescentes.",
+        options: ["Oswaldo Reynoso", "Mario Vargas Llosa", "Enrique Congrains", "José Diez Canseco", "Julio Ramón Ribeyro"],
+        correct: 0,
+        justification: "<strong>Oswaldo Reynoso</strong> es conocido por retratar el mundo juvenil y adolescente urbano con un lenguaje coloquial y lleno de jergas. Sus obras <em>Los inocentes</em> y <em>En octubre no hay milagros</em> son testimonio de su interés por la psicología y comportamiento de los jóvenes limeños."
     },
     {
-        question: "En la oración «Hubieron muchos inconvenientes en el proceso electoral», el vicio cometido es:",
-        options: [
-            "Pleonasmo",
-            "Anfibología",
-            "Cacofonía",
-            "Solecismo",
-            "Barbarismo"
-        ],
+        question: "En la novela <em>La ciudad y los perros</em>, dentro del colegio militar establece relaciones de poder y dominación hacia sus compañeros, originando que los más débiles le teman y que muchos quieran imitar. Nos referimos a:",
+        options: ["Poeta", "Esclavo", "Rulos", "Jaguar"],
         correct: 3,
-        justification: "Es un solecismo: error morfosintáctico por usar «haber» impersonal existencial en plural («hubieron») cuando debe permanecer invariable en singular («Hubo muchos inconvenientes»). El solecismo es el vicio que viola las reglas gramaticales del idioma."
+        justification: "El <strong>Jaguar</strong> es el personaje que ejerce poder y dominación en el Colegio Leoncio Prado en la novela de Mario Vargas Llosa. Es el líder del grupo «El Círculo», temido por los cadetes más débiles e imitado por los que buscan su protección."
+    },
+    {
+        question: "«...Estreno pilcha azul y corbata de seda italiana bien bacán...» Del estilo de Oswaldo Reynoso se evidencia:",
+        options: [
+            "Lenguaje propio de los migrantes provincianos.",
+            "El lenguaje juvenil y de jergas.",
+            "Estilo sobrio y conciso.",
+            "El uso de metáforas y comparaciones."
+        ],
+        correct: 1,
+        justification: "Palabras como «pilcha» (ropa) y «bacán» (estupendo) son jergas propias del habla juvenil urbana limeña de los años 50-60. Este uso del <strong>lenguaje juvenil y de jergas</strong> es el sello estilístico más característico de Oswaldo Reynoso."
+    },
+    {
+        question: "En el cuento <em>Al pie del acantilado</em> de Julio Ramón Ribeyro, ¿cuál es el sentido simbólico de la higuerilla?",
+        options: [
+            "Un arbusto que crece frente al mar.",
+            "Es material que sirve como leña y para construir casas.",
+            "La terca resistencia frente a las adversidades.",
+            "La sombra y descanso de los viajeros."
+        ],
+        correct: 2,
+        justification: "La higuerilla simboliza la <strong>terca resistencia y perseverancia del ser humano ante la adversidad</strong>. Así como esta planta crece en condiciones extremas (en los acantilados), la familia protagonista sobrevive en condiciones de extrema precariedad, negándose a rendirse ante las dificultades."
     }
 ];
 
@@ -868,10 +626,10 @@ function showResults() {
     const msg = document.getElementById('resultMessage');
     if (nota >= 17) {
         badge.textContent = '🏆 Sobresaliente'; badge.className = 'grade-badge badge-excelente';
-        msg.textContent = '¡Excelente desempeño! Dominas con solidez los temas de Lenguaje. ¡Así se llega a la universidad! 🌟';
+        msg.textContent = '¡Excelente desempeño! Dominas con solidez los temas de Literatura. ¡Así se llega a la universidad! 🌟';
     } else if (nota >= 14) {
         badge.textContent = '👏 Aprobado — Bueno'; badge.className = 'grade-badge badge-bueno';
-        msg.textContent = '¡Muy bien! Tienes buenos conocimientos de Lenguaje. Refuerza los temas donde fallaste y estarás listo para el examen de admisión. 📚';
+        msg.textContent = '¡Muy bien! Tienes buenos conocimientos de Literatura. Refuerza los temas donde fallaste y estarás listo para el examen de admisión. 📚';
     } else if (nota >= 11) {
         badge.textContent = '📖 Aprobado — Regular'; badge.className = 'grade-badge badge-regular';
         msg.textContent = 'Vas por buen camino, pero aún hay temas que necesitan más repaso. ¡Tú puedes mejorar, sigue adelante! ✏️';
